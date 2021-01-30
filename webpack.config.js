@@ -3,6 +3,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
+
 const manifestJson = require('./public/manifest.json');
 
 const config = function (env) {
@@ -28,7 +30,15 @@ const config = function (env) {
 			}),
 			new WebpackManifestPlugin({
 				generate: () => manifestJson
-			})
+			}),
+			new CopyPlugin({
+				patterns: [
+				  { from: "./public/portfolio.svg", to: "portfolio.svg" },
+				  { from: "./public/preview.jpg", to: "preview.jpg" },
+				  { from: "./public/Robots.txt", to: "Robots.txt" },
+				  { from: "./public/sitemap.xml", to: "sitemap.xml" },
+				],
+			}),
 		],
 		optimization: {
 			splitChunks: {
