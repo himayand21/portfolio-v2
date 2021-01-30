@@ -2,18 +2,16 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ManifestPlugin = require('webpack-manifest-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const manifestJson = require('./public/manifest.json');
 
-const VENDOR_LIBS = ["react", "react-dom"];
 const config = function (env) {
   	const isProduction = env === 'production';
 	return {
 		mode: isProduction ? "production" : "development",
-		devtool: isProduction ? "none" : "cheap-module-eval-source-map",
+		devtool: isProduction ? false : "eval-cheap-module-source-map",
 		entry: {
 			bundle: ["@babel/polyfill", "./src/index.js"],
-			vendor: VENDOR_LIBS
 		},
 		output: {
 			path: path.resolve(__dirname, "build"),
@@ -28,7 +26,7 @@ const config = function (env) {
 			new MiniCssExtractPlugin({
 				filename: "styles/[name].built.css"
 			}),
-			new ManifestPlugin({
+			new WebpackManifestPlugin({
 				generate: () => manifestJson
 			})
 		],
