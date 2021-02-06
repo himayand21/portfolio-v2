@@ -38,6 +38,7 @@ const config = (env) => {
           { from: './public/preview.jpg', to: 'preview.jpg' },
           { from: './public/Robots.txt', to: 'Robots.txt' },
           { from: './public/sitemap.xml', to: 'sitemap.xml' },
+          { from: './public/index.css', to: 'index.css' },
         ],
       }),
     ],
