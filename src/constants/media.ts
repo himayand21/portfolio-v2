@@ -1,3 +1,3 @@
-export const mobile = 450;
-export const tablet = 735;
-export const laptop = 1068;
+export const MOBILE = 450;
+export const TABLET = 768;
+export const LAPTOP = 1068;
