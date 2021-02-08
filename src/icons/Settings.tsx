@@ -1,6 +1,7 @@
+import { ReactElement } from 'react';
 import { Icon } from '../styles';
 
-const Settings = () => (
+const Settings = (): ReactElement => (
   <Icon
     aria-hidden="true"
     focusable="false"

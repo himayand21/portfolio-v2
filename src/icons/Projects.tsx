@@ -1,6 +1,7 @@
+import { ReactElement } from 'react';
 import { Icon } from '../styles';
 
-const Code = () => (
+const Projects = (): ReactElement => (
   <Icon
     aria-hidden="true"
     focusable="false"
@@ -15,4 +16,4 @@ const Code = () => (
   </Icon>
 );
 
-export default Code;
+export default Projects;

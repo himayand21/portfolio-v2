@@ -23,6 +23,9 @@ export const Left = styled.header`
   align-items: flex-start;
   justify-content: flex-start;
   width: 250px;
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
   @media only screen and (max-width: ${LAPTOP}px) {
     width: 200px;
   }
@@ -34,6 +37,7 @@ export const Left = styled.header`
     width: 100vw;
     position: fixed;
     bottom: 0;
+    top: unset;
     padding-right: 0px;
     border-top: 1px solid ${(props) => props.theme.border};
   }
@@ -48,6 +52,7 @@ export const Right = styled.main`
   border-left: 1px solid ${(props) => props.theme.border};
   border-right: 1px solid ${(props) => props.theme.border};
   padding-right: 10vw;
+  min-height: 120vh;
   @media only screen and (max-width: ${LAPTOP}px) {
     padding-right: 5vw;
   }
@@ -55,9 +60,8 @@ export const Right = styled.main`
     padding-right: 10px;
   }
   @media only screen and (max-width: ${MOBILE}px) {
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 60px;
+    padding: 0px;
+    padding-bottom: 80px;
     border: none;
   }
 `;
@@ -67,7 +71,7 @@ export const MenuItems = styled.ul`
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 40px;
     @media only screen and (max-width: ${TABLET}px) {
       align-items: center;
     }
@@ -76,11 +80,18 @@ export const MenuItems = styled.ul`
       margin: 0;
       justify-content: space-around;
     }
-    li:first-child {
-      margin-bottom: 20px;
-      padding-right: 0px;
-      @media only screen and (max-width: ${MOBILE}px) {
-        display: none;
-      }
+`;
+
+export const Article = styled.article`
+    width: 100%;
+    padding: 40px 60px;
+    @media only screen and (max-width: ${LAPTOP}px) {
+      padding: 40px 50px;
+    }
+    @media only screen and (max-width: ${TABLET}px) {
+      padding: 40px;
+    }
+    @media only screen and (max-width: ${MOBILE}px) {
+      padding: 25px;
     }
 `;
