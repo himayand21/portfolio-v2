@@ -1,12 +1,13 @@
 import {
-  Suspense, useState, lazy, ReactElement,
+  useState, ReactElement,
 } from 'react';
 import { ThemeProvider } from 'styled-components';
 import {
   useHistory, useLocation, Route, Switch,
 } from 'react-router-dom';
 
-import Loader from './components/Loader';
+import Profile from './containers/Profile';
+import Settings from './containers/settings';
 import {
   Screen,
   Left,
@@ -20,9 +21,6 @@ import header from './metadata/header';
 import {
   COLORS, AMBIENCE, AMBIENCES, COLOR_MAP,
 } from './constants';
-
-const Profile = lazy(() => import('./containers/Profile'));
-const Settings = lazy(() => import('./containers/settings'));
 
 const App = (): ReactElement => {
   const [color, setColor] = useState(COLORS.SKY);
@@ -73,20 +71,18 @@ const App = (): ReactElement => {
           </MenuItems>
         </Left>
         <Right>
-          <Suspense fallback={<Loader />}>
-            <Switch>
-              <Route path="/profile" component={Profile} />
-              <Route path="/settings">
-                <Settings
-                  color={color}
-                  ambience={ambience}
-                  setColor={setColor}
-                  setAmbience={setAmbience}
-                />
-              </Route>
-              <Route path="*" component={Profile} />
-            </Switch>
-          </Suspense>
+          <Switch>
+            <Route path="/profile" component={Profile} />
+            <Route path="/settings">
+              <Settings
+                color={color}
+                ambience={ambience}
+                setColor={setColor}
+                setAmbience={setAmbience}
+              />
+            </Route>
+            <Route path="*" component={Profile} />
+          </Switch>
         </Right>
       </Screen>
     </ThemeProvider>
