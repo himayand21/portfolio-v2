@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {
-  TABLET, LAPTOP, ThemeType,
+  TABLET, LAPTOP, ThemeType, AmbienceType,
 } from '../../constants';
 
 import {
@@ -8,6 +8,7 @@ import {
   TypographyHeadline,
   TypographyIntroReduced,
   TypographyLabelReduced,
+  TypographyBody,
 } from '../../styles';
 
 export const Title = styled(TypographyHeadline)`
@@ -62,7 +63,7 @@ export const Picker = styled.span`
     }
 `;
 
-export const Tick = styled.span`
+export const CheckWrapper = styled.span`
     width: 100%;
     height: 100%;
     color: white;
@@ -84,6 +85,10 @@ export const Caption = styled(TypographyBodyReduced)`
     font-weight: bold;
 `;
 
+export const ThemeName = styled(TypographyBody)`
+    font-weight: bold;
+`;
+
 export const PickerWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -94,4 +99,31 @@ export const PickerWrapper = styled.div`
     @media only screen and (max-width: ${TABLET}px) {
         width: 25%;
     }
+`;
+
+export const ThemeBoxWrapper = styled(PickerWrapper)`
+    width: 31%;
+    @media only screen and (max-width: ${TABLET}px) {
+        width: 31%;
+    }
+`;
+
+type ThemeBoxProps = {
+    selected: boolean,
+    customTheme: AmbienceType,
+    theme: ThemeType,
+};
+
+export const ThemeBox = styled.div`
+    width: 100%;
+    min-height: 100px;
+    border-radius: 15px;
+    border: 2px solid ${({ theme, customTheme, selected }: ThemeBoxProps) => (selected ? theme.color : customTheme.border)};
+    background-color: ${({ customTheme }: ThemeBoxProps) => customTheme.background};
+    color: ${({ customTheme }: ThemeBoxProps) => customTheme.text};
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 `;

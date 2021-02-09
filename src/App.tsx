@@ -26,7 +26,7 @@ const Settings = lazy(() => import('./containers/settings'));
 
 const App = (): ReactElement => {
   const [color, setColor] = useState(COLORS.SKY);
-  const [ambience, setAmbience] = useState(AMBIENCE.LIGHT);
+  const [ambience, setAmbience] = useState(AMBIENCE.BRIGHT);
 
   const history = useHistory();
   const location = useLocation();

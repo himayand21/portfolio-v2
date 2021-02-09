@@ -1,10 +1,24 @@
 import { ReactElement } from 'react';
-import { COLORS, COLOR_MAP } from '../../constants';
+import {
+  COLORS, COLOR_MAP, AMBIENCE, THEMES,
+} from '../../constants';
 import Check from '../../icons/Check';
 
 import { Article } from '../../styles';
 import {
-  Label, Title, Subtitle, Box, Picker, PickerWrapper, Caption, Block, Pallete, Tick,
+  Label,
+  Title,
+  Subtitle,
+  Box,
+  Picker,
+  PickerWrapper,
+  Caption,
+  Block,
+  Pallete,
+  CheckWrapper,
+  ThemeBoxWrapper,
+  ThemeBox,
+  ThemeName,
 } from './styles';
 
 type SettingsProps = {
@@ -13,6 +27,10 @@ type SettingsProps = {
   setColor: (color: string) => void,
   setAmbience: (ambience: string) => void,
 };
+
+const getCaption = (name: string): string => (
+  name.charAt(0) + name.slice(1).toLowerCase()
+);
 
 const Settings = ({
   color,
@@ -38,13 +56,13 @@ const Settings = ({
                 onClick={() => setColor(each)}
               >
                 {(color === each) && (
-                  <Tick>
+                  <CheckWrapper>
                     <Check />
-                  </Tick>
+                  </CheckWrapper>
                 )}
               </Picker>
               <Caption>
-                {each.charAt(0) + each.slice(1).toLowerCase()}
+                {getCaption(each)}
               </Caption>
             </PickerWrapper>
           ))}
@@ -53,7 +71,23 @@ const Settings = ({
     </Block>
     <Block>
       <Label>Background</Label>
-      <Box>Content</Box>
+      <Box>
+        <Pallete>
+          {Object.values(AMBIENCE).map((theme) => (
+            <ThemeBoxWrapper>
+              <ThemeBox
+                onClick={() => setAmbience(theme)}
+                selected={theme === ambience}
+                customTheme={THEMES[theme]}
+              >
+                <ThemeName>
+                  {getCaption(theme)}
+                </ThemeName>
+              </ThemeBox>
+            </ThemeBoxWrapper>
+          ))}
+        </Pallete>
+      </Box>
     </Block>
   </Article>
 );

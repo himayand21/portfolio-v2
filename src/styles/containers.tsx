@@ -6,6 +6,8 @@ export const Screen = styled.div`
   min-height: 100vh;
   display: flex;
   padding-left: 10vw;
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
   @media only screen and (max-width: ${LAPTOP}px) {
     padding-left: 5vw;
   }
@@ -39,7 +41,7 @@ export const Left = styled.header`
     bottom: 0;
     top: unset;
     padding-right: 0px;
-    border-top: 1px solid ${(props) => props.theme.border};
+    border-top: 1px solid ${({ theme }) => theme.border};
   }
 `;
 
@@ -49,10 +51,9 @@ export const Right = styled.main`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  border-left: 1px solid ${(props) => props.theme.border};
-  border-right: 1px solid ${(props) => props.theme.border};
+  border-left: 1px solid ${({ theme }) => theme.border};
+  border-right: 1px solid ${({ theme }) => theme.border};
   padding-right: 10vw;
-  min-height: 120vh;
   @media only screen and (max-width: ${LAPTOP}px) {
     padding-right: 5vw;
   }
@@ -61,7 +62,8 @@ export const Right = styled.main`
   }
   @media only screen and (max-width: ${MOBILE}px) {
     padding: 0px;
-    padding-bottom: 80px;
+    padding-bottom: 10px;
+    max-height: calc(100vh - 80px);
     border: none;
   }
 `;
