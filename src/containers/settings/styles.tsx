@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {
-  TABLET, LAPTOP, ThemeType, AmbienceType,
+  TABLET, LAPTOP, MOBILE, ThemeType, AmbienceType,
 } from '../../constants';
 
 import {
@@ -126,4 +126,13 @@ export const ThemeBox = styled.div`
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    @media only screen and (max-width: ${LAPTOP}px) {
+        min-height: 80px;
+    }
+    @media only screen and (max-width: ${TABLET}px) {
+        min-height: 70px;
+    }
+    @media only screen and (max-width: ${MOBILE}px) {
+        min-height: 60px;
+    }
 `;

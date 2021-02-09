@@ -18,7 +18,7 @@ import {
 } from './styles';
 import header from './metadata/header';
 import {
-  COLORS, AMBIENCE, THEMES, COLOR_MAP,
+  COLORS, AMBIENCE, AMBIENCES, COLOR_MAP,
 } from './constants';
 
 const Profile = lazy(() => import('./containers/Profile'));
@@ -44,7 +44,7 @@ const App = (): ReactElement => {
   return (
     <ThemeProvider
       theme={{
-        ...THEMES[ambience],
+        ...AMBIENCES[ambience],
         color: COLOR_MAP[color],
       }}
     >

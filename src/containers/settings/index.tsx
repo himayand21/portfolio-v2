@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import {
-  COLORS, COLOR_MAP, AMBIENCE, THEMES,
+  COLORS, COLOR_MAP, AMBIENCE, AMBIENCES,
 } from '../../constants';
 import Check from '../../icons/Check';
 
@@ -73,15 +73,15 @@ const Settings = ({
       <Label>Background</Label>
       <Box>
         <Pallete>
-          {Object.values(AMBIENCE).map((theme) => (
+          {Object.values(AMBIENCE).map((each) => (
             <ThemeBoxWrapper>
               <ThemeBox
-                onClick={() => setAmbience(theme)}
-                selected={theme === ambience}
-                customTheme={THEMES[theme]}
+                onClick={() => setAmbience(each)}
+                selected={each === ambience}
+                customTheme={AMBIENCES[each]}
               >
                 <ThemeName>
-                  {getCaption(theme)}
+                  {getCaption(each)}
                 </ThemeName>
               </ThemeBox>
             </ThemeBoxWrapper>
