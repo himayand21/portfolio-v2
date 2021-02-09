@@ -1,17 +1,19 @@
 import styled from 'styled-components';
-import { TABLET, LAPTOP, MOBILE } from '../constants';
+import {
+  TABLET, LAPTOP, MOBILE, DESKTOP,
+} from '../constants';
 
 export const Screen = styled.div`
   width: 100%;
   min-height: 100vh;
   display: flex;
-  padding-left: 10vw;
+  padding-left: calc(50vw - 675px);
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
-  @media only screen and (max-width: ${LAPTOP}px) {
-    padding-left: 5vw;
+  @media only screen and (max-width: ${DESKTOP}px) {
+    padding-left: 15px;
   }
-  @media only screen and (max-width: ${TABLET}px) {
+  @media only screen and (max-width: ${LAPTOP}px) {
     padding-left: 10px;
   }
   @media only screen and (max-width: ${MOBILE}px) {
@@ -29,9 +31,6 @@ export const Left = styled.header`
   top: 0;
   max-height: 100vh;
   @media only screen and (max-width: ${LAPTOP}px) {
-    width: 200px;
-  }
-  @media only screen and (max-width: ${TABLET}px) {
     width: 80px;
     padding-right: 10px;
   }
@@ -53,13 +52,6 @@ export const Right = styled.main`
   justify-content: flex-start;
   border-left: 1px solid ${({ theme }) => theme.border};
   border-right: 1px solid ${({ theme }) => theme.border};
-  padding-right: 10vw;
-  @media only screen and (max-width: ${LAPTOP}px) {
-    padding-right: 5vw;
-  }
-  @media only screen and (max-width: ${TABLET}px) {
-    padding-right: 10px;
-  }
   @media only screen and (max-width: ${MOBILE}px) {
     padding: 0px;
     padding-bottom: 10px;
@@ -74,6 +66,8 @@ export const MenuItems = styled.ul`
     align-items: flex-start;
     width: 100%;
     margin-top: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
     @media only screen and (max-width: ${TABLET}px) {
       align-items: center;
     }

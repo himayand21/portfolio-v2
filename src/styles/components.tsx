@@ -3,7 +3,9 @@ import { transparentize } from 'polished';
 import {
   TypographyLabel,
 } from './typography';
-import { TABLET, MOBILE, ThemeType } from '../constants';
+import {
+  MOBILE, LAPTOP, ThemeType,
+} from '../constants';
 
 type WithIsActiveProps = {
     isActive: boolean,
@@ -26,7 +28,7 @@ export const MenuItem = styled.li`
             background-color: ${transparentize(0.9, theme.color)};
         }
     `))}
-    @media only screen and (max-width: ${TABLET}px) {
+    @media only screen and (max-width: ${LAPTOP}px) {
         border-radius: 23px;
         padding-right: 0px;
     }
@@ -43,7 +45,7 @@ export const MenuLogo = styled.span`
     align-items: center;
     border-radius: 50%;
     color: ${({ isActive, theme }: WithIsActiveProps) => (isActive ? theme.containedText : theme.color)};
-    @media only screen and (max-width: ${TABLET}px) {
+    @media only screen and (max-width: ${LAPTOP}px) {
         width: 46px;
         height: 46px;
     }
@@ -59,7 +61,7 @@ export const MenuName = styled(TypographyLabel)`
     padding-left: 5px;
     user-select: none;
     color: ${({ isActive, theme }: WithIsActiveProps) => (isActive ? theme.containedText : theme.text)};
-    @media only screen and (max-width: ${TABLET}px) {
+    @media only screen and (max-width: ${LAPTOP}px) {
         display: none;
         padding: 0px;
     }

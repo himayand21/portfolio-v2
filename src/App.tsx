@@ -6,7 +6,7 @@ import {
   useHistory, useLocation, Route, Switch,
 } from 'react-router-dom';
 
-import Profile from './containers/Profile';
+import Profile from './containers/profile';
 import Settings from './containers/settings';
 import {
   Screen,
@@ -23,8 +23,8 @@ import {
 } from './constants';
 
 const App = (): ReactElement => {
-  const [color, setColor] = useState(COLORS.SKY);
-  const [ambience, setAmbience] = useState(AMBIENCE.BRIGHT);
+  const [color, setColor] = useState(COLORS.PINK);
+  const [ambience, setAmbience] = useState(AMBIENCE.NIGHT);
 
   const history = useHistory();
   const location = useLocation();
