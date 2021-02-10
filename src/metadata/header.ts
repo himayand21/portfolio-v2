@@ -3,29 +3,30 @@ import Projects from '../icons/Projects';
 import Messages from '../icons/Messages';
 import Settings from '../icons/Settings';
 import Skills from '../icons/Skills';
+import { ROUTES } from '../constants';
 
 const header = [
   {
     icon: Profile,
     label: 'Profile',
-    path: '/profile',
+    path: ROUTES.PROFILE,
   },
   {
     icon: Projects,
     label: 'Projects',
-    path: '/projects',
+    path: ROUTES.PROJECTS,
   }, {
     icon: Skills,
     label: 'Skills',
-    path: '/skills',
+    path: ROUTES.SKILLS,
   }, {
     icon: Messages,
     label: 'Contact',
-    path: '/contact',
+    path: ROUTES.CONTACT,
   }, {
     icon: Settings,
     label: 'Settings',
-    path: '/settings',
+    path: ROUTES.SETTINGS,
   },
 ];
 

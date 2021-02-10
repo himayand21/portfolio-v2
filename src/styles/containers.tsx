@@ -10,6 +10,7 @@ export const Screen = styled.div`
   padding-left: calc(50vw - 675px);
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
+  overflow: hidden;
   @media only screen and (max-width: ${DESKTOP}px) {
     padding-left: 15px;
   }
@@ -55,7 +56,8 @@ export const Right = styled.main`
   @media only screen and (max-width: ${MOBILE}px) {
     padding: 0px;
     padding-bottom: 10px;
-    max-height: calc(100vh - 80px);
+    max-height: calc(100vh - 78px);
+    overflow-y: auto;
     border: none;
   }
 `;

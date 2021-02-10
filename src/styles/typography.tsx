@@ -3,6 +3,12 @@ import { TABLET, LAPTOP, MOBILE } from '../constants';
 
 export const TypographyBody = styled.span`
     font-size: 16px;
+    @media only screen and (max-width: ${TABLET}px) {
+        font-size: 14px;
+    }
+    @media only screen and (max-width: ${MOBILE}px) {
+        font-size: 12px;
+    }
 `;
 
 export const TypographyBodyReduced = styled.span`

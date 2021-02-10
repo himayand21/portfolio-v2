@@ -117,7 +117,7 @@ type ThemeBoxProps = {
 export const ThemeBox = styled.div`
     width: 100%;
     min-height: 100px;
-    border-radius: 15px;
+    border-radius: 7px;
     border: 2px solid ${({ theme, customTheme, selected }: ThemeBoxProps) => (selected ? theme.color : customTheme.border)};
     background-color: ${({ customTheme }: ThemeBoxProps) => customTheme.background};
     color: ${({ customTheme }: ThemeBoxProps) => customTheme.text};

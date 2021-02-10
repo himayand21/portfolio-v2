@@ -19,7 +19,7 @@ import {
 } from './styles';
 import header from './metadata/header';
 import {
-  COLORS, AMBIENCE, AMBIENCES, COLOR_MAP,
+  COLORS, AMBIENCE, AMBIENCES, COLOR_MAP, ROUTES,
 } from './constants';
 
 const App = (): ReactElement => {
@@ -35,7 +35,7 @@ const App = (): ReactElement => {
 
   const checkIfActive = (path: string): boolean => {
     if (location.pathname === path) return true;
-    if (location.pathname === '/' && path === '/profile') return true;
+    if (location.pathname === ROUTES.DEFAULT && path === ROUTES.PROFILE) return true;
     return false;
   };
 
@@ -72,8 +72,8 @@ const App = (): ReactElement => {
         </Left>
         <Right>
           <Switch>
-            <Route path="/profile" component={Profile} />
-            <Route path="/settings">
+            <Route path={ROUTES.PROFILE} component={Profile} />
+            <Route path={ROUTES.SETTINGS}>
               <Settings
                 color={color}
                 ambience={ambience}

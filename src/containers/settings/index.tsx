@@ -43,7 +43,7 @@ const Settings = ({
       Settings
     </Title>
     <Subtitle>
-      Customize your theme color and background
+      Customize your view with your choice of color and background
     </Subtitle>
     <Block>
       <Label>Color</Label>

@@ -41,7 +41,7 @@ const DARK_AMBIENCE = {
   ...COMMON_AMBIENCE,
   text: 'rgb(217, 217, 217)',
   text2: 'rgb(110, 118, 125)',
-  background: 'rgb(10, 10, 10)',
+  background: 'rgb(25, 25, 25)',
   backgroundHover: 'rgba(255, 255, 255, 0.03)',
   border: 'rgb(47, 51, 54)',
 };
@@ -49,12 +49,12 @@ const DARK_AMBIENCE = {
 export const COLOR_MAP = {
   [COLORS.SKY]: 'rgb(29, 161, 242)',
   [COLORS.GREEN]: 'rgb(23, 191, 99)',
-  [COLORS.RED]: 'rgb(228, 0, 0)',
+  [COLORS.RED]: 'rgb(255, 0, 0)',
   [COLORS.ORANGE]: 'rgb(244, 93, 34)',
-  [COLORS.PURPLE]: 'rgb(121, 75, 196)',
+  [COLORS.PURPLE]: 'rgb(161, 75, 196)',
   [COLORS.YELLOW]: 'rgb(255, 173, 31)',
   [COLORS.BLUE]: 'rgb(66, 103, 178)',
-  [COLORS.PINK]: 'rgb(224, 36, 94)',
+  [COLORS.PINK]: 'rgb(255, 16, 94)',
 };
 
 export const AMBIENCES = {
