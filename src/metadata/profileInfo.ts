@@ -34,7 +34,7 @@ const profileInfo = [
   ],
 ];
 
-export type rowType = {
+export type profilerowType = {
   icon: FC,
   label: string,
   link?: string,

@@ -23,14 +23,14 @@ const BRIGHT_AMBIENCE = {
   ...COMMON_AMBIENCE,
   text: 'rgb(15, 20, 25)',
   text2: 'rgb(91, 112, 131)',
-  background: 'rgb(255, 255, 255)',
+  background: 'rgb(245, 245, 245)',
   backgroundHover: 'rgba(0, 0, 0, 0.03)',
-  border: 'rgb(235, 238, 240)',
+  border: 'rgba(0, 0, 0, 0.1)',
 };
 
 const NIGHT_AMBIENCE = {
   ...COMMON_AMBIENCE,
-  text: 'rgb(255, 255, 255)',
+  text: 'rgb(245, 245, 245)',
   text2: 'rgb(136, 153, 166)',
   background: 'rgb(21, 32, 43)',
   backgroundHover: 'rgba(255, 255, 255, 0.03)',

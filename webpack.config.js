@@ -91,7 +91,7 @@ const config = (env) => {
           }],
         },
         {
-          test: /.(jpg|png|ogg|mp3)$/,
+          test: /.(jpg|png|ogg|mp3|webp)$/,
           use: {
             loader: 'file-loader',
             options: {

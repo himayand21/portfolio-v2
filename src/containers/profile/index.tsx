@@ -4,10 +4,6 @@ import {
   ProfileImageWrapper,
   CoverImage,
   DisplayImage,
-  FeedWrapper,
-  Feed,
-  Aside,
-  Header,
   ProfileInfoContainer,
   Name,
   ProfileInfoWrapper,
@@ -16,9 +12,27 @@ import {
   InfoLogo,
   InfoSpan,
   InfoLink,
-} from './styles';
+} from './profileStyles';
 
-import profileInfo, { rowType } from '../../metadata/profileInfo';
+import {
+  FeedWrapper,
+  Feed,
+  Header,
+} from './feedStyles';
+
+import {
+  Aside,
+  AsideBlock,
+  AsideBlockTitle,
+  AsideBlockItem,
+  AsideItemImage,
+  AsideItemInfoWrapper,
+  AsideItemTitle,
+  AsideItemSubtitle,
+} from './asideStyles';
+
+import profileInfo, { profilerowType } from '../../metadata/profileInfo';
+import asideFeed, { asideFeedType, asiderowType } from '../../metadata/asideFeed';
 
 import Cover from '../../images/Cover.jpg';
 import Display from '../../images/Display.jpg';
@@ -34,10 +48,10 @@ const Profile = (): ReactElement => (
       <ProfileInfoContainer>
         <Name>Himayan Debnath</Name>
         <ProfileInfoWrapper>
-          {profileInfo.map((row: rowType[]) => (
+          {profileInfo.map((row: profilerowType[]): ReactElement => (
             <ProfileRow>
-              {row.map(({ icon: Icon, label, link }: rowType): ReactElement => (
-                <Info>
+              {row.map(({ icon: Icon, label, link }: profilerowType): ReactElement => (
+                <Info key={label}>
                   <InfoLogo>
                     <Icon />
                   </InfoLogo>
@@ -58,7 +72,36 @@ const Profile = (): ReactElement => (
         </ProfileInfoWrapper>
       </ProfileInfoContainer>
     </Feed>
-    <Aside />
+    <Aside>
+      {asideFeed.map(({
+        type,
+        items,
+      }: asideFeedType): ReactElement => (
+        <AsideBlock key={type}>
+          <AsideBlockTitle>
+            {type}
+          </AsideBlockTitle>
+          {items.map(({
+            title,
+            subtitle,
+            image,
+            link,
+          }: asiderowType): ReactElement => (
+            <AsideBlockItem href={link} target="blank">
+              <AsideItemImage src={image} alt="" />
+              <AsideItemInfoWrapper>
+                <AsideItemTitle>
+                  {title}
+                </AsideItemTitle>
+                <AsideItemSubtitle>
+                  {subtitle}
+                </AsideItemSubtitle>
+              </AsideItemInfoWrapper>
+            </AsideBlockItem>
+          ))}
+        </AsideBlock>
+      ))}
+    </Aside>
   </FeedWrapper>
 );
 

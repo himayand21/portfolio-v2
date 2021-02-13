@@ -82,11 +82,11 @@ export const Box = styled.div`
 
 export const Caption = styled(TypographyBodyReduced)`
     margin-top: 5px;
-    font-weight: bold;
+    font-weight: 400;
 `;
 
 export const ThemeName = styled(TypographyBody)`
-    font-weight: bold;
+    font-weight: 400;
 `;
 
 export const PickerWrapper = styled.div`
@@ -125,7 +125,7 @@ export const ThemeBox = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
+    font-weight: 400;
     @media only screen and (max-width: ${LAPTOP}px) {
         min-height: 80px;
     }

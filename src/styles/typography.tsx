@@ -3,6 +3,7 @@ import { TABLET, LAPTOP, MOBILE } from '../constants';
 
 export const TypographyBody = styled.span`
     font-size: 16px;
+    font-weight: 200;
     @media only screen and (max-width: ${TABLET}px) {
         font-size: 14px;
     }
@@ -13,6 +14,7 @@ export const TypographyBody = styled.span`
 
 export const TypographyBodyReduced = styled.span`
     font-size: 14px;
+    font-weight: 200;
     @media only screen and (max-width: ${TABLET}px) {
         font-size: 11px;
     }
@@ -20,7 +22,7 @@ export const TypographyBodyReduced = styled.span`
 
 export const TypographyHeadlineSuper = styled.h1`
     font-size: 64px;
-    font-weight: bold;
+    font-weight: 400;
     @media only screen and (max-width: ${LAPTOP}px) {
         font-size: 48px;
     }
@@ -34,7 +36,7 @@ export const TypographyHeadlineSuper = styled.h1`
 
 export const TypographyHeadline = styled.h2`
     font-size: 48px;
-    font-weight: bold;
+    font-weight: 400;
     @media only screen and (max-width: ${LAPTOP}px) {
         font-size: 40px;
     }
@@ -48,7 +50,7 @@ export const TypographyHeadline = styled.h2`
 
 export const TypographyHeadlineReduced = styled.h3`
     font-size: 40px;
-    font-weight: bold;
+    font-weight: 400;
     @media only screen and (max-width: ${LAPTOP}px) {
         font-size: 32px;
     }
@@ -62,6 +64,7 @@ export const TypographyHeadlineReduced = styled.h3`
 
 export const TypographyIntroSuper = styled.h4`
     font-size: 32px;
+    font-weight: 200;
     @media only screen and (max-width: ${LAPTOP}px) {
         font-size: 28px;
     }
@@ -75,6 +78,7 @@ export const TypographyIntroSuper = styled.h4`
 
 export const TypographyIntro = styled.h5`
     font-size: 24px;
+    font-weight: 200;
     @media only screen and (max-width: ${LAPTOP}px) {
         font-size: 21px;
     }
@@ -88,6 +92,7 @@ export const TypographyIntro = styled.h5`
 
 export const TypographyIntroReduced = styled.h6`
     font-size: 20px;
+    font-weight: 200;
     @media only screen and (max-width: ${LAPTOP}px) {
         font-size: 18px;
     }
@@ -101,7 +106,7 @@ export const TypographyIntroReduced = styled.h6`
 
 export const TypographyLabelSuper = styled.span`
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 400;
     @media only screen and (max-width: ${LAPTOP}px) {
         font-size: 21px;
     }
@@ -115,7 +120,7 @@ export const TypographyLabelSuper = styled.span`
 
 export const TypographyLabel = styled.span`
     font-size: 21px;
-    font-weight: bold;
+    font-weight: 400;
     @media only screen and (max-width: ${LAPTOP}px) {
         font-size: 19px;
     }
@@ -129,7 +134,7 @@ export const TypographyLabel = styled.span`
 
 export const TypographyLabelReduced = styled.span`
     font-size: 17px;
-    font-weight: bold;
+    font-weight: 400;
     @media only screen and (max-width: ${LAPTOP}px) {
         font-size: 14px;
     }
@@ -137,6 +142,7 @@ export const TypographyLabelReduced = styled.span`
 
 export const TypographyCaption = styled.span`
     font-size: 12px;
+    font-weight: 200;
     @media only screen and (max-width: ${LAPTOP}px) {
         font-size: 10px;
     }
