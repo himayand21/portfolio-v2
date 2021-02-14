@@ -3,6 +3,7 @@ import Blog2 from '../images/Blog2.png';
 import Org1 from '../images/Org1.png';
 import Org2 from '../images/Org2.jpg';
 import Org3 from '../images/Org3.png';
+import Vol1 from '../images/Vol1.jpg';
 
 const aiseFeed = [
   {
@@ -36,6 +37,15 @@ const aiseFeed = [
       title: 'Wipro Technologies',
       subtitle: 'August 2018 - April 2020',
       image: Org1,
+    }],
+  },
+  {
+    type: 'Volunteer Experience',
+    items: [{
+      link: 'https://www.facebook.com/edforall.org',
+      title: 'Edforall',
+      subtitle: 'July 2016 - July 2017',
+      image: Vol1,
     }],
   },
 ];

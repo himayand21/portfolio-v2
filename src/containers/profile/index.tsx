@@ -31,8 +31,22 @@ import {
   AsideItemSubtitle,
 } from './asideStyles';
 
+import {
+  TimelineItem,
+  Sender,
+  SenderImage,
+  SenderName,
+  SenderDetails,
+  SenderDate,
+  TimelineInfo,
+  TimelineInfoTitle,
+  TimelineInfoSubtitle,
+  TimelineIcon,
+} from './timelineStyles';
+
 import profileInfo, { profilerowType } from '../../metadata/profileInfo';
 import asideFeed, { asideFeedType, asiderowType } from '../../metadata/asideFeed';
+import timeline from '../../metadata/timeline';
 
 import Cover from '../../images/Cover.jpg';
 import Display from '../../images/Display.jpg';
@@ -71,6 +85,30 @@ const Profile = (): ReactElement => (
           ))}
         </ProfileInfoWrapper>
       </ProfileInfoContainer>
+      {timeline.map(({
+        icon: Icon,
+        name,
+        date,
+        title,
+        subtitle,
+      }): ReactElement => (
+        <TimelineItem>
+          <Sender>
+            <SenderImage src={Display} alt="" />
+            <SenderDetails>
+              <SenderName>{name}</SenderName>
+              <SenderDate>{date}</SenderDate>
+            </SenderDetails>
+          </Sender>
+          <TimelineInfo>
+            <TimelineIcon>
+              <Icon />
+            </TimelineIcon>
+            <TimelineInfoTitle>{title}</TimelineInfoTitle>
+            <TimelineInfoSubtitle>{subtitle}</TimelineInfoSubtitle>
+          </TimelineInfo>
+        </TimelineItem>
+      ))}
     </Feed>
     <Aside>
       {asideFeed.map(({

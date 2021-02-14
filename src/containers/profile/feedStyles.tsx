@@ -17,7 +17,7 @@ export const FeedWrapper = styled.section`
 
 export const Feed = styled.div`
     max-width: 600px;
-    min-width: 50%;
+    min-width: 60%;
     min-height: 100vh;
     border-right: 1px solid ${({ theme }) => theme.border};
     @media only screen and (max-width: ${TABLET}px) {

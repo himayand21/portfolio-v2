@@ -1,7 +1,17 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import {
-  TABLET, LAPTOP, MOBILE, DESKTOP,
+  TABLET, LAPTOP, MOBILE, DESKTOP, ThemeType,
 } from '../constants';
+
+type withThemeType = {
+  theme: ThemeType,
+};
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${({ theme }: withThemeType) => theme.background};
+  }
+`;
 
 export const Screen = styled.div`
   width: 100%;
@@ -10,7 +20,6 @@ export const Screen = styled.div`
   padding-left: calc(50vw - 675px);
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
-  overflow: hidden;
   @media only screen and (max-width: ${DESKTOP}px) {
     padding-left: 15px;
   }

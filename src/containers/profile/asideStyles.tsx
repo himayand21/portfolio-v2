@@ -11,7 +11,7 @@ export const Aside = styled.aside`
     min-height: 100vh;
     position: sticky;
     top: 0;
-    min-width: 300px;
+    min-width: 250px;
     @media only screen and (max-width: ${TABLET}px) {
         display: none;
     }
@@ -30,7 +30,7 @@ export const AsideBlock = styled.section`
 export const AsideBlockTitle = styled(TypographyBody)`
     display: block;
     width: 100%;
-    padding: 10px 15px;
+    padding: 12px 15px 10px;
     font-weight: 400;
     color: ${({ theme }) => theme.text2};
 `;

@@ -16,6 +16,7 @@ import {
   MenuItem,
   MenuLogo,
   MenuName,
+  GlobalStyle,
 } from './styles';
 import header from './metadata/header';
 import {
@@ -46,6 +47,7 @@ const App = (): ReactElement => {
         color: COLOR_MAP[color],
       }}
     >
+      <GlobalStyle />
       <Screen>
         <Left>
           <MenuItems>
