@@ -57,9 +57,12 @@ export const TimelineInfo = styled.div`
 `;
 
 export const TimelineIcon = styled.div`
-    width: 17%;
-    height: 17%;
-    color: ${({ theme }) => theme.color};
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+    border-radius: 50%;
+    color: ${({ theme }) => theme.text};
+    background-color: ${({ theme }) => theme.color};
 `;
 
 export const TimelineInfoTitle = styled(TypographyBody)`

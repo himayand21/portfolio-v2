@@ -14,7 +14,7 @@ const profileInfo = [
     },
     {
       icon: Birthday,
-      label: 'September 21 1996',
+      label: 'September 21, 1996',
     },
   ], [
     {

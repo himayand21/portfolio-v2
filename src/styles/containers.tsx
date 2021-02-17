@@ -11,6 +11,16 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${({ theme }: withThemeType) => theme.background};
   }
+  * {
+    margin: 0;
+    padding: 0;
+    outline: none !important;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration: unset;
+    color: unset;
+  }
 `;
 
 export const Screen = styled.div`
