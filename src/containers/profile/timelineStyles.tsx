@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { transparentize } from 'polished';
 import { TypographyBody, TypographyBodyReduced } from '../../styles';
 import { TABLET } from '../../constants';
 
@@ -56,6 +57,52 @@ export const TimelineInfo = styled.div`
     text-align: center;
 `;
 
+export const TimelineLink = styled.a`
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: 100%;
+    margin: 20px 0 10px;
+    border-radius: 10px;
+    border: 3px solid ${({ theme }) => theme.color};
+    background-color: ${({ theme }) => theme.backgroundHover};
+    transition: background-color ease-in 0.3s;
+    cursor: pointer;
+    &:hover {
+        background-color: ${({ theme }) => transparentize(0.05, theme.background)};
+    }
+`;
+
+export const TimelineLinkImage = styled.img`
+    padding: 10px;
+    background-color: white;
+    width: 25%;
+    @media only screen and (max-width: ${TABLET}px) {
+        width: 35%;
+    }
+`;
+
+export const TimelineLinkTitle = styled(TypographyBody)`
+    color: ${({ theme }) => theme.text};
+    font-weight: 400;
+    margin: 10px 0;
+`;
+
+export const TimelineLinkSubtitle = styled(TypographyBodyReduced)`
+    color: ${({ theme }) => theme.text2};
+    font-weight: 400;
+    margin-bottom: 10px;
+`;
+
+export const TimelineLinkInfoWrapper = styled.div`
+    flex: 1;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: stretch;
+`;
+
 export const TimelineIcon = styled.div`
     width: 80px;
     height: 80px;
@@ -69,9 +116,11 @@ export const TimelineInfoTitle = styled(TypographyBody)`
     color: ${({ theme }) => theme.text};
     margin-top: 20px;
     margin-bottom: 7px;
+    font-weight: 400;
 `;
 
 export const TimelineInfoSubtitle = styled(TypographyBodyReduced)`
     color: ${({ theme }) => theme.text2};
     margin-bottom: 10px;
+    font-weight: 400;
 `;

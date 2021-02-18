@@ -42,11 +42,16 @@ import {
   TimelineInfoTitle,
   TimelineInfoSubtitle,
   TimelineIcon,
+  TimelineLink,
+  TimelineLinkImage,
+  TimelineLinkInfoWrapper,
+  TimelineLinkTitle,
+  TimelineLinkSubtitle,
 } from './timelineStyles';
 
 import profileInfo, { profilerowType } from '../../metadata/profileInfo';
 import asideFeed, { asideFeedType, asiderowType } from '../../metadata/asideFeed';
-import timeline from '../../metadata/timeline';
+import timeline, { types } from '../../metadata/timeline';
 
 import Cover from '../../images/Cover.jpg';
 import Display from '../../images/Display.jpg';
@@ -85,30 +90,64 @@ const Profile = (): ReactElement => (
           ))}
         </ProfileInfoWrapper>
       </ProfileInfoContainer>
-      {timeline.map(({
-        icon: Icon,
-        name,
-        date,
-        title,
-        subtitle,
-      }): ReactElement => (
-        <TimelineItem>
-          <Sender>
-            <SenderImage src={Display} alt="" />
-            <SenderDetails>
-              <SenderName>{name}</SenderName>
-              <SenderDate>{date}</SenderDate>
-            </SenderDetails>
-          </Sender>
-          <TimelineInfo>
-            <TimelineIcon>
-              <Icon />
-            </TimelineIcon>
-            <TimelineInfoTitle>{title}</TimelineInfoTitle>
-            <TimelineInfoSubtitle>{subtitle}</TimelineInfoSubtitle>
-          </TimelineInfo>
-        </TimelineItem>
-      ))}
+      {// eslint-disable-next-line @typescript-eslint/no-explicit-any
+      timeline.map((row: any): ReactElement | null => {
+        const {
+          name,
+          date,
+          type,
+        } = row;
+        return (
+          <TimelineItem key={date}>
+            <Sender>
+              <SenderImage src={Display} alt="" />
+              <SenderDetails>
+                <SenderName>{name}</SenderName>
+                <SenderDate>{date}</SenderDate>
+              </SenderDetails>
+            </Sender>
+            {(() => {
+              switch (type) {
+                case types.LINK: {
+                  const {
+                    title,
+                    subtitle,
+                    image,
+                    link,
+                  } = row;
+                  return (
+                    <TimelineLink target="blank" href={link}>
+                      <TimelineLinkImage alt="" src={image} />
+                      <TimelineLinkInfoWrapper>
+                        <TimelineLinkTitle>{title}</TimelineLinkTitle>
+                        <TimelineLinkSubtitle>{subtitle}</TimelineLinkSubtitle>
+                      </TimelineLinkInfoWrapper>
+                    </TimelineLink>
+                  );
+                }
+                case types.EVENT: {
+                  const {
+                    icon: Icon,
+                    title,
+                    subtitle,
+                  } = row;
+                  return (
+                    <TimelineInfo>
+                      <TimelineIcon>
+                        <Icon />
+                      </TimelineIcon>
+                      <TimelineInfoTitle>{title}</TimelineInfoTitle>
+                      <TimelineInfoSubtitle>{subtitle}</TimelineInfoSubtitle>
+                    </TimelineInfo>
+                  );
+                }
+                default: return null;
+              }
+            })()}
+          </TimelineItem>
+        );
+      })
+    }
     </Feed>
     <Aside>
       {asideFeed.map(({

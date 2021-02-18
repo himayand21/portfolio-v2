@@ -35,7 +35,7 @@ const aiseFeed = [
     }, {
       link: 'https://www.wipro.com',
       title: 'Wipro Technologies',
-      subtitle: 'August 2018 - April 2020',
+      subtitle: 'July 2018 - April 2020',
       image: Org1,
     }],
   },
