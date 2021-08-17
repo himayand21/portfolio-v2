@@ -64,12 +64,12 @@ export const TimelineLink = styled.a`
     width: 100%;
     margin: 20px 0 10px;
     border-radius: 10px;
-    border: 3px solid ${({ theme }) => theme.color};
+    border: 3px solid ${({ theme }) => theme.border};
     background-color: ${({ theme }) => theme.backgroundHover};
     transition: background-color ease-in 0.3s;
     cursor: pointer;
     &:hover {
-        background-color: ${({ theme }) => transparentize(0.05, theme.background)};
+        background-color: ${({ theme }) => transparentize(0.1, theme.backgroundHover)};
     }
 `;
 
