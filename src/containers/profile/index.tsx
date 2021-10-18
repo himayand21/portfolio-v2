@@ -12,6 +12,8 @@ import {
   InfoLogo,
   InfoSpan,
   InfoLink,
+  CoverImageDummy,
+  DisplayImageDummy,
 } from './styles/profileStyles';
 
 import {
@@ -56,6 +58,7 @@ import timeline, { types, timelineType } from '../../metadata/timeline';
 
 import Cover from '../../images/Cover.jpg';
 import Display from '../../images/Display.jpg';
+import PreloadImage from '../../common/PreloadImage';
 
 type ProfileProps = {
   ambience: string,
@@ -68,8 +71,14 @@ const Profile = ({
     <Feed>
       <Header>Profile</Header>
       <ProfileImageWrapper>
-        <CoverImage src={Cover} alt="" />
-        <DisplayImage src={Display} alt="" />
+        <CoverImageDummy />
+        <DisplayImageDummy />
+        <PreloadImage src={Cover}>
+          <CoverImage src={Cover} alt="" />
+        </PreloadImage>
+        <PreloadImage src={Display}>
+          <DisplayImage src={Display} alt="" />
+        </PreloadImage>
       </ProfileImageWrapper>
       <ProfileInfoContainer>
         <Name>Himayan Debnath</Name>
@@ -110,7 +119,9 @@ const Profile = ({
         return (
           <TimelineItem key={date}>
             <Sender>
-              <SenderImage src={Display} alt="" />
+              <PreloadImage src={Display}>
+                <SenderImage src={Display} alt="" />
+              </PreloadImage>
               <SenderDetails>
                 <SenderName>{name}</SenderName>
                 <SenderDate>{date}</SenderDate>
@@ -127,8 +138,12 @@ const Profile = ({
                   } = row;
                   return (
                     <TimelineLink target="blank" href={link}>
-                      <TimelineLinkImage alt="" src={getImage(ambience)} />
-                      <TimelineLinkDivider />
+                      <PreloadImage src={getImage(ambience) || ''}>
+                        <>
+                          <TimelineLinkImage alt="" src={getImage(ambience)} />
+                          <TimelineLinkDivider />
+                        </>
+                      </PreloadImage>
                       <TimelineLinkInfoWrapper>
                         <TimelineLinkTitle>{getTitle()}</TimelineLinkTitle>
                         <TimelineLinkSubtitle>{getSubTitle()}</TimelineLinkSubtitle>

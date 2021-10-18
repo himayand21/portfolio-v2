@@ -12,13 +12,35 @@ export const ProfileImageWrapper = styled.div`
     position: relative;
 `;
 
+export const CoverImageDummy = styled.div`
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    padding-top: 49%;
+    background-color: ${({ theme }) => theme.border};
+`;
+
 export const CoverImage = styled.img`
     position: absolute;
     left: 0px;
     top: 0px;
     width: 100%;
     max-height: 100%;
+    z-index: 1;
+`;
+
+export const DisplayImageDummy = styled.div`
+    width: 35%;
+    border-radius: 50%;
+    position: absolute;
+    left: 5%;
+    bottom: 8px;
+    padding-top: calc(35% - 8px);
+    border: 4px solid ${({ theme }) => theme.background};
     background-color: ${({ theme }) => theme.border};
+    box-sizing: border-box;
+    z-index: 2;
 `;
 
 export const DisplayImage = styled.img`
@@ -27,8 +49,9 @@ export const DisplayImage = styled.img`
     position: absolute;
     left: 5%;
     bottom: 8px;
-    background-color: ${({ theme }) => theme.border};
     border: 4px solid ${({ theme }) => theme.background};
+    z-index: 3;
+    box-sizing: border-box;
 `;
 
 export const ProfileInfoContainer = styled.section`
