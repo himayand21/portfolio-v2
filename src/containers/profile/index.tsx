@@ -12,13 +12,13 @@ import {
   InfoLogo,
   InfoSpan,
   InfoLink,
-} from './profileStyles';
+} from './styles/profileStyles';
 
 import {
   FeedWrapper,
   Feed,
   Header,
-} from './feedStyles';
+} from './styles/feedStyles';
 
 import {
   Aside,
@@ -29,7 +29,7 @@ import {
   AsideItemInfoWrapper,
   AsideItemTitle,
   AsideItemSubtitle,
-} from './asideStyles';
+} from './styles/asideStyles';
 
 import {
   TimelineItem,
@@ -44,19 +44,26 @@ import {
   TimelineIcon,
   TimelineLink,
   TimelineLinkImage,
+  TimelineLinkDivider,
   TimelineLinkInfoWrapper,
   TimelineLinkTitle,
   TimelineLinkSubtitle,
-} from './timelineStyles';
+} from './styles/timelineStyles';
 
 import profileInfo, { profilerowType } from '../../metadata/profileInfo';
 import asideFeed, { asideFeedType, asiderowType } from '../../metadata/asideFeed';
-import timeline, { types } from '../../metadata/timeline';
+import timeline, { types, timelineType } from '../../metadata/timeline';
 
 import Cover from '../../images/Cover.jpg';
 import Display from '../../images/Display.jpg';
 
-const Profile = (): ReactElement => (
+type ProfileProps = {
+  ambience: string,
+};
+
+const Profile = ({
+  ambience,
+}: ProfileProps): ReactElement => (
   <FeedWrapper>
     <Feed>
       <Header>Profile</Header>
@@ -69,10 +76,14 @@ const Profile = (): ReactElement => (
         <ProfileInfoWrapper>
           {profileInfo.map((row: profilerowType[]): ReactElement => (
             <ProfileRow>
-              {row.map(({ icon: Icon, label, link }: profilerowType): ReactElement => (
+              {row.map(({
+                getIcon,
+                label,
+                link,
+              }: profilerowType): ReactElement => (
                 <Info key={label}>
                   <InfoLogo>
-                    <Icon />
+                    {getIcon()}
                   </InfoLogo>
                   {link ? (
                     <InfoLink
@@ -90,8 +101,7 @@ const Profile = (): ReactElement => (
           ))}
         </ProfileInfoWrapper>
       </ProfileInfoContainer>
-      {// eslint-disable-next-line @typescript-eslint/no-explicit-any
-      timeline.map((row: any): ReactElement | null => {
+      {timeline.map((row: timelineType): ReactElement | null => {
         const {
           name,
           date,
@@ -110,34 +120,35 @@ const Profile = (): ReactElement => (
               switch (type) {
                 case types.LINK: {
                   const {
-                    title,
-                    subtitle,
-                    image,
+                    getTitle,
+                    getSubTitle,
+                    getImage = () => undefined,
                     link,
                   } = row;
                   return (
                     <TimelineLink target="blank" href={link}>
-                      <TimelineLinkImage alt="" src={image} />
+                      <TimelineLinkImage alt="" src={getImage(ambience)} />
+                      <TimelineLinkDivider />
                       <TimelineLinkInfoWrapper>
-                        <TimelineLinkTitle>{title}</TimelineLinkTitle>
-                        <TimelineLinkSubtitle>{subtitle}</TimelineLinkSubtitle>
+                        <TimelineLinkTitle>{getTitle()}</TimelineLinkTitle>
+                        <TimelineLinkSubtitle>{getSubTitle()}</TimelineLinkSubtitle>
                       </TimelineLinkInfoWrapper>
                     </TimelineLink>
                   );
                 }
                 case types.EVENT: {
                   const {
-                    icon: Icon,
-                    title,
-                    subtitle,
+                    getIcon = () => undefined,
+                    getTitle,
+                    getSubTitle,
                   } = row;
                   return (
                     <TimelineInfo>
                       <TimelineIcon>
-                        <Icon />
+                        {getIcon()}
                       </TimelineIcon>
-                      <TimelineInfoTitle>{title}</TimelineInfoTitle>
-                      <TimelineInfoSubtitle>{subtitle}</TimelineInfoSubtitle>
+                      <TimelineInfoTitle>{getTitle()}</TimelineInfoTitle>
+                      <TimelineInfoSubtitle>{getSubTitle()}</TimelineInfoSubtitle>
                     </TimelineInfo>
                   );
                 }
@@ -146,8 +157,7 @@ const Profile = (): ReactElement => (
             })()}
           </TimelineItem>
         );
-      })
-    }
+      })}
     </Feed>
     <Aside>
       {asideFeed.map(({
@@ -161,11 +171,11 @@ const Profile = (): ReactElement => (
           {items.map(({
             title,
             subtitle,
-            image,
+            getImage,
             link,
           }: asiderowType): ReactElement => (
             <AsideBlockItem href={link} target="blank">
-              <AsideItemImage src={image} alt="" />
+              <AsideItemImage src={getImage(ambience)} alt="" />
               <AsideItemInfoWrapper>
                 <AsideItemTitle>
                   {title}

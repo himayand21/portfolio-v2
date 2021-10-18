@@ -1,17 +1,14 @@
-import { Component, ReactElement } from 'react';
-import styled from 'styled-components';
+import { ReactElement } from 'react';
 
 import BabyCarriage from '../icons/BabyCarriage';
 import Graduation from '../icons/Graduation';
-import Org1 from '../images/Org1.png';
+import Org11 from '../images/Org11.png';
+import Org12 from '../images/Org12.png';
 
-const Link = styled.a`
-  color: ${({ theme }) => theme.color};
-  font-weight: 400;
-  margin: 0 4px;
-`;
+import Link from '../common/Link';
+import { AMBIENCE } from '../constants';
 
-const VIT = () => (
+const EducationTitle = (): ReactElement => (
   <div>
     <span>Graduated from</span>
     <Link href="https://vit.ac.in" target="blank">
@@ -19,6 +16,17 @@ const VIT = () => (
     </Link>
     <span>Vellore</span>
   </div>
+);
+
+const EducationSubtitle = (): ReactElement => (
+  <>
+    <div>Bachelor of Technology</div>
+    <div>Electronics and Instrumentation Engineering</div>
+    <div>
+      <b>CGPA</b>
+      <span> - 9.04</span>
+    </div>
+  </>
 );
 
 export const types = {
@@ -29,44 +37,50 @@ export const types = {
 const timeline = [{
   type: types.LINK,
   name: 'Himayan Debnath',
-  date: 'July 2018',
-  image: Org1,
-  title: 'Wipro Technologies',
-  subtitle: 'To my first job and new beginnings.',
+  date: 'June 2018',
+  getImage: (ambience: string): string => {
+    switch (ambience) {
+      case AMBIENCE.BRIGHT: return Org11;
+      case AMBIENCE.NIGHT: case AMBIENCE.DARK: return Org12;
+      default: return Org11;
+    }
+  },
+  getTitle: (): string => ('Wipro Technologies'),
+  getSubTitle: (): string => 'Project Engineer | June 2018 - April 2020',
   link: 'https://www.wipro.com',
 }, {
-  icon: Graduation,
+  getIcon: Graduation,
   type: types.EVENT,
   name: 'Himayan Debnath',
   date: 'May 2018',
-  title: <VIT />,
-  subtitle: 'Bachelor of Technology in Electronics and Instrumentation Engineering',
+  getTitle: EducationTitle,
+  getSubTitle: EducationSubtitle,
 }, {
-  icon: BabyCarriage,
+  getIcon: BabyCarriage,
   type: types.EVENT,
   name: 'Himayan Debnath',
   date: 'September 1996',
-  title: 'Born on September 21, 1996',
-  subtitle: 'Kolkata, West Bengal',
+  getTitle: (): string => ('Born on September 21, 1996'),
+  getSubTitle: (): string => 'Kolkata, West Bengal',
 }];
 
 export type eventType = {
-  icon: typeof Component,
+  getIcon?: () => string | ReactElement,
   type: string,
   name: string,
   date: string,
-  title: string | ReactElement,
-  subtitle: string,
+  getTitle: () => string | ReactElement,
+  getSubTitle: () => string | ReactElement,
 };
 
 export type linkType = {
   type: string,
   name: string,
   date: string,
-  image: string,
-  title: string,
-  subtitle: string,
-  link: string,
+  getImage?: (ambience: string) => string,
+  getTitle: () => string | ReactElement,
+  getSubTitle: () => string | ReactElement,
+  link?: string,
 }
 
 export type timelineType = linkType & eventType;

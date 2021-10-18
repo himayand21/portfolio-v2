@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 import {
   DESKTOP, TABLET,
-} from '../../constants';
-import { TypographyIntroSuper } from '../../styles';
+} from '../../../constants';
+import { TypographyIntroSuper } from '../../../styles';
 
 export const FeedWrapper = styled.section`
     display: flex;

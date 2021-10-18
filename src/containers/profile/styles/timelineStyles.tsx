@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
-import { TypographyBody, TypographyBodyReduced } from '../../styles';
-import { TABLET } from '../../constants';
+import { TypographyBody, TypographyBodyReduced } from '../../../styles';
+import { TABLET } from '../../../constants';
 
 export const TimelineItem = styled.section`
     width: 100%;
@@ -74,12 +74,19 @@ export const TimelineLink = styled.a`
 `;
 
 export const TimelineLinkImage = styled.img`
-    padding: 10px;
-    background-color: white;
+    padding: 15px 10px;
+    background-color: transparent;
     width: 25%;
     @media only screen and (max-width: ${TABLET}px) {
         width: 35%;
     }
+`;
+
+export const TimelineLinkDivider = styled.div`
+    width: 2px;
+    margin: 3% 0;
+    background-color: ${({ theme }) => theme.border};
+    border-radius: 2px;
 `;
 
 export const TimelineLinkTitle = styled(TypographyBody)`
@@ -108,7 +115,7 @@ export const TimelineIcon = styled.div`
     height: 80px;
     padding: 20px;
     border-radius: 50%;
-    color: ${({ theme }) => theme.text};
+    color: white;
     background-color: ${({ theme }) => theme.color};
 `;
 
@@ -123,4 +130,7 @@ export const TimelineInfoSubtitle = styled(TypographyBodyReduced)`
     color: ${({ theme }) => theme.text2};
     margin-bottom: 10px;
     font-weight: 400;
+    b {
+        color: ${({ theme }) => theme.text};
+    }
 `;

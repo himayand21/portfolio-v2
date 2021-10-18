@@ -1,10 +1,10 @@
 import { transparentize } from 'polished';
 import styled from 'styled-components';
-import { TypographyCaption, TypographyBodyReduced, TypographyBody } from '../../styles';
+import { TypographyCaption, TypographyBodyReduced, TypographyBody } from '../../../styles';
 import {
   LAPTOP,
   TABLET,
-} from '../../constants';
+} from '../../../constants';
 
 export const Aside = styled.aside`
     flex: 1;

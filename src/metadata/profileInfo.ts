@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ReactElement } from 'react';
 
 import Birthday from '../icons/Birthday';
 import Location from '../icons/Location';
@@ -9,25 +9,25 @@ import Twitter from '../icons/Twitter';
 const profileInfo = [
   [
     {
-      icon: Location,
+      getIcon: Location,
       label: 'Bengaluru',
     },
     {
-      icon: Birthday,
+      getIcon: Birthday,
       label: 'September 21, 1996',
     },
   ], [
     {
-      icon: Github,
+      getIcon: Github,
       label: '@himayand21',
       link: 'https://github.com/himayand21',
     }, {
-      icon: Twitter,
+      getIcon: Twitter,
       label: '@himayan7',
       link: 'https://twitter.com/Himayan7',
     },
     {
-      icon: LinkedIn,
+      getIcon: LinkedIn,
       label: '@himayan-debnath',
       link: 'https://www.linkedin.com/in/himayan-debnath',
     },
@@ -35,7 +35,7 @@ const profileInfo = [
 ];
 
 export type profilerowType = {
-  icon: FC,
+  getIcon: () => ReactElement,
   label: string,
   link?: string,
 };

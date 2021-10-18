@@ -3,8 +3,8 @@ import { darken } from 'polished';
 
 import {
   TABLET,
-} from '../../constants';
-import { TypographyIntroReduced, TypographyBody } from '../../styles';
+} from '../../../constants';
+import { TypographyIntroReduced, TypographyBody } from '../../../styles';
 
 export const ProfileImageWrapper = styled.div`
     width: 100%;

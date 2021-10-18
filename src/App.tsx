@@ -74,7 +74,11 @@ const App = (): ReactElement => {
         </Left>
         <Right>
           <Switch>
-            <Route path={ROUTES.PROFILE} component={Profile} />
+            <Route path={ROUTES.PROFILE}>
+              <Profile
+                ambience={ambience}
+              />
+            </Route>
             <Route path={ROUTES.SETTINGS}>
               <Settings
                 color={color}
@@ -83,7 +87,11 @@ const App = (): ReactElement => {
                 setAmbience={setAmbience}
               />
             </Route>
-            <Route path="*" component={Profile} />
+            <Route path="*">
+              <Profile
+                ambience={ambience}
+              />
+            </Route>
           </Switch>
         </Right>
       </Screen>
