@@ -31,6 +31,9 @@ export const Feed = styled.div`
 export const Header = styled(TypographyIntroSuper)`
     color: ${({ theme }) => theme.text};
     width: 100%;
-    padding: 10px 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    height: 70px;
     border-bottom: 1px solid ${({ theme }) => theme.border};
 `;

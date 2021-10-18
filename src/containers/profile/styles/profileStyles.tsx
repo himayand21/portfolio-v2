@@ -8,13 +8,17 @@ import { TypographyIntroReduced, TypographyBody } from '../../../styles';
 
 export const ProfileImageWrapper = styled.div`
     width: 100%;
+    padding-top: 67%;
     position: relative;
 `;
 
 export const CoverImage = styled.img`
+    position: absolute;
+    left: 0px;
+    top: 0px;
     width: 100%;
     max-height: 100%;
-    margin-bottom: 12%;
+    background-color: ${({ theme }) => theme.border};
 `;
 
 export const DisplayImage = styled.img`
@@ -23,6 +27,7 @@ export const DisplayImage = styled.img`
     position: absolute;
     left: 5%;
     bottom: 8px;
+    background-color: ${({ theme }) => theme.border};
     border: 4px solid ${({ theme }) => theme.background};
 `;
 

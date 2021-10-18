@@ -53,7 +53,6 @@ export const AsideBlockItem = styled.a`
 
 export const AsideItemImage = styled.img`
     width: 50px;
-    height: 50px;
     border-radius: 50%;
     margin-right: 15px;
     @media only screen and (min-width: ${TABLET}px) and (max-width: ${TABLET + 200}px) {

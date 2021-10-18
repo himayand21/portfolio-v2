@@ -1,6 +1,6 @@
 import { AMBIENCE } from '../constants';
 import Blog1 from '../images/Blog1.png';
-import Blog2 from '../images/Blog2.png';
+import Blog2 from '../images/Blog2.jpg';
 import Org11 from '../images/Org11.png';
 import Org12 from '../images/Org12.png';
 import Org2 from '../images/Org2.jpg';
