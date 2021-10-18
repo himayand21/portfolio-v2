@@ -49,7 +49,7 @@ export const Left = styled.header`
   width: 250px;
   position: sticky;
   top: 0;
-  z-index: 10;
+  background-color: inherit;
   max-height: 100vh;
   @media only screen and (max-width: ${LAPTOP}px) {
     width: 80px;
@@ -90,6 +90,7 @@ export const MenuItems = styled.ul`
     margin-top: 40px;
     padding-left: 10px;
     padding-right: 10px;
+    background-color: inherit;
     @media only screen and (max-width: ${TABLET}px) {
       align-items: center;
     }
