@@ -49,6 +49,7 @@ export const Left = styled.header`
   width: 250px;
   position: sticky;
   top: 0;
+  z-index: 10;
   max-height: 100vh;
   @media only screen and (max-width: ${LAPTOP}px) {
     width: 80px;
