@@ -66,7 +66,7 @@ export const WiproDescription = (): ReactElement => (
       <b>large scale applications</b>
       <span> for the </span>
       <b>Apple</b>
-      <span> account, a couple of noteworthy ones are -</span>
+      <span> account. A couple of noteworthy ones are -</span>
     </Description>
     <DescriptionList>
       <DescriptionListItem>

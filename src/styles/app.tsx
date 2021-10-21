@@ -69,6 +69,7 @@ export const Left = styled.header`
   @media only screen and (max-width: ${MOBILE}px) {
     width: 100vw;
     position: fixed;
+    z-index: 3;
     bottom: 0;
     top: unset;
     padding: 10px 0;
