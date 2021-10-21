@@ -60,6 +60,9 @@ export const Left = styled.header`
   background-color: inherit;
   max-height: 100vh;
   @media only screen and (max-width: ${LAPTOP}px) {
+    width: 200px;
+  }
+  @media only screen and (max-width: ${TABLET}px) {
     width: 80px;
     padding-right: 10px;
   }
@@ -68,7 +71,7 @@ export const Left = styled.header`
     position: fixed;
     bottom: 0;
     top: unset;
-    padding-right: 0px;
+    padding: 10px 0;
     border-top: 1px solid ${({ theme }) => theme.border};
   }
 `;

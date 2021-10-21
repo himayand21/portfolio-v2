@@ -167,13 +167,14 @@ export const DescriptionListItem = styled.li`
     b, a, span {
         margin-bottom: 5px;
         margin-left: 0px;
-        display: block;
     }
 `;
 
 export const ListContent = styled.div`
     flex: 1;
     padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 `;
 
 export const ListBulletWrapper = styled.div`

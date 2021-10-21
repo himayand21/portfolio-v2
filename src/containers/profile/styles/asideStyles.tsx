@@ -1,19 +1,40 @@
 import { transparentize } from 'polished';
 import styled from 'styled-components';
 import { TypographyCaption, TypographyBodyReduced, TypographyBody } from '../../../styles';
-import {
-  LAPTOP,
-  TABLET,
-} from '../../../constants';
+import { LAPTOP, ThemeType } from '../../../constants';
 
-export const Aside = styled.aside`
+type withIsHightlightsShown = {
+    isHighlightsShown: boolean,
+    theme: ThemeType,
+}
+
+export const Aside = styled('aside')<withIsHightlightsShown>`
     flex: 1;
     min-height: 100vh;
     position: sticky;
     top: 0;
     min-width: 250px;
-    @media only screen and (max-width: ${TABLET}px) {
-        display: none;
+    @media only screen and (max-width: ${LAPTOP}px) {
+        max-height: 100vh;
+        box-sizing: border-box;
+        ${({ isHighlightsShown, theme }) => (isHighlightsShown ? (`
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            z-index: 5;
+            background-color: ${theme.background};
+            border-left: 1px solid ${theme.border};
+            padding-top: 50px;
+            transform: translateX(0px) scaleX(1);
+            opacity: 1;
+            overflow: auto;
+            transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, padding-top 0.2s ease-in-out;
+        `) : (`
+            margin-left: -250px;
+            transform: translateX(250px) scaleX(0);
+            opacity: 0;
+            overflow: hidden;
+        `))}
     }
 `;
 
@@ -55,9 +76,6 @@ export const AsideItemImage = styled.img`
     width: 50px;
     border-radius: 50%;
     margin-right: 15px;
-    @media only screen and (min-width: ${TABLET}px) and (max-width: ${TABLET + 200}px) {
-        display: none;
-    }
     @media only screen and (min-width: ${LAPTOP}px) and (max-width: ${LAPTOP + 100}px) {
         display: none;
     }

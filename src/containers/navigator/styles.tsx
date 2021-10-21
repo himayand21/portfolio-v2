@@ -17,10 +17,13 @@ export const MenuItems = styled.ul`
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 40px;
     padding-left: 10px;
     padding-right: 10px;
     background-color: inherit;
+    @media only screen and (max-width: ${LAPTOP}px) {
+        margin-top: 20px;
+    }
     @media only screen and (max-width: ${TABLET}px) {
       align-items: center;
       margin-top: 10px;
@@ -49,12 +52,11 @@ export const MenuItem = styled.li`
         }
     `))}
     @media only screen and (max-width: ${LAPTOP}px) {
-        border-radius: 23px;
-        padding-right: 0px;
-        margin: 10px 0px;
+        margin: 5px 0px;
     }
     @media only screen and (max-width: ${TABLET}px) {
-        margin: 5px 0px;
+        border-radius: 23px;
+        padding-right: 0px;
     }
     @media only screen and (max-width: ${MOBILE}px) {
         border-radius: 24px;
@@ -85,7 +87,7 @@ export const MenuName = styled(TypographyLabel)`
     padding-left: 5px;
     user-select: none;
     color: ${({ isActive, theme }: withIsActiveProps) => (isActive ? theme.containedText : theme.text)};
-    @media only screen and (max-width: ${LAPTOP}px) {
+    @media only screen and (max-width: ${TABLET}px) {
         display: none;
         padding: 0px;
     }

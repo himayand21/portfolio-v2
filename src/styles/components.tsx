@@ -1,3 +1,4 @@
+import { darken } from 'polished';
 import styled from 'styled-components';
 import {
   TABLET, LAPTOP, MOBILE,
@@ -25,4 +26,7 @@ export const Link = styled.a`
   color: ${({ theme }) => theme.color};
   font-weight: 400;
   margin: 0 4px;
+  &:hover {
+    color: ${({ theme }) => darken(0.1, theme.color)};
+  }
 `;
