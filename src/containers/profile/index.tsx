@@ -14,7 +14,7 @@ import {
   InfoLink,
   CoverImageDummy,
   DisplayImageDummy,
-} from './styles/profileStyles';
+} from './styles/profileInfoStyles';
 
 import {
   FeedWrapper,
@@ -52,9 +52,9 @@ import {
   TimelineLinkSubtitle,
 } from './styles/timelineStyles';
 
-import profileInfo, { profilerowType } from '../../metadata/profileInfo';
-import asideFeed, { asideFeedType, asiderowType } from '../../metadata/asideFeed';
-import timeline, { types, timelineType } from '../../metadata/timeline';
+import profileInfo, { profilerowType } from '../../metadata/profile/profileInfo';
+import asideFeed, { asideFeedType, asiderowType } from '../../metadata/profile/asideFeed';
+import timeline, { types, timelineType } from '../../metadata/profile/timeline';
 
 import Cover from '../../images/Cover.jpg';
 import Display from '../../images/Display.jpg';
@@ -115,6 +115,7 @@ const Profile = ({
           name,
           date,
           type,
+          getDescription = () => undefined,
         } = row;
         return (
           <TimelineItem key={date}>
@@ -127,6 +128,7 @@ const Profile = ({
                 <SenderDate>{date}</SenderDate>
               </SenderDetails>
             </Sender>
+            {getDescription()}
             {(() => {
               switch (type) {
                 case types.LINK: {

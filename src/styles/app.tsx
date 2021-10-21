@@ -20,6 +20,14 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     text-decoration: unset;
     color: unset;
+    font-size: 16px;
+    font-weight: 200;
+    @media only screen and (max-width: ${TABLET}px) {
+        font-size: 14px;
+    }
+    @media only screen and (max-width: ${MOBILE}px) {
+        font-size: 12px;
+    }
   }
 `;
 
@@ -80,37 +88,4 @@ export const Right = styled.main`
     overflow-y: auto;
     border: none;
   }
-`;
-
-export const MenuItems = styled.ul`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    margin-top: 40px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: inherit;
-    @media only screen and (max-width: ${TABLET}px) {
-      align-items: center;
-    }
-    @media only screen and (max-width: ${MOBILE}px) {
-      flex-direction: row;
-      margin: 0;
-      justify-content: space-around;
-    }
-`;
-
-export const Article = styled.article`
-    width: 100%;
-    padding: 40px 60px;
-    @media only screen and (max-width: ${LAPTOP}px) {
-      padding: 40px 50px;
-    }
-    @media only screen and (max-width: ${TABLET}px) {
-      padding: 40px;
-    }
-    @media only screen and (max-width: ${MOBILE}px) {
-      padding: 25px;
-    }
 `;

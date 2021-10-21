@@ -1,11 +1,11 @@
-import { AMBIENCE } from '../constants';
-import Blog1 from '../images/Blog1.png';
-import Blog2 from '../images/Blog2.jpg';
-import Org11 from '../images/Org11.png';
-import Org12 from '../images/Org12.png';
-import Org2 from '../images/Org2.jpg';
-import Org3 from '../images/Org3.png';
-import Vol1 from '../images/Vol1.jpg';
+import { AMBIENCE } from '../../constants';
+import Blog1 from '../../images/Blog1.png';
+import Blog2 from '../../images/Blog2.jpg';
+import Org11 from '../../images/Org11.png';
+import Org12 from '../../images/Org12.png';
+import Org2 from '../../images/Org2.jpg';
+import Org3 from '../../images/Org3.png';
+import Vol1 from '../../images/Vol1.jpg';
 
 const aiseFeed = [
   {

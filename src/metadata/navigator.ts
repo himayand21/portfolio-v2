@@ -5,7 +5,7 @@ import Settings from '../icons/Settings';
 import Skills from '../icons/Skills';
 import { ROUTES } from '../constants';
 
-const header = [
+const navigator = [
   {
     icon: Profile,
     label: 'Profile',
@@ -30,4 +30,4 @@ const header = [
   },
 ];
 
-export default header;
+export default navigator;

@@ -1,33 +1,12 @@
 import { ReactElement } from 'react';
 
-import BabyCarriage from '../icons/BabyCarriage';
-import Graduation from '../icons/Graduation';
-import Org11 from '../images/Org11.png';
-import Org12 from '../images/Org12.png';
+import BabyCarriage from '../../icons/BabyCarriage';
+import Graduation from '../../icons/Graduation';
+import Org11 from '../../images/Org11.png';
+import Org12 from '../../images/Org12.png';
 
-import Link from '../common/Link';
-import { AMBIENCE } from '../constants';
-
-const EducationTitle = (): ReactElement => (
-  <div>
-    <span>Graduated from</span>
-    <Link href="https://vit.ac.in" target="blank">
-      VIT University
-    </Link>
-    <span>Vellore</span>
-  </div>
-);
-
-const EducationSubtitle = (): ReactElement => (
-  <>
-    <div>Bachelor of Technology</div>
-    <div>Electronics and Instrumentation Engineering</div>
-    <div>
-      <b>CGPA</b>
-      <span> - 9.04</span>
-    </div>
-  </>
-);
+import { AMBIENCE } from '../../constants';
+import { EducationSubtitle, EducationTitle, WiproDescription } from '../../containers/profile/components';
 
 export const types = {
   EVENT: 'EVENT',
@@ -38,6 +17,8 @@ const timeline = [{
   type: types.LINK,
   name: 'Himayan Debnath',
   date: 'June 2018',
+  link: 'https://www.wipro.com',
+  getDescription: WiproDescription,
   getImage: (ambience: string): string => {
     switch (ambience) {
       case AMBIENCE.BRIGHT: return Org11;
@@ -47,19 +28,18 @@ const timeline = [{
   },
   getTitle: (): string => ('Wipro Technologies'),
   getSubTitle: (): string => 'Project Engineer | June 2018 - April 2020',
-  link: 'https://www.wipro.com',
 }, {
-  getIcon: Graduation,
   type: types.EVENT,
   name: 'Himayan Debnath',
   date: 'May 2018',
+  getIcon: Graduation,
   getTitle: EducationTitle,
   getSubTitle: EducationSubtitle,
 }, {
-  getIcon: BabyCarriage,
   type: types.EVENT,
   name: 'Himayan Debnath',
   date: 'September 1996',
+  getIcon: BabyCarriage,
   getTitle: (): string => ('Born on September 21, 1996'),
   getSubTitle: (): string => 'Kolkata, West Bengal',
 }];
@@ -77,6 +57,7 @@ export type linkType = {
   type: string,
   name: string,
   date: string,
+  getDescription?: () => string | ReactElement,
   getImage?: (ambience: string) => string,
   getTitle: () => string | ReactElement,
   getSubTitle: () => string | ReactElement,

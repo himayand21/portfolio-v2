@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
 import { TypographyBody, TypographyBodyReduced } from '../../../styles';
-import { TABLET } from '../../../constants';
+import { TABLET, ThemeType } from '../../../constants';
 
 export const TimelineItem = styled.section`
     width: 100%;
@@ -91,8 +91,10 @@ export const TimelineLinkDivider = styled.div`
 
 export const TimelineLinkTitle = styled(TypographyBody)`
     color: ${({ theme }) => theme.text};
-    font-weight: 400;
     margin: 10px 0;
+    * {
+        font-weight: 400;
+    }
 `;
 
 export const TimelineLinkSubtitle = styled(TypographyBodyReduced)`
@@ -132,5 +134,79 @@ export const TimelineInfoSubtitle = styled(TypographyBodyReduced)`
     font-weight: 400;
     b {
         color: ${({ theme }) => theme.text};
+        font-weight: 400;
     }
 `;
+
+export const DescriptionWrapper = styled.div`
+  margin: 15px 0;
+  line-height: 1.7rem;
+`;
+
+export const Description = styled(TypographyBody)`
+  color: ${({ theme }) => theme.text2};
+  margin-bottom: 20px;
+  display: block;
+  b {
+    color: ${({ theme }) => theme.text};
+    font-weight: 400;
+  }
+`;
+
+export const DescriptionList = styled.ul`
+    list-style-type: none;
+    margin: 10px 0;
+`;
+
+export const DescriptionListItem = styled.li`
+    display: flex;
+    b {
+        color: ${({ theme }) => theme.text};
+        font-weight: 400;
+    }
+    b, a, span {
+        margin-bottom: 5px;
+        margin-left: 0px;
+        display: block;
+    }
+`;
+
+export const ListContent = styled.div`
+    flex: 1;
+    padding-bottom: 10px;
+`;
+
+export const ListBulletWrapper = styled.div`
+    display: flex;
+    width: 10%;
+    margin: 0px;
+    transform: translateY(0.85rem);
+    margin-right: 10px;
+`;
+
+type withIsFirst = {
+    isFirst?: boolean,
+    theme: ThemeType,
+};
+
+type withIsLast = {
+    isLast?: boolean,
+    theme: ThemeType,
+};
+
+export const LeftBranch = styled('div')<withIsFirst>`
+    flex: 1;
+    ${({ isFirst, theme }) => (isFirst ? (`
+        border-top: 1px solid ${theme.border};
+    `) : '')}
+`;
+
+export const RightBranch = styled('div')<withIsLast>`
+    flex: 1;
+    border-top: 1px solid ${({ theme }) => theme.border};
+    ${({ isLast, theme }) => (!isLast ? (`
+        border-left: 1px solid ${theme.border};
+    `) : '')}
+`;
+
+export const ListContentDescription = styled(Description)``;
