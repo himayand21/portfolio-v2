@@ -76,15 +76,17 @@ export const TimelineLink = styled.a`
 export const TimelineLinkImage = styled.img`
     padding: 15px 10px;
     background-color: transparent;
-    width: 25%;
+    width: 20%;
+    margin-left: 10px;
+    align-self: center;
     @media only screen and (max-width: ${TABLET}px) {
-        width: 35%;
+        width: 25%;
     }
 `;
 
 export const TimelineLinkDivider = styled.div`
     width: 2px;
-    margin: 3% 0;
+    margin: 4% 10px;
     background-color: ${({ theme }) => theme.border};
     border-radius: 2px;
 `;
@@ -105,7 +107,7 @@ export const TimelineLinkSubtitle = styled(TypographyBodyReduced)`
 
 export const TimelineLinkInfoWrapper = styled.div`
     flex: 1;
-    padding: 5%;
+    padding: 4%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -151,6 +153,9 @@ export const Description = styled(TypographyBody)`
     color: ${({ theme }) => theme.text};
     font-weight: 400;
   }
+  a {
+    font-weight: 400;
+  }
 `;
 
 export const DescriptionList = styled.ul`
@@ -170,19 +175,16 @@ export const DescriptionListItem = styled.li`
     }
 `;
 
+export const WorkExperienceContent = styled(TimelineInfoSubtitle)`
+    flex: 1;
+    padding-bottom: 5px;
+`;
+
 export const ListContent = styled.div`
     flex: 1;
     padding-bottom: 10px;
     display: flex;
     flex-direction: column;
-`;
-
-export const ListBulletWrapper = styled.div`
-    display: flex;
-    width: 10%;
-    margin: 0px;
-    transform: translateY(0.85rem);
-    margin-right: 10px;
 `;
 
 type withIsFirst = {
@@ -194,6 +196,24 @@ type withIsLast = {
     isLast?: boolean,
     theme: ThemeType,
 };
+
+export const ListBulletWrapper = styled('div')<withIsLast>`
+    display: flex;
+    width: 10%;
+    margin: 0px;
+    transform: translateY(0.85rem);
+    margin-right: 10px;
+    ${({ isLast }) => (isLast ? (`
+        & ~ div {
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+        & ~ span {
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+    `) : '')}
+`;
 
 export const LeftBranch = styled('div')<withIsFirst>`
     flex: 1;

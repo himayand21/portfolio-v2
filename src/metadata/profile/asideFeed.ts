@@ -3,7 +3,8 @@ import Blog1 from '../../images/Blog1.png';
 import Blog2 from '../../images/Blog2.jpg';
 import Org11 from '../../images/Org11.png';
 import Org12 from '../../images/Org12.png';
-import Org2 from '../../images/Org2.jpg';
+import Org21 from '../../images/Org21.png';
+import Org22 from '../../images/Org22.png';
 import Org3 from '../../images/Org3.png';
 import Vol1 from '../../images/Vol1.jpg';
 
@@ -33,7 +34,13 @@ const aiseFeed = [
       link: 'https://snapwiz.com',
       title: 'Snapwiz Edutec',
       subtitle: 'April 2020 - October 2020',
-      getImage: (): string => Org2,
+      getImage: (ambience?: string): string => {
+        switch (ambience) {
+          case AMBIENCE.BRIGHT: return Org21;
+          case AMBIENCE.NIGHT: case AMBIENCE.DARK: return Org22;
+          default: return Org21;
+        }
+      },
     }, {
       link: 'https://www.wipro.com',
       title: 'Wipro Technologies',

@@ -4,9 +4,19 @@ import BabyCarriage from '../../icons/BabyCarriage';
 import Graduation from '../../icons/Graduation';
 import Org11 from '../../images/Org11.png';
 import Org12 from '../../images/Org12.png';
+import Org21 from '../../images/Org21.png';
+import Org22 from '../../images/Org22.png';
+import Org3 from '../../images/Org3.png';
 
 import { AMBIENCE } from '../../constants';
-import { EducationSubtitle, EducationTitle, WiproDescription } from '../../containers/profile/components';
+import {
+  EducationSubtitle,
+  EducationTitle,
+  WiproDescription,
+  SnapwizDescription,
+  VedantuDescription,
+  VedantuWorkExperience,
+} from '../../containers/profile/components';
 
 export const types = {
   EVENT: 'EVENT',
@@ -14,6 +24,30 @@ export const types = {
 };
 
 const timeline = [{
+  type: types.LINK,
+  name: 'Himayan Debnath',
+  date: 'October 2020',
+  link: 'https://www.vedantu.com',
+  getDescription: VedantuDescription,
+  getImage: (): string => Org3,
+  getTitle: (): string => ('Vedantu Innovations'),
+  getSubTitle: VedantuWorkExperience,
+}, {
+  type: types.LINK,
+  name: 'Himayan Debnath',
+  date: 'April 2020',
+  link: 'https://www.snapwiz.com',
+  getDescription: SnapwizDescription,
+  getImage: (ambience: string): string => {
+    switch (ambience) {
+      case AMBIENCE.BRIGHT: return Org21;
+      case AMBIENCE.NIGHT: case AMBIENCE.DARK: return Org22;
+      default: return Org21;
+    }
+  },
+  getTitle: (): string => ('Snapwiz Edutec'),
+  getSubTitle: (): string => 'Software Engineer (April 2020 - October 2020)',
+}, {
   type: types.LINK,
   name: 'Himayan Debnath',
   date: 'June 2018',
@@ -27,7 +61,7 @@ const timeline = [{
     }
   },
   getTitle: (): string => ('Wipro Technologies'),
-  getSubTitle: (): string => 'Project Engineer | June 2018 - April 2020',
+  getSubTitle: (): string => 'Project Engineer (June 2018 - April 2020)',
 }, {
   type: types.EVENT,
   name: 'Himayan Debnath',
