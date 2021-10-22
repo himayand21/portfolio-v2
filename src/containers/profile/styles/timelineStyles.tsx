@@ -94,9 +94,7 @@ export const TimelineLinkDivider = styled.div`
 export const TimelineLinkTitle = styled(TypographyBody)`
     color: ${({ theme }) => theme.text};
     margin: 10px 0;
-    * {
-        font-weight: 400;
-    }
+    font-weight: 400;
 `;
 
 export const TimelineLinkSubtitle = styled(TypographyBodyReduced)`

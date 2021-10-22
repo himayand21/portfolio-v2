@@ -29,7 +29,6 @@ export const Aside = styled('aside')<withIsHightlightsShown>`
             opacity: 1;
             overflow: auto;
             transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, padding-top 0.2s ease-in-out;
-            border-left: none;
         `) : (`
             margin-left: -250px;
             transform: translateX(250px) scaleX(0);
