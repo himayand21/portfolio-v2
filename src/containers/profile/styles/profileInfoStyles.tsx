@@ -4,7 +4,7 @@ import { darken } from 'polished';
 import {
   TABLET,
 } from '../../../constants';
-import { TypographyIntroReduced, TypographyBody } from '../../../styles';
+import { TypographyIntroReduced, TypographyBody, TypographyBodyReduced } from '../../../styles';
 
 export const ProfileImageWrapper = styled.div`
     width: 100%;
@@ -60,6 +60,7 @@ export const ProfileInfoContainer = styled.section`
     border-bottom: 1px solid ${({ theme }) => theme.border};
     padding-left: 20px;
     padding-bottom: 20px;
+    position: relative;
 `;
 
 export const Name = styled(TypographyIntroReduced)`
@@ -110,4 +111,9 @@ export const InfoLink = styled.a`
 export const InfoSpan = styled.span`
     margin-left: 7px;
     align-self: stretch
+`;
+
+export const BioText = styled(TypographyBodyReduced)`
+    margin: 10px 20px 10px 0;
+    width: 100%;
 `;

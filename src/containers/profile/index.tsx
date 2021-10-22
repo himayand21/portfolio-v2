@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { ReactElement, useState } from 'react';
 
 import {
@@ -12,6 +13,7 @@ import {
   InfoLogo,
   InfoSpan,
   InfoLink,
+  BioText,
   CoverImageDummy,
   DisplayImageDummy,
 } from './styles/profileInfoStyles';
@@ -55,7 +57,11 @@ import {
   TimelineLinkSubtitle,
 } from './styles/timelineStyles';
 
-import profileInfo, { profilerowType } from '../../metadata/profile/profileInfo';
+import { Pill, PillContent } from '../../styles';
+
+import {
+  profileInfo, contactInfo, bioInfo, profilerowType,
+} from '../../metadata/profile/profileInfo';
 import asideFeed, { asideFeedType, asiderowType } from '../../metadata/profile/asideFeed';
 import timeline, { types, timelineType } from '../../metadata/profile/timeline';
 
@@ -96,32 +102,49 @@ const Profile = ({
         <ProfileInfoContainer>
           <Name>Himayan Debnath</Name>
           <ProfileInfoWrapper>
-            {profileInfo.map((row: profilerowType[]): ReactElement => (
-              <ProfileRow>
-                {row.map(({
-                  getIcon,
-                  label,
-                  link,
-                }: profilerowType): ReactElement => (
-                  <Info key={label}>
-                    <InfoLogo>
-                      {getIcon()}
-                    </InfoLogo>
-                    {link ? (
-                      <InfoLink
-                        href={link}
-                        target="blank"
-                      >
-                        {label}
-                      </InfoLink>
-                    ) : (
-                      <InfoSpan>{label}</InfoSpan>
-                    )}
-                  </Info>
-                ))}
-              </ProfileRow>
-            ))}
+            <ProfileRow>
+              {profileInfo.map(({
+                getIcon,
+                label,
+              }: profilerowType): ReactElement => (
+                <Info key={label}>
+                  <InfoLogo>
+                    {getIcon()}
+                  </InfoLogo>
+                  <InfoSpan>{label}</InfoSpan>
+                </Info>
+              ))}
+            </ProfileRow>
+            <ProfileRow>
+              {bioInfo.map((text) => (
+                <BioText as="div">{text}</BioText>
+              ))}
+            </ProfileRow>
+            <ProfileRow>
+              {contactInfo.map(({
+                getIcon,
+                label,
+                link,
+              }: profilerowType): ReactElement => (
+                <Info key={label}>
+                  <InfoLogo>
+                    {getIcon()}
+                  </InfoLogo>
+                  <InfoLink
+                    href={link}
+                    target="blank"
+                  >
+                    {label}
+                  </InfoLink>
+                </Info>
+              ))}
+            </ProfileRow>
           </ProfileInfoWrapper>
+          <Pill>
+            <PillContent>
+              TIMELINE
+            </PillContent>
+          </Pill>
         </ProfileInfoContainer>
         {timeline.map((row: timelineType): ReactElement | null => {
           const {

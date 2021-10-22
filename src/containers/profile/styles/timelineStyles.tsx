@@ -201,7 +201,7 @@ export const ListBulletWrapper = styled('div')<withIsLast>`
     display: flex;
     width: 10%;
     margin: 0px;
-    transform: translateY(0.85rem);
+    transform: translateY(0.7rem);
     margin-right: 10px;
     ${({ isLast }) => (isLast ? (`
         & ~ div {

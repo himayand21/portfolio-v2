@@ -100,10 +100,8 @@ export const SnapwizDescription = (): ReactElement => (
     <Description>
       <span>At </span>
       <b>Snapwiz</b>
-      <span>, I was responsible for developing new and upcoming featues for their education platform -</span>
-      <Link href="https://edulastic.com" target="blank">
-        Edulastic
-      </Link>
+      <span>, I was responsible for developing new and upcoming featues for their education platform - </span>
+      <b>Edulastic</b>
       <span>. It is a technology-enhanced assessment solution for teachers and school administrators. Here, I got introduced to tools like </span>
       <b>redux-saga</b>
       <span> and </span>

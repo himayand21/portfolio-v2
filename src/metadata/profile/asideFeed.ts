@@ -1,6 +1,7 @@
 import { AMBIENCE } from '../../constants';
-import Blog1 from '../../images/Blog1.png';
-import Blog2 from '../../images/Blog2.jpg';
+import Blog1 from '../../images/Blog1.jpg';
+import Blog2 from '../../images/Blog2.png';
+import Blog3 from '../../images/Blog3.jpeg';
 import Org11 from '../../images/Org11.png';
 import Org12 from '../../images/Org12.png';
 import Org21 from '../../images/Org21.png';
@@ -12,15 +13,20 @@ const aiseFeed = [
   {
     type: 'Blogs',
     items: [{
+      link: 'https://levelup.gitconnected.com/how-to-flex-a-beginners-guide-904c3edc2fdc',
+      title: 'Your Ultimate Guide to Flexbox',
+      subtitle: 'July 2021',
+      getImage: (): string => Blog3,
+    }, {
       link: 'https://himayandebnath.medium.com/10-modern-javascript-syntax-to-help-you-code-faster-82cc0a5a3960',
       title: '10 Modern JavaScript syntax to help you code faster',
       subtitle: 'November 2020',
-      getImage: (): string => Blog1,
+      getImage: (): string => Blog2,
     }, {
       link: 'https://himayandebnath.medium.com/10-css-things-i-wish-i-knew-when-i-was-a-beginner-68ba4b5b3da8',
       title: '10 CSS things I wish I knew when I was a beginner',
       subtitle: 'August 2020',
-      getImage: (): string => Blog2,
+      getImage: (): string => Blog1,
     }],
   },
   {
@@ -28,7 +34,7 @@ const aiseFeed = [
     items: [{
       link: 'https://www.vedantu.com',
       title: 'Vedantu Innovations',
-      subtitle: 'October 2020 - present',
+      subtitle: 'October 2020 - now',
       getImage: (): string => Org3,
     }, {
       link: 'https://snapwiz.com',

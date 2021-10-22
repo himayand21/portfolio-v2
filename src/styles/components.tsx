@@ -1,5 +1,6 @@
 import { darken } from 'polished';
 import styled from 'styled-components';
+import { TypographyBodyReduced } from './typography';
 import {
   TABLET, LAPTOP, MOBILE,
 } from '../constants';
@@ -29,4 +30,28 @@ export const Link = styled.a`
   &:hover {
     color: ${({ theme }) => darken(0.1, theme.color)};
   }
+`;
+
+export const Pill = styled.div`
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  transform: translateX(-50%) translateY(50%);
+  z-index: 2;
+  border-radius: 10px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 10px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid ${({ theme }) => theme.border};
+  background-color: ${({ theme }) => theme.background};
+`;
+
+export const PillContent = styled(TypographyBodyReduced)`
+  color: ${({ theme }) => theme.text2};
+  font-weight: 400;
+  letter-spacing: 0.1em;
 `;
