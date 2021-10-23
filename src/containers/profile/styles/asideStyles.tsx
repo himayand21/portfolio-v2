@@ -27,11 +27,13 @@ export const Aside = styled('aside')<withIsHightlightsShown>`
             padding-top: 50px;
             transform: translateX(0px) scaleX(1);
             overflow: auto;
-            transition: transform 0.2s ease-in-out;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         `) : (`
             margin-left: -250px;
             transform: translateX(250px) scaleX(0);
             overflow: hidden;
+            opacity: 0;
         `))}
     }
 `;
