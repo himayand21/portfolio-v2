@@ -17,17 +17,17 @@ export const Aside = styled('aside')<withIsHightlightsShown>`
     @media only screen and (max-width: ${LAPTOP}px) {
         max-height: 100vh;
         box-sizing: border-box;
+        z-index: 5;
         ${({ isHighlightsShown, theme }) => (isHighlightsShown ? (`
             position: fixed;
             top: 0px;
             right: 0px;
-            z-index: 5;
             background-color: ${theme.background};
             border-left: 1px solid ${theme.border};
             padding-top: 50px;
             transform: translateX(0px) scaleX(1);
             overflow: auto;
-            transition: transform 0.2s ease-in-out, padding-top 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out;
         `) : (`
             margin-left: -250px;
             transform: translateX(250px) scaleX(0);
