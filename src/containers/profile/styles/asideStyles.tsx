@@ -26,13 +26,11 @@ export const Aside = styled('aside')<withIsHightlightsShown>`
             border-left: 1px solid ${theme.border};
             padding-top: 50px;
             transform: translateX(0px) scaleX(1);
-            opacity: 1;
             overflow: auto;
-            transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, padding-top 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out, padding-top 0.2s ease-in-out;
         `) : (`
             margin-left: -250px;
             transform: translateX(250px) scaleX(0);
-            opacity: 0;
             overflow: hidden;
         `))}
     }
