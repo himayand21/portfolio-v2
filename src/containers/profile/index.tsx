@@ -212,14 +212,12 @@ const Profile = ({
           );
         })}
       </Feed>
-      {isHighlightsShown && (
-        <CrossIcon onClick={toggleSetIsHighlightsShown}>
-          <Cross />
-        </CrossIcon>
-      )}
       <Aside
         isHighlightsShown={isHighlightsShown}
       >
+        <CrossIcon onClick={toggleSetIsHighlightsShown}>
+          <Cross />
+        </CrossIcon>
         {asideFeed.map(({
           type,
           items,

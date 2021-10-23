@@ -70,8 +70,8 @@ export const CrossIcon = styled.div`
     display: none;
     align-items: center;
     color: ${({ theme }) => theme.color};
-    position: fixed;
-    top: 20px;
+    position: absolute;
+    top: 10px;
     right 20px;
     z-index: 6;
     &:hover {
