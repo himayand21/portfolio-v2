@@ -21,7 +21,7 @@ import {
 } from './constants';
 
 const App = (): ReactElement => {
-  const [color, setColor] = useState(COLORS.PINK);
+  const [color, setColor] = useState(COLORS.GREEN);
   const [ambience, setAmbience] = useState(AMBIENCE.NIGHT);
 
   return (
