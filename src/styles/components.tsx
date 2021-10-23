@@ -55,4 +55,5 @@ export const PillContent = styled(TypographyBodyReduced)`
   color: ${({ theme }) => theme.background};
   font-weight: 400;
   letter-spacing: 0.1em;
+  line-height: 1em;
 `;

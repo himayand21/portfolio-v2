@@ -14,6 +14,7 @@ export const Aside = styled('aside')<withIsHightlightsShown>`
     position: sticky;
     top: 0;
     min-width: 250px;
+    padding-top: 20px;
     @media only screen and (max-width: ${LAPTOP}px) {
         max-height: 100vh;
         box-sizing: border-box;
