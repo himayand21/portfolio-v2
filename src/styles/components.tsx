@@ -21,6 +21,8 @@ export const Article = styled.article`
 
 export const Icon = styled.svg`
     color: inherit;
+    width: 100%;
+    height: 100%;
 `;
 
 export const Link = styled.a`
