@@ -48,12 +48,11 @@ export const Pill = styled.div`
   padding: 2px 10px;
   box-sizing: border-box;
   text-align: center;
-  border: 1px solid ${({ theme }) => theme.border};
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) => theme.text2};
 `;
 
 export const PillContent = styled(TypographyBodyReduced)`
-  color: ${({ theme }) => theme.text2};
+  color: ${({ theme }) => theme.background};
   font-weight: 400;
   letter-spacing: 0.1em;
 `;
