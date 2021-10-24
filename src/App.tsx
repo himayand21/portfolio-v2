@@ -10,6 +10,7 @@ import {
 import Profile from './containers/profile';
 import Settings from './containers/settings';
 import Navigator from './containers/navigator';
+import Skills from './containers/skills';
 import {
   Screen,
   Left,
@@ -50,6 +51,9 @@ const App = (): ReactElement => {
                 setColor={setColor}
                 setAmbience={setAmbience}
               />
+            </Route>
+            <Route path={ROUTES.SKILLS}>
+              <Skills />
             </Route>
             <Route path="*">
               <Profile
