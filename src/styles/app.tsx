@@ -90,6 +90,7 @@ export const Right = styled.main`
     padding-bottom: 10px;
     max-height: calc(100vh - 78px);
     overflow-y: auto;
+    overflow-x: hidden;
     border: none;
   }
 `;
