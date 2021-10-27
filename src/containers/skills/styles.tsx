@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {
   LAPTOP, TABLET, MOBILE, ThemeType,
 } from '../../constants';
-import { TypographyHeadline, TypographyLabelReduced } from '../../styles';
+import { TypographyHeadline, TypographyIntro, TypographyLabelReduced } from '../../styles';
 
 export const Article = styled.article`
     padding: 40px 60px;
@@ -40,16 +40,31 @@ export const Left = styled.div`
 `;
 
 export const Right = styled.div`
-    width: 200px;
-    transform: scale(1.33) translateX(5%);
+    width: 300px;
     @media only screen and (max-width: ${LAPTOP}px) {
-        width: 175px;
+        width: 250px;
     }
     @media only screen and (max-width: ${TABLET}px) {
-        width: 150px;
+        width: 200px;
     }
     @media only screen and (max-width: ${MOBILE}px) {
-        width: 125px;
+        width: 150px;
+    }
+`;
+
+export const SkillLabel = styled(TypographyIntro)`
+    display: block;
+    font-weight: 400;
+    margin: 43px 0;
+    line-height: 1em;
+    @media only screen and (max-width: ${LAPTOP}px) {
+        margin: 35px 0;
+    }
+    @media only screen and (max-width: ${TABLET}px) {
+        margin: 27px 0;
+    }
+    @media only screen and (max-width: ${MOBILE}px) {
+        margin: 18px 0;
     }
 `;
 
@@ -127,4 +142,5 @@ export const HexagonSide = styled.div`
     width: 50%;
     left: 25%;
     box-sizing: border-box;
+    border-radius: 2px;
 `;
