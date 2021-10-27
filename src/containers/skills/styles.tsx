@@ -32,8 +32,9 @@ export const Label = styled(TypographyLabelReduced)`
 
 export const Block = styled.section`
     width: 100%;
+    max-width: 750px;
+    margin: 30px auto;
     display: flex;
-    margin: 30px 0;
 `;
 
 export const Left = styled.div`
@@ -57,16 +58,16 @@ export const Right = styled.div`
 export const SkillLabel = styled(TypographyLabel)`
     display: block;
     font-weight: 400;
-    margin: 56px 0;
+    margin: 55px 0;
     line-height: 1em;
     @media only screen and (max-width: ${LAPTOP}px) {
-        margin: 47px 0;
+        margin: 46px 0;
     }
     @media only screen and (max-width: ${TABLET}px) {
-        margin: 44px 0;
+        margin: 43px 0;
     }
     @media only screen and (max-width: ${MOBILE}px) {
-        margin: 37px 0;
+        margin: 35px 0;
     }
 `;
 
@@ -104,10 +105,14 @@ export const HexagonWrapper = styled('div')<withLeftRightProps>`
             border-top: 4px solid ${theme.color};
         }
         & + div {
+            margin-top: 0px !important;
             div:nth-child(2) {
                 border-top: 4px solid ${theme.color};
                 border-bottom: 4px solid ${theme.color};
             }
+        }
+        & ~ div {
+            margin-top: -4px;
         }
     `) : '')}
     ${({ isLeft, theme }) => (isLeft ? (`
@@ -136,7 +141,6 @@ export const HexagonSide = styled.div`
     height: 100%;
     width: 50%;
     left: 25%;
-    box-sizing: border-box;
     border-radius: 2px;
     display: flex;
     align-items: center;
