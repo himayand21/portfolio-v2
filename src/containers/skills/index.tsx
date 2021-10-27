@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 
-import { Article } from '../../styles';
 import {
+  Article,
   Title,
   Block,
   Left,
@@ -10,8 +10,10 @@ import {
   GridContainer,
   HexagonSide,
   SkillLabel,
+  SkillIcon,
 } from './styles';
 import { skillSet, skillSetType } from '../../metadata/skills';
+import PreloadImage from '../../common/PreloadImage';
 
 const Skills = (): ReactElement => {
   const allIcons = skillSet.reduce((acc: string[], proficiencyLevel: skillSetType[]) => ([
@@ -44,7 +46,11 @@ const Skills = (): ReactElement => {
                 isRight={((index + 1) % 2) === 0}
               >
                 <HexagonSide />
-                <HexagonSide />
+                <HexagonSide>
+                  <PreloadImage src={each}>
+                    <SkillIcon src={each} />
+                  </PreloadImage>
+                </HexagonSide>
                 <HexagonSide />
               </HexagonWrapper>
             ))}

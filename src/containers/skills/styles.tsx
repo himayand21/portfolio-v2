@@ -5,16 +5,16 @@ import {
 import { TypographyHeadline, TypographyIntro, TypographyLabelReduced } from '../../styles';
 
 export const Article = styled.article`
-    padding: 40px 60px;
+    padding: 40px 0px 0px 40px;
     width: 100%;
     @media only screen and (max-width: ${LAPTOP}px) {
-      padding: 40px 50px;
+      padding: 40px 0px 0px 50px;
     }
     @media only screen and (max-width: ${TABLET}px) {
-      padding: 40px;
+      padding: 40px 0px 0px 40px;
     }
     @media only screen and (max-width: ${MOBILE}px) {
-      padding: 25px;
+      padding: 25px 0px 0px 25px;
     }
 `;
 
@@ -32,7 +32,6 @@ export const Block = styled.section`
     width: 100%;
     display: flex;
     margin: 30px 0;
-    width: 100%;
 `;
 
 export const Left = styled.div`
@@ -40,32 +39,34 @@ export const Left = styled.div`
 `;
 
 export const Right = styled.div`
-    width: 300px;
-    @media only screen and (max-width: ${LAPTOP}px) {
-        width: 250px;
-    }
+    width: 350px;
     @media only screen and (max-width: ${TABLET}px) {
-        width: 200px;
+        width: 300px;
     }
     @media only screen and (max-width: ${MOBILE}px) {
-        width: 150px;
+        width: 250px;
+        transform: translateX(35px);
     }
 `;
 
 export const SkillLabel = styled(TypographyIntro)`
     display: block;
     font-weight: 400;
-    margin: 43px 0;
+    margin: 54px 0;
     line-height: 1em;
     @media only screen and (max-width: ${LAPTOP}px) {
-        margin: 35px 0;
+        margin: 56px 0;
     }
     @media only screen and (max-width: ${TABLET}px) {
-        margin: 27px 0;
+        margin: 48px 0;
     }
     @media only screen and (max-width: ${MOBILE}px) {
-        margin: 18px 0;
+        margin: 39px 0;
     }
+`;
+
+export const SkillIcon = styled.img`
+    width: 80%;
 `;
 
 export const GridContainer = styled.div`
@@ -122,17 +123,6 @@ export const HexagonWrapper = styled('div')<withLeftRightProps>`
             border-bottom: 4px solid ${theme.color};
         }
     `) : '')}
-    @media only screen and (max-width: ${TABLET}px) {
-        div {
-            border-width: 2px !important;
-        }
-        ${({ isLeft }) => (isLeft ? (`
-            transform: translateX(calc(12.5% + 1px));
-        `) : '')}
-        ${({ isRight }) => (isRight ? (`
-            transform: translateX(calc(-12.5% - 1px)) translateY(calc(50% - 1px));
-        `) : '')}
-    }
 `;
 
 export const HexagonSide = styled.div`
@@ -143,4 +133,7 @@ export const HexagonSide = styled.div`
     left: 25%;
     box-sizing: border-box;
     border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;

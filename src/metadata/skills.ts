@@ -16,7 +16,7 @@ export const skillSet = [
       icon: CSS,
     },
     {
-      name: 'JS',
+      name: 'JavaScript',
       icon: JS,
     },
     {
