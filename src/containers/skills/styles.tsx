@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import {
   LAPTOP, TABLET, MOBILE, ThemeType,
 } from '../../constants';
-import { TypographyHeadline, TypographyIntro, TypographyLabelReduced } from '../../styles';
+import {
+  TypographyBody, TypographyHeadline, TypographyLabel, TypographyLabelReduced,
+} from '../../styles';
 
 export const Article = styled.article`
     padding: 40px 0px 0px 40px;
@@ -40,28 +42,31 @@ export const Left = styled.div`
 
 export const Right = styled.div`
     width: 350px;
-    @media only screen and (max-width: ${TABLET}px) {
+    @media only screen and (max-width: ${LAPTOP}px) {
         width: 300px;
     }
+    @media only screen and (max-width: ${TABLET}px) {
+        width: 276px;
+    }
     @media only screen and (max-width: ${MOBILE}px) {
-        width: 250px;
-        transform: translateX(35px);
+        width: 230px;
+        transform: translateX(25px);
     }
 `;
 
-export const SkillLabel = styled(TypographyIntro)`
+export const SkillLabel = styled(TypographyLabel)`
     display: block;
     font-weight: 400;
-    margin: 54px 0;
+    margin: 56px 0;
     line-height: 1em;
     @media only screen and (max-width: ${LAPTOP}px) {
-        margin: 56px 0;
+        margin: 47px 0;
     }
     @media only screen and (max-width: ${TABLET}px) {
-        margin: 48px 0;
+        margin: 44px 0;
     }
     @media only screen and (max-width: ${MOBILE}px) {
-        margin: 39px 0;
+        margin: 37px 0;
     }
 `;
 
