@@ -3,7 +3,7 @@ import {
   LAPTOP, TABLET, MOBILE, ThemeType,
 } from '../../constants';
 import {
-  TypographyBody, TypographyHeadline, TypographyLabel, TypographyLabelReduced,
+  TypographyHeadline, TypographyLabel, TypographyLabelReduced,
 } from '../../styles';
 
 export const Article = styled.article`
