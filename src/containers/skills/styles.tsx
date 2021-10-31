@@ -3,7 +3,7 @@ import {
   LAPTOP, TABLET, MOBILE, ThemeType,
 } from '../../constants';
 import {
-  TypographyHeadline, TypographyLabel, TypographyLabelReduced,
+  TypographyHeadline, TypographyLabelReduced,
 } from '../../styles';
 
 export const Article = styled.article`
@@ -35,11 +35,13 @@ export const Block = styled.section`
     max-width: 750px;
     margin: 30px auto;
     display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
-export const Left = styled.div`
-    flex: 1;
-`;
+// export const Left = styled.div`
+//     flex: 1;
+// `;
 
 export const Right = styled.div`
     width: 350px;
@@ -55,21 +57,21 @@ export const Right = styled.div`
     }
 `;
 
-export const SkillLabel = styled(TypographyLabel)`
-    display: block;
-    font-weight: 400;
-    margin: 55px 0;
-    line-height: 1em;
-    @media only screen and (max-width: ${LAPTOP}px) {
-        margin: 46px 0;
-    }
-    @media only screen and (max-width: ${TABLET}px) {
-        margin: 43px 0;
-    }
-    @media only screen and (max-width: ${MOBILE}px) {
-        margin: 35px 0;
-    }
-`;
+// export const SkillLabel = styled(TypographyLabel)`
+//     display: block;
+//     font-weight: 400;
+//     margin: 55px 0;
+//     line-height: 1em;
+//     @media only screen and (max-width: ${LAPTOP}px) {
+//         margin: 46px 0;
+//     }
+//     @media only screen and (max-width: ${TABLET}px) {
+//         margin: 43px 0;
+//     }
+//     @media only screen and (max-width: ${MOBILE}px) {
+//         margin: 35px 0;
+//     }
+// `;
 
 export const SkillIcon = styled.img`
     width: 80%;

@@ -4,61 +4,61 @@ import {
   Article,
   Title,
   Block,
-  Left,
   Right,
   HexagonWrapper,
   GridContainer,
   HexagonSide,
-  SkillLabel,
   SkillIcon,
 } from './styles';
 import { skillSet, skillSetType } from '../../metadata/skills';
 import PreloadImage from '../../common/PreloadImage';
 
-const Skills = (): ReactElement => {
-  const allIcons = skillSet.reduce((acc: string[], proficiencyLevel: skillSetType[]) => ([
-    ...acc,
-    ...proficiencyLevel.map((each) => each.icon),
-  ]), []);
-  return (
-    <Article>
-      <Title>
-        Skills
-      </Title>
-      <Block>
-        <Left>
-          {skillSet.map((proficiencyLevel: skillSetType[]): ReactElement => (
+const getIndex = (
+  skillSetArray: skillSetType[][],
+  parentIndex: number,
+  childIndex: number,
+): number => {
+  let count = childIndex;
+  for (let i = 0; i < parentIndex; i += 1) {
+    count += skillSetArray[i].length;
+  }
+  return count;
+};
+
+const Skills = (): ReactElement => (
+  <Article>
+    <Title>
+      Skills
+    </Title>
+    <Block>
+      <Right>
+        <GridContainer>
+          {skillSet.map((proficiencyLevel: skillSetType[], parentIndex: number): ReactElement => (
             <>
-              {proficiencyLevel.map((each: skillSetType): ReactElement => (
-                <SkillLabel>
-                  {each.name}
-                </SkillLabel>
-              ))}
+              {proficiencyLevel.map((each: skillSetType, childIndex: number): ReactElement => {
+                const index = getIndex(skillSet, parentIndex, childIndex);
+                return (
+                  <HexagonWrapper
+                    isLeft={((index + 1) % 2) === 1}
+                    isFirst={(index === 0)}
+                    isRight={((index + 1) % 2) === 0}
+                  >
+                    <HexagonSide />
+                    <HexagonSide>
+                      <PreloadImage src={each.icon}>
+                        <SkillIcon src={each.icon} />
+                      </PreloadImage>
+                    </HexagonSide>
+                    <HexagonSide />
+                  </HexagonWrapper>
+                );
+              })}
             </>
           ))}
-        </Left>
-        <Right>
-          <GridContainer>
-            {allIcons.map((each: string, index: number): ReactElement => (
-              <HexagonWrapper
-                isLeft={((index + 1) % 2) === 1}
-                isFirst={(index === 0)}
-                isRight={((index + 1) % 2) === 0}
-              >
-                <HexagonSide />
-                <HexagonSide>
-                  <PreloadImage src={each}>
-                    <SkillIcon src={each} />
-                  </PreloadImage>
-                </HexagonSide>
-                <HexagonSide />
-              </HexagonWrapper>
-            ))}
-          </GridContainer>
-        </Right>
-      </Block>
-    </Article>
-  );
-};
+        </GridContainer>
+      </Right>
+    </Block>
+  </Article>
+);
 
 export default Skills;
