@@ -82,7 +82,7 @@ export const Info = styled(TypographyBody)`
     display: flex;
     flex-direction: row;
     margin-right: 17px;
-    color: ${({ theme }) => theme.text2};
+    color: ${({ theme }) => theme.text1};
     margin-bottom: 5px;
 `;
 

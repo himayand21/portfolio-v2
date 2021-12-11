@@ -19,7 +19,7 @@ const PreloadImage = ({
     };
 
     image.src = src;
-  });
+  }, []);
 
   if (!loaded) return null;
   return (

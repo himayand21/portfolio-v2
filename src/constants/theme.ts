@@ -26,6 +26,7 @@ const BRIGHT_AMBIENCE = {
   background: 'rgb(245, 245, 245)',
   backgroundHover: 'rgba(0, 0, 0, 0.03)',
   border: 'rgba(0, 0, 0, 0.1)',
+  shadow: 'rgb(55, 55, 55)',
 };
 
 const NIGHT_AMBIENCE = {
@@ -35,6 +36,7 @@ const NIGHT_AMBIENCE = {
   background: 'rgb(21, 32, 43)',
   backgroundHover: 'rgba(255, 255, 255, 0.03)',
   border: 'rgb(56, 68, 77)',
+  shadow: 'rgba(56, 68, 77, 0.8)',
 };
 
 const DARK_AMBIENCE = {
@@ -44,6 +46,7 @@ const DARK_AMBIENCE = {
   background: 'rgb(25, 25, 25)',
   backgroundHover: 'rgba(255, 255, 255, 0.03)',
   border: 'rgb(47, 51, 54)',
+  shadow: 'rgba(47, 51, 54, 0.8)',
 };
 
 export const COLOR_MAP = {
