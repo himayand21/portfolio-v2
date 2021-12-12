@@ -1,16 +1,54 @@
 import styled from 'styled-components';
-import { LAPTOP, TABLET } from '../../constants';
+import { lighten } from 'polished';
+import { LAPTOP, TABLET, ThemeType } from '../../constants';
 
 import {
   TypographyCaption,
   TypographyHeadline,
   TypographyIntroReduced,
+  TypographyLabelReduced,
   TypographyLabelSuper,
 } from '../../styles';
 
+export const TitleRow = styled.header`
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+`;
+
 export const Title = styled(TypographyHeadline)`
   color: ${({ theme }) => theme.text1};
-  margin-bottom: 10px;
+  flex: 1;
+`;
+
+export const SkillFilter = styled.button`
+  background-color: ${({ theme }) => theme.color};
+  color: ${({ theme }) => theme.background};
+  border: none;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  @media (hover: hover) {
+    transition: background-color 0.3s ease-out;
+    &:hover {
+      background-color: ${({ theme }) => lighten(0.1, theme.color)};
+    }
+  }
+`;
+
+export const SkillFilterIcon = styled.div`
+  width: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+`;
+
+export const SkillFilterSpan = styled(TypographyLabelReduced)`
+  font-weight: bold;
 `;
 
 export const Subtitle = styled(TypographyIntroReduced)`
@@ -79,8 +117,9 @@ export const ProjectTitle = styled(TypographyLabelSuper)`
 `;
 
 export const ProjectSubTitle = styled(TypographyCaption)`
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
   margin: 5px 15px 15px;
+  font-weight: bold;
   @media only screen and (max-width: ${TABLET}px) {
     margin: 2px 10px 10px;
   }
@@ -134,4 +173,96 @@ export const SkillLabel = styled(TypographyCaption)`
   color: rgb(215, 215, 215);
   font-weight: bold;
   margin-left: 5px;
+`;
+
+type withIsFiltersShown = {
+  isFiltersShown: boolean,
+  theme: ThemeType,
+}
+
+export const Aside = styled('aside')<withIsFiltersShown>`
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  min-width: 250px;
+  padding: 50px 20px 0px 20px;
+  max-height: 100vh;
+  box-sizing: border-box;
+  z-index: 5;
+  ${({ isFiltersShown, theme }) => (isFiltersShown ? (`
+      top: 0px;
+      right: 0px;
+      background-color: ${theme.background};
+      border-left: 1px solid ${theme.border};
+      transform: translateX(0px) scaleX(1);
+      overflow: auto;
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  `) : (`
+      margin-left: -250px;
+      transform: translateX(250px) scaleX(0);
+      overflow: hidden;
+      opacity: 0;
+  `))}
+  }
+`;
+
+export const SkillRow = styled.div`
+  margin: 22px 0;
+  display: flex;
+  align-items: center;
+`;
+
+export const SkillRows = styled.div`
+  margin-bottom: 40px;
+`;
+
+export const SkillRowLabel = styled(TypographyLabelReduced)`
+  color: ${({ theme }) => theme.text2};
+  font-weight: bold;
+  margin-left: 10px;
+`;
+
+export const SkillRowImageContainer = styled(SkillImageContainer)`
+  width: 30px;
+`;
+
+type withIsChecked = {
+  isChecked: boolean,
+  theme: ThemeType,
+}
+
+export const SkillCheckBox = styled('div')<withIsChecked>`
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 2px;
+  color: ${({ theme }) => theme.background};
+  transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
+  ${({ isChecked, theme }) => (isChecked ? (`
+    background-color: ${theme.color};
+    border: 2px solid ${theme.border};
+    @media (hover: hover) {
+      &:hover {
+        background-color: ${lighten(0.1, theme.color)};
+      }
+    }
+  `) : (`
+    border: 2px solid ${theme.color};
+    * {
+      opacity: 1;
+    }
+  `))}
+`;
+
+export const SkillInfo = styled.div`
+  flex: 1;
+  height: 25px;
+  display: flex;
+  align-items: center;
 `;

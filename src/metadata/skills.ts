@@ -9,57 +9,89 @@ import Mongo from '../images/skills/mongo.png';
 import Node from '../images/skills/node.png';
 import Firebase from '../images/skills/firebase.png';
 import GraphQL from '../images/skills/graphql.png';
-import Native from '../images/skills/native.png';
 
-const skillSet = {
-  HTML: {
+export const SKILL_KEYS = {
+  HTML: 'HTML',
+  CSS: 'CSS',
+  JS: 'JS',
+  REACT: 'REACT',
+  REDUX: 'REDUX',
+  SASS: 'SASS',
+  WEBPACK: 'WEBPACK',
+  MONGO: 'MONGO',
+  NODE: 'NODE',
+  FIREBASE: 'FIREBASE',
+  GRAPHQL: 'GRAPHQL',
+  REACT_NATIVE: 'REACT_NATIVE',
+};
+
+const skills = {
+  [SKILL_KEYS.HTML]: {
     name: 'HTML5',
     icon: HTML,
+    key: SKILL_KEYS.HTML,
   },
-  CSS: {
+  [SKILL_KEYS.CSS]: {
     name: 'CSS3',
     icon: CSS,
+    key: SKILL_KEYS.CSS,
   },
-  JS: {
+  [SKILL_KEYS.JS]: {
     name: 'JavaScript',
     icon: JS,
+    key: SKILL_KEYS.JS,
   },
-  REACT: {
+  [SKILL_KEYS.REACT]: {
     name: 'React',
     icon: React,
+    key: SKILL_KEYS.REACT,
   },
-  REDUX: {
+  [SKILL_KEYS.REDUX]: {
     name: 'Redux',
     icon: Redux,
+    key: SKILL_KEYS.REDUX,
   },
-  SASS: {
+  [SKILL_KEYS.SASS]: {
     name: 'Sass',
     icon: Sass,
+    key: SKILL_KEYS.SASS,
   },
-  WEBPACK: {
+  [SKILL_KEYS.WEBPACK]: {
     name: 'Webpack',
     icon: Webpack,
+    key: SKILL_KEYS.WEBPACK,
   },
-  MONGO: {
+  [SKILL_KEYS.MONGO]: {
     name: 'MongoDB',
     icon: Mongo,
+    key: SKILL_KEYS.MONGO,
   },
-  NODE: {
+  [SKILL_KEYS.NODE]: {
     name: 'NodeJS',
     icon: Node,
+    key: SKILL_KEYS.NODE,
   },
-  FIREBASE: {
+  [SKILL_KEYS.FIREBASE]: {
     name: 'Firebase',
     icon: Firebase,
+    key: SKILL_KEYS.FIREBASE,
   },
-  GRAPHQL: {
+  [SKILL_KEYS.GRAPHQL]: {
     name: 'GraphQL',
     icon: GraphQL,
+    key: SKILL_KEYS.GRAPHQL,
   },
-  REACT_NATIVE: {
+  [SKILL_KEYS.REACT_NATIVE]: {
     name: 'React Native',
-    icon: Native,
+    icon: React,
+    key: SKILL_KEYS.REACT_NATIVE,
   },
 };
 
-export default skillSet;
+export default skills;
+
+export type skillType = {
+  name: string,
+  icon: string,
+  key: string,
+};

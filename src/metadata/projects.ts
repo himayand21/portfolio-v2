@@ -12,7 +12,7 @@ import covid19 from '../images/projects/covid19.jpg';
 import nodeReactAuth from '../images/projects/nodeReactAuth.jpg';
 import blackboard from '../images/projects/blackboard.jpg';
 
-import SKILLSET from './skills';
+import SKILLSET, { skillType } from './skills';
 
 const {
   HTML,
@@ -124,3 +124,11 @@ const projects = [
 ];
 
 export default projects;
+
+export type projectInfoType = {
+  title: string,
+  subtitle: string,
+  image: string,
+  link: string,
+  skills: skillType[],
+};

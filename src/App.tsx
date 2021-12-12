@@ -56,9 +56,6 @@ const App = (): ReactElement => {
             <Route path={ROUTES.PROJECTS}>
               <Projects />
             </Route>
-            {/* <Route path={ROUTES.SKILLS}>
-              <Skills />
-            </Route> */}
             <Route path="*">
               <Profile
                 ambience={ambience}
