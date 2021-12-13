@@ -18,6 +18,7 @@ import {
   SkillImageContainer,
   SkillFilter,
   SkillFilterSpan,
+  SkillFilterBadge,
   SkillFilterIcon,
   Aside,
   SkillRows,
@@ -34,10 +35,13 @@ import skills, { skillType, SKILL_KEYS } from '../../metadata/skills';
 import PreloadImage from '../../common/PreloadImage';
 import Filter from '../../icons/Filter';
 import Check from '../../icons/Check';
+import Skills from '../../icons/Skills';
 
 const Projects = (): ReactElement => {
   const [isFiltersShown, setIsFiltersShown] = useState(false);
   const [selectedSkills, setSelectedSkills] = useState(Object.values(SKILL_KEYS));
+  const numberOfSkillsSelected = Object.keys(SKILL_KEYS).length;
+  const areAllSkillsSelected = selectedSkills.length === numberOfSkillsSelected;
 
   const toggleFiltersShown = () => setIsFiltersShown(!isFiltersShown);
 
@@ -62,6 +66,14 @@ const Projects = (): ReactElement => {
     ))
   ));
 
+  const toggleSelectAllFilters = () => {
+    if (areAllSkillsSelected) {
+      setSelectedSkills([]);
+    } else {
+      setSelectedSkills(Object.values(SKILL_KEYS));
+    }
+  };
+
   return (
     <>
       <Article>
@@ -76,10 +88,13 @@ const Projects = (): ReactElement => {
             <SkillFilterSpan>
               by Skills
             </SkillFilterSpan>
+            <SkillFilterBadge>
+              {numberOfSkillsSelected}
+            </SkillFilterBadge>
           </SkillFilter>
         </TitleRow>
         <Subtitle>
-          Here are a few projects I have worked on over the years
+          Here are a few projects I have worked on over the years -
         </Subtitle>
         <Grid>
           {selectedProjects.map(({
@@ -120,6 +135,20 @@ const Projects = (): ReactElement => {
         isFiltersShown={isFiltersShown}
       >
         <SkillRows>
+          <SkillRow>
+            <SkillInfo>
+              <SkillRowImageContainer>
+                <Skills />
+              </SkillRowImageContainer>
+              <SkillRowLabel>Select ALL</SkillRowLabel>
+            </SkillInfo>
+            <SkillCheckBox
+              isChecked={areAllSkillsSelected}
+              onClick={toggleSelectAllFilters}
+            >
+              <Check />
+            </SkillCheckBox>
+          </SkillRow>
           {Object.entries(skills).map(([
             skillKey, {
               name,

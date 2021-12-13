@@ -51,6 +51,15 @@ export const SkillFilterSpan = styled(TypographyLabelReduced)`
   font-weight: bold;
 `;
 
+export const SkillFilterBadge = styled(TypographyCaption)`
+  padding: 1px 5px 1px 3px;
+  border-radius: 4px 50% 50% 4px;
+  transform: translateX(4px);
+  color: ${({ theme }) => theme.color};
+  background-color: ${({ theme }) => theme.background};
+  font-weight: bold;
+`;
+
 export const Subtitle = styled(TypographyIntroReduced)`
   color: ${({ theme }) => theme.text2};
 `;
