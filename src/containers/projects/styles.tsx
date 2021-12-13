@@ -8,6 +8,7 @@ import {
   TypographyIntroReduced,
   TypographyLabelReduced,
   TypographyLabelSuper,
+  TypographyBody,
 } from '../../styles';
 
 export const TitleRow = styled.header`
@@ -153,20 +154,6 @@ export const SkillsContainer = styled.div`
   }
 `;
 
-export const SkillContainer = styled.div`
-  height: 20px;
-  border-radius: 5px;
-  padding: 4px;
-  margin: 2px;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media only screen and (max-width: ${TABLET}px) {
-    margin: 1px;
-  }
-`;
-
 export const SkillImageContainer = styled.div`
   height: 100%;
   display: flex;
@@ -179,7 +166,6 @@ export const SkillImage = styled.img`
 `;
 
 export const SkillLabel = styled(TypographyCaption)`
-  color: rgb(215, 215, 215);
   font-weight: bold;
   margin-left: 5px;
 `;
@@ -194,7 +180,7 @@ export const Aside = styled('aside')<withIsFiltersShown>`
   position: fixed;
   top: 0;
   min-width: 250px;
-  padding: 50px 20px 0px 20px;
+  padding: 20px;
   max-height: 100vh;
   box-sizing: border-box;
   z-index: 5;
@@ -222,6 +208,39 @@ export const SkillRow = styled.div`
   align-items: center;
 `;
 
+export const SkillFilterHeaderRow = styled.div`
+  padding: 20px 0px 10px 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid ${({ theme }) => theme.border};
+`;
+
+export const SkillFilterFooterRow = styled.div`
+  display: flex;
+  align-items: center;
+  border-top: 1px solid ${({ theme }) => theme.border};
+  padding: 20px 0px 10px 0;
+  margin-top: -10px;
+`;
+
+export const SkillFilterHeader = styled(TypographyBody)`
+  font-weight: bold;
+  flex: 1;
+`;
+
+export const SkillFilterSelectAllBtn = styled.button`
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+`;
+
+export const SkillFilterSelectAllSpan = styled(TypographyBody)`
+  color: ${({ theme }) => theme.color};
+  font-weight: bold;
+`;
+
 export const SkillRows = styled.div`
   margin-bottom: 40px;
 `;
@@ -241,7 +260,7 @@ type withIsChecked = {
   theme: ThemeType,
 }
 
-export const SkillCheckBox = styled('div')<withIsChecked>`
+export const SkillCheckBox = styled('button')<withIsChecked>`
   width: 22px;
   height: 22px;
   border-radius: 5px;
@@ -256,16 +275,44 @@ export const SkillCheckBox = styled('div')<withIsChecked>`
   ${({ isChecked, theme }) => (isChecked ? (`
     background-color: ${theme.color};
     border: 2px solid ${theme.border};
+    * {
+      opacity: 1;
+    }
     @media (hover: hover) {
       &:hover {
         background-color: ${lighten(0.1, theme.color)};
       }
     }
   `) : (`
+    background: none;
     border: 2px solid ${theme.color};
     * {
-      opacity: 1;
+      opacity: 0;
     }
+  `))}
+`;
+
+export const SkillContainer = styled('div')<withIsChecked>`
+  height: 20px;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 2px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  @media only screen and (max-width: ${TABLET}px) {
+    margin: 1px;
+  }
+  ${({ isChecked }) => (isChecked ? (`
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(215, 215, 215);
+  `) : (`
+    background-color: rgba(70, 70, 70, 0.5);
+    color: rgb(195, 195, 195);
+    opacity: 0.8;
   `))}
 `;
 

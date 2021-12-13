@@ -1,4 +1,6 @@
-import { ReactElement, useState } from 'react';
+import {
+  MouseEventHandler, ReactElement, useState, MouseEvent,
+} from 'react';
 
 import { Article } from '../../styles';
 import {
@@ -22,6 +24,11 @@ import {
   SkillFilterIcon,
   Aside,
   SkillRows,
+  SkillFilterHeaderRow,
+  SkillFilterFooterRow,
+  SkillFilterHeader,
+  SkillFilterSelectAllBtn,
+  SkillFilterSelectAllSpan,
   SkillRow,
   SkillRowLabel,
   SkillRowImageContainer,
@@ -35,23 +42,29 @@ import skills, { skillType, SKILL_KEYS } from '../../metadata/skills';
 import PreloadImage from '../../common/PreloadImage';
 import Filter from '../../icons/Filter';
 import Check from '../../icons/Check';
-import Skills from '../../icons/Skills';
 
 const Projects = (): ReactElement => {
   const [isFiltersShown, setIsFiltersShown] = useState(false);
   const [selectedSkills, setSelectedSkills] = useState(Object.values(SKILL_KEYS));
-  const numberOfSkillsSelected = Object.keys(SKILL_KEYS).length;
-  const areAllSkillsSelected = selectedSkills.length === numberOfSkillsSelected;
+
+  const numberOfSkillsSelected = selectedSkills.length;
+  const areAllSkillsSelected = Object.keys(SKILL_KEYS).length === numberOfSkillsSelected;
 
   const toggleFiltersShown = () => setIsFiltersShown(!isFiltersShown);
 
-  const toggleFilterCheck = (skill: string) => {
-    if (selectedSkills.includes(skill)) {
-      setSelectedSkills(selectedSkills.filter((each) => each !== skill));
+  const toggleFilterCheck: MouseEventHandler<HTMLButtonElement> = (
+    event: MouseEvent<HTMLButtonElement>,
+  ) => {
+    if (!(event.currentTarget instanceof HTMLButtonElement)) {
+      return;
+    }
+    const { skillKey = '' } = event?.currentTarget?.dataset || {};
+    if (selectedSkills.includes(skillKey)) {
+      setSelectedSkills(selectedSkills.filter((each) => each !== skillKey));
     } else {
       setSelectedSkills([
         ...selectedSkills,
-        skill,
+        skillKey,
       ]);
     }
   };
@@ -81,7 +94,9 @@ const Projects = (): ReactElement => {
           <Title>
             Projects
           </Title>
-          <SkillFilter onClick={toggleFiltersShown}>
+          <SkillFilter
+            onClick={toggleFiltersShown}
+          >
             <SkillFilterIcon>
               <Filter />
             </SkillFilterIcon>
@@ -116,8 +131,11 @@ const Projects = (): ReactElement => {
                 {projectSkills.map(({
                   icon,
                   name,
-                }: skillType) => (
-                  <SkillContainer>
+                  key: skillKey,
+                }: skillType): ReactElement => (
+                  <SkillContainer
+                    isChecked={(selectedSkills.includes(skillKey))}
+                  >
                     <SkillImageContainer>
                       <PreloadImage src={icon}>
                         <SkillImage src={icon} />
@@ -135,20 +153,16 @@ const Projects = (): ReactElement => {
         isFiltersShown={isFiltersShown}
       >
         <SkillRows>
-          <SkillRow>
-            <SkillInfo>
-              <SkillRowImageContainer>
-                <Skills />
-              </SkillRowImageContainer>
-              <SkillRowLabel>Select ALL</SkillRowLabel>
-            </SkillInfo>
-            <SkillCheckBox
-              isChecked={areAllSkillsSelected}
+          <SkillFilterHeaderRow>
+            <SkillFilterHeader>Filters</SkillFilterHeader>
+            <SkillFilterSelectAllBtn
               onClick={toggleSelectAllFilters}
             >
-              <Check />
-            </SkillCheckBox>
-          </SkillRow>
+              <SkillFilterSelectAllSpan>
+                {`${areAllSkillsSelected ? 'Clear' : 'Select'} all`}
+              </SkillFilterSelectAllSpan>
+            </SkillFilterSelectAllBtn>
+          </SkillFilterHeaderRow>
           {Object.entries(skills).map(([
             skillKey, {
               name,
@@ -167,7 +181,8 @@ const Projects = (): ReactElement => {
                 </SkillInfo>
                 <SkillCheckBox
                   isChecked={isChecked}
-                  onClick={() => toggleFilterCheck(skillKey)}
+                  data-skill-key={skillKey}
+                  onClick={toggleFilterCheck}
                 >
                   <Check />
                 </SkillCheckBox>
@@ -175,11 +190,16 @@ const Projects = (): ReactElement => {
             );
           })}
         </SkillRows>
-        <SkillFilter onClick={toggleFiltersShown}>
-          <SkillFilterSpan>
-            Done
-          </SkillFilterSpan>
-        </SkillFilter>
+        <SkillFilterFooterRow>
+          <SkillFilterHeader>
+            {`${selectedProjects.length} projects`}
+          </SkillFilterHeader>
+          <SkillFilter onClick={toggleFiltersShown}>
+            <SkillFilterSpan>
+              Done
+            </SkillFilterSpan>
+          </SkillFilter>
+        </SkillFilterFooterRow>
       </Aside>
     </>
   );
