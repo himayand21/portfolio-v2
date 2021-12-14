@@ -62,7 +62,7 @@ export const TypographyHeadlineReduced = styled.h3`
     }
 `;
 
-export const TypographyIntroSuper = styled.h4`
+export const TypographyIntroSuper = styled.div`
     font-size: 32px;
     font-weight: 200;
     @media only screen and (max-width: ${LAPTOP}px) {
@@ -76,7 +76,7 @@ export const TypographyIntroSuper = styled.h4`
     }
 `;
 
-export const TypographyIntro = styled.h5`
+export const TypographyIntro = styled.div`
     font-size: 24px;
     font-weight: 200;
     @media only screen and (max-width: ${LAPTOP}px) {
@@ -90,7 +90,7 @@ export const TypographyIntro = styled.h5`
     }
 `;
 
-export const TypographyIntroReduced = styled.h6`
+export const TypographyIntroReduced = styled.div`
     font-size: 20px;
     font-weight: 200;
     @media only screen and (max-width: ${LAPTOP}px) {

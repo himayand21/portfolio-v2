@@ -179,7 +179,7 @@ export const VedantuDescription = (): ReactElement => (
 );
 
 export const VedantuWorkExperience = (): ReactElement => (
-  <>
+  <DescriptionList>
     <DescriptionListItem>
       <ListBullet isFirst />
       <WorkExperienceContent>
@@ -192,5 +192,5 @@ export const VedantuWorkExperience = (): ReactElement => (
         SDE - 2 (April 2021 - now)
       </WorkExperienceContent>
     </DescriptionListItem>
-  </>
+  </DescriptionList>
 );
