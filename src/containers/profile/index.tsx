@@ -1,5 +1,9 @@
-/* eslint-disable max-len */
-import { ReactElement, useEffect, useState } from 'react';
+import {
+  ReactElement,
+  useEffect,
+  useState,
+  useRef,
+} from 'react';
 
 import {
   ProfileImageWrapper,
@@ -81,9 +85,31 @@ const Profile = ({
   const [isHighlightsShown, setIsHighlightsShown] = useState(false);
   const toggleSetIsHighlightsShown = () => setIsHighlightsShown(!isHighlightsShown);
 
+  const highlightsRef = useRef<HTMLDivElement>(null);
+
+  const handleOutsideClick = (event: Event) => {
+    const clickedOn = highlightsRef.current;
+    if (clickedOn) {
+      if (!clickedOn?.contains(event.target as Node)) {
+        event.preventDefault();
+        setIsHighlightsShown(false);
+      }
+    }
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    if (isHighlightsShown) {
+      document.addEventListener('click', handleOutsideClick, false);
+      return (() => {
+        document.removeEventListener('click', handleOutsideClick, false);
+      });
+    }
+    return (() => undefined);
+  }, [isHighlightsShown]);
 
   return (
     <FeedWrapper>
@@ -219,6 +245,7 @@ const Profile = ({
       </Feed>
       <Aside
         isHighlightsShown={isHighlightsShown}
+        ref={highlightsRef}
       >
         <CrossIcon onClick={toggleSetIsHighlightsShown}>
           <Cross />
