@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { transparentize } from 'polished';
+import { darken, transparentize } from 'polished';
 import { TypographyBody, TypographyBodyReduced } from '../../../styles';
 import { TABLET, ThemeType } from '../../../constants';
 
@@ -236,7 +236,7 @@ export const ListContentDescription = styled(TypographyBodyReduced)`
     font-size: inherit;
   }
   b {
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => darken(0.12, theme.text)};
     font-weight: 400;
   }
   a {

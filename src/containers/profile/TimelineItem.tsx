@@ -21,8 +21,6 @@ import {
   TimelineLinkSubtitle,
 } from './styles/timelineStyles';
 
-import Display from '../../images/Display.jpg';
-
 type linkPropType = {
     getImage: (ambience: string) => string,
     getTitle: () => string | ReactElement,
@@ -79,7 +77,10 @@ const Timeline = ({
 }: propType): ReactElement => (
   <TimelineItem key={date}>
     <Sender>
-      <SenderImage src={Display} alt="" />
+      <SenderImage
+        src="assets/display.jpg"
+        alt=""
+      />
       <SenderDetails>
         <SenderName>{name}</SenderName>
         <SenderDate>{date}</SenderDate>

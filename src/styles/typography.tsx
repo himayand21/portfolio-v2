@@ -8,7 +8,7 @@ export const TypographyBody = styled.span`
         font-size: 14px;
     }
     @media only screen and (max-width: ${MOBILE}px) {
-        font-size: 12px;
+        font-size: 13px;
     }
 `;
 
@@ -16,7 +16,7 @@ export const TypographyBodyReduced = styled.span`
     font-size: 14px;
     font-weight: 200;
     @media only screen and (max-width: ${TABLET}px) {
-        font-size: 11px;
+        font-size: 12px;
     }
 `;
 

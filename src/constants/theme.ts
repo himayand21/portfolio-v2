@@ -32,7 +32,7 @@ const BRIGHT_AMBIENCE = {
 const NIGHT_AMBIENCE = {
   ...COMMON_AMBIENCE,
   text: 'rgb(245, 245, 245)',
-  text2: 'rgb(191, 191, 191)',
+  text2: 'rgb(201, 201, 201)',
   background: 'rgb(21, 32, 43)',
   backgroundHover: 'rgba(255, 255, 255, 0.03)',
   border: 'rgb(56, 68, 77)',

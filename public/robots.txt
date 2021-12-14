@@ -1,2 +1,2 @@
-src/componentsUser-agent: *
-Allow: /
+user-agent: *
+disallow:

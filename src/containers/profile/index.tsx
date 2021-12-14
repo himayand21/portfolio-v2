@@ -50,9 +50,6 @@ import {
 import asideFeed, { asideFeedType, asiderowType } from '../../metadata/profile/asideFeed';
 import timeline, { timelineType } from '../../metadata/profile/timeline';
 
-import Cover from '../../images/Cover.jpg';
-import Display from '../../images/Display.jpg';
-import PreloadImage from '../../common/PreloadImage';
 import Bars from '../../icons/Bars';
 import Cross from '../../icons/Cross';
 import TimelineItem from './TimelineItem';
@@ -107,24 +104,16 @@ const Profile = ({
         <ProfileImageWrapper>
           <CoverImageDummy />
           <DisplayImageDummy />
-          <PreloadImage
-            imageRef={coverImageRef}
-          >
-            <CoverImage
-              src={Cover}
-              ref={coverImageRef}
-              alt=""
-            />
-          </PreloadImage>
-          <PreloadImage
-            imageRef={displayImageRef}
-          >
-            <DisplayImage
-              src={Display}
-              ref={displayImageRef}
-              alt=""
-            />
-          </PreloadImage>
+          <CoverImage
+            src="assets/cover.jpg"
+            ref={coverImageRef}
+            alt=""
+          />
+          <DisplayImage
+            src="assets/display.jpg"
+            ref={displayImageRef}
+            alt=""
+          />
         </ProfileImageWrapper>
         <ProfileInfoContainer>
           <Name>Himayan Debnath</Name>
