@@ -1,7 +1,7 @@
 import { transparentize } from 'polished';
 import styled from 'styled-components';
 import { TypographyCaption, TypographyBodyReduced, TypographyBody } from '../../../styles';
-import { LAPTOP, ThemeType } from '../../../constants';
+import { LAPTOP, MOBILE, ThemeType } from '../../../constants';
 
 type withIsHightlightsShown = {
     isHighlightsShown: boolean,
@@ -36,6 +36,11 @@ export const Aside = styled('aside')<withIsHightlightsShown>`
             overflow: hidden;
             opacity: 0;
         `))}
+    }
+    @media only screen and (max-width: ${MOBILE}px) {
+        ${({ isHighlightsShown }) => (isHighlightsShown ? (`
+            border-left: none;
+        `) : '')}
     }
 `;
 

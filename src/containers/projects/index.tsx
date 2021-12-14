@@ -1,5 +1,10 @@
 import {
-  MouseEventHandler, ReactElement, useState, MouseEvent,
+  MouseEventHandler,
+  ReactElement,
+  useState,
+  MouseEvent,
+  useEffect,
+  useRef,
 } from 'react';
 
 import { Article } from '../../styles';
@@ -47,6 +52,8 @@ const Projects = (): ReactElement => {
   const [isFiltersShown, setIsFiltersShown] = useState(false);
   const [selectedSkills, setSelectedSkills] = useState(Object.values(SKILL_KEYS));
 
+  const filtersRef = useRef<HTMLDivElement>(null);
+
   const numberOfSkillsSelected = selectedSkills.length;
   const areAllSkillsSelected = Object.keys(SKILL_KEYS).length === numberOfSkillsSelected;
 
@@ -86,6 +93,30 @@ const Projects = (): ReactElement => {
       setSelectedSkills(Object.values(SKILL_KEYS));
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleOutsideClick = (event: Event) => {
+    const clickedOn = filtersRef.current;
+    if (clickedOn) {
+      if (!clickedOn?.contains(event.target as Node)) {
+        event.preventDefault();
+        setIsFiltersShown(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (isFiltersShown) {
+      document.addEventListener('click', handleOutsideClick, false);
+      return (() => {
+        document.removeEventListener('click', handleOutsideClick, false);
+      });
+    }
+    return (() => undefined);
+  }, [isFiltersShown]);
 
   return (
     <>
@@ -151,18 +182,19 @@ const Projects = (): ReactElement => {
       </Article>
       <Aside
         isFiltersShown={isFiltersShown}
+        ref={filtersRef}
       >
+        <SkillFilterHeaderRow>
+          <SkillFilterHeader>Filters</SkillFilterHeader>
+          <SkillFilterSelectAllBtn
+            onClick={toggleSelectAllFilters}
+          >
+            <SkillFilterSelectAllSpan>
+              {`${areAllSkillsSelected ? 'Clear' : 'Select'} all`}
+            </SkillFilterSelectAllSpan>
+          </SkillFilterSelectAllBtn>
+        </SkillFilterHeaderRow>
         <SkillRows>
-          <SkillFilterHeaderRow>
-            <SkillFilterHeader>Filters</SkillFilterHeader>
-            <SkillFilterSelectAllBtn
-              onClick={toggleSelectAllFilters}
-            >
-              <SkillFilterSelectAllSpan>
-                {`${areAllSkillsSelected ? 'Clear' : 'Select'} all`}
-              </SkillFilterSelectAllSpan>
-            </SkillFilterSelectAllBtn>
-          </SkillFilterHeaderRow>
           {Object.entries(skills).map(([
             skillKey, {
               name,

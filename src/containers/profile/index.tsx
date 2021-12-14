@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { ReactElement, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 
 import {
   ProfileImageWrapper,
@@ -80,6 +80,11 @@ const Profile = ({
 }: ProfileProps): ReactElement => {
   const [isHighlightsShown, setIsHighlightsShown] = useState(false);
   const toggleSetIsHighlightsShown = () => setIsHighlightsShown(!isHighlightsShown);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <FeedWrapper>
       <Feed>

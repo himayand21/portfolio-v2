@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { lighten } from 'polished';
-import { LAPTOP, TABLET, ThemeType } from '../../constants';
+import {
+  LAPTOP, TABLET, MOBILE, ThemeType,
+} from '../../constants';
 
 import {
   TypographyCaption,
@@ -178,7 +180,6 @@ type withIsFiltersShown = {
 export const Aside = styled('aside')<withIsFiltersShown>`
   min-height: 100vh;
   position: fixed;
-  top: 0;
   min-width: 250px;
   padding: 20px;
   max-height: 100vh;
@@ -200,6 +201,31 @@ export const Aside = styled('aside')<withIsFiltersShown>`
       opacity: 0;
   `))}
   }
+  @media only screen and (max-width: ${MOBILE}px) {
+    min-height: unset;
+    max-height: 60vh;
+    min-width: 100vw;
+    bottom: 0px;
+    left: 0px;
+    top: unset;
+    overflow: hidden;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    ${({ isFiltersShown, theme }) => (isFiltersShown ? (`
+        background-color: ${theme.background};
+        border: 1px solid ${theme.border};
+        border-bottom: none;
+        border-radius: 25px 25px 0px 0px;
+        transform: translateY(0px) scaleY(1);
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    `) : (`
+        margin-top: -60vh;
+        transform: translateY(60vh) scaleY(0);
+        opacity: 0;
+    `))}
+    }
+  }
 `;
 
 export const SkillRow = styled.div`
@@ -210,7 +236,6 @@ export const SkillRow = styled.div`
 
 export const SkillFilterHeaderRow = styled.div`
   padding: 20px 0px 10px 0;
-  margin-bottom: 20px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid ${({ theme }) => theme.border};
@@ -221,7 +246,6 @@ export const SkillFilterFooterRow = styled.div`
   align-items: center;
   border-top: 1px solid ${({ theme }) => theme.border};
   padding: 20px 0px 10px 0;
-  margin-top: -10px;
 `;
 
 export const SkillFilterHeader = styled(TypographyBody)`
@@ -242,7 +266,14 @@ export const SkillFilterSelectAllSpan = styled(TypographyBody)`
 `;
 
 export const SkillRows = styled.div`
-  margin-bottom: 40px;
+  @media only screen and (max-width: ${MOBILE}px) {
+    max-height: calc(60vh - 118px);
+    overflow: auto;
+    margin-left: -20px;
+    padding-left: 20px;
+    margin-right: -20px;
+    padding-right: 20px;
+  }
 `;
 
 export const SkillRowLabel = styled(TypographyLabelReduced)`
@@ -321,4 +352,7 @@ export const SkillInfo = styled.div`
   height: 25px;
   display: flex;
   align-items: center;
+  @media only screen and (max-width: ${TABLET}px) {
+    height: 20px;
+  }
 `;
