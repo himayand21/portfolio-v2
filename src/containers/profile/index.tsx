@@ -42,38 +42,20 @@ import {
   AsideItemSubtitle,
 } from './styles/asideStyles';
 
-import {
-  TimelineItem,
-  Sender,
-  SenderImage,
-  SenderName,
-  SenderDetails,
-  SenderDate,
-  TimelineInfo,
-  TimelineInfoTitle,
-  TimelineInfoSubtitle,
-  TimelineIcon,
-  TimelineLink,
-  TimelineLinkImage,
-  TimelineLinkDivider,
-  TimelineLinkInfoWrapper,
-  TimelineLinkTitle,
-  TimelineLinkSubtitle,
-} from './styles/timelineStyles';
-
 import { Pill, PillContent } from '../../styles';
 
 import {
   profileInfo, contactInfo, bioInfo, profilerowType,
 } from '../../metadata/profile/profileInfo';
 import asideFeed, { asideFeedType, asiderowType } from '../../metadata/profile/asideFeed';
-import timeline, { types, timelineType } from '../../metadata/profile/timeline';
+import timeline, { timelineType } from '../../metadata/profile/timeline';
 
 import Cover from '../../images/Cover.jpg';
 import Display from '../../images/Display.jpg';
 import PreloadImage from '../../common/PreloadImage';
 import Bars from '../../icons/Bars';
 import Cross from '../../icons/Cross';
+import TimelineItem from './TimelineItem';
 
 type ProfileProps = {
   ambience: string,
@@ -86,6 +68,8 @@ const Profile = ({
   const toggleSetIsHighlightsShown = () => setIsHighlightsShown(!isHighlightsShown);
 
   const highlightsRef = useRef<HTMLDivElement>(null);
+  const coverImageRef = useRef<HTMLImageElement>(null);
+  const displayImageRef = useRef<HTMLImageElement>(null);
 
   const handleOutsideClick = (event: Event) => {
     const clickedOn = highlightsRef.current;
@@ -123,11 +107,23 @@ const Profile = ({
         <ProfileImageWrapper>
           <CoverImageDummy />
           <DisplayImageDummy />
-          <PreloadImage src={Cover}>
-            <CoverImage src={Cover} alt="" />
+          <PreloadImage
+            imageRef={coverImageRef}
+          >
+            <CoverImage
+              src={Cover}
+              ref={coverImageRef}
+              alt=""
+            />
           </PreloadImage>
-          <PreloadImage src={Display}>
-            <DisplayImage src={Display} alt="" />
+          <PreloadImage
+            imageRef={displayImageRef}
+          >
+            <DisplayImage
+              src={Display}
+              ref={displayImageRef}
+              alt=""
+            />
           </PreloadImage>
         </ProfileImageWrapper>
         <ProfileInfoContainer>
@@ -182,64 +178,26 @@ const Profile = ({
             name,
             date,
             type,
-            getDescription = () => undefined,
+            getDescription = () => '',
+            getTitle = () => '',
+            getSubTitle = () => '',
+            getImage = () => '',
+            getIcon = () => '',
+            link,
           } = row;
           return (
-            <TimelineItem key={date}>
-              <Sender>
-                <PreloadImage src={Display}>
-                  <SenderImage src={Display} alt="" />
-                </PreloadImage>
-                <SenderDetails>
-                  <SenderName>{name}</SenderName>
-                  <SenderDate>{date}</SenderDate>
-                </SenderDetails>
-              </Sender>
-              {getDescription()}
-              {(() => {
-                switch (type) {
-                  case types.LINK: {
-                    const {
-                      getTitle,
-                      getSubTitle,
-                      getImage = () => undefined,
-                      link,
-                    } = row;
-                    return (
-                      <TimelineLink target="blank" href={link}>
-                        <PreloadImage src={getImage(ambience) || ''}>
-                          <>
-                            <TimelineLinkImage alt="" src={getImage(ambience)} />
-                            <TimelineLinkDivider />
-                          </>
-                        </PreloadImage>
-                        <TimelineLinkInfoWrapper>
-                          <TimelineLinkTitle>{getTitle()}</TimelineLinkTitle>
-                          <TimelineLinkSubtitle>{getSubTitle()}</TimelineLinkSubtitle>
-                        </TimelineLinkInfoWrapper>
-                      </TimelineLink>
-                    );
-                  }
-                  case types.EVENT: {
-                    const {
-                      getIcon = () => undefined,
-                      getTitle,
-                      getSubTitle,
-                    } = row;
-                    return (
-                      <TimelineInfo>
-                        <TimelineIcon>
-                          {getIcon()}
-                        </TimelineIcon>
-                        <TimelineInfoTitle>{getTitle()}</TimelineInfoTitle>
-                        <TimelineInfoSubtitle>{getSubTitle()}</TimelineInfoSubtitle>
-                      </TimelineInfo>
-                    );
-                  }
-                  default: return null;
-                }
-              })()}
-            </TimelineItem>
+            <TimelineItem
+              name={name}
+              date={date}
+              type={type}
+              getDescription={getDescription}
+              getTitle={getTitle}
+              getSubTitle={getSubTitle}
+              getImage={getImage}
+              getIcon={getIcon}
+              link={link}
+              ambience={ambience}
+            />
           );
         })}
       </Feed>

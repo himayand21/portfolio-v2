@@ -228,4 +228,18 @@ export const RightBranch = styled('div')<withIsLast>`
     `) : '')}
 `;
 
-export const ListContentDescription = styled(Description)``;
+export const ListContentDescription = styled(TypographyBodyReduced)`
+  color: ${({ theme }) => theme.text2};
+  margin-bottom: 20px;
+  display: block;
+  * {
+    font-size: inherit;
+  }
+  b {
+    color: ${({ theme }) => theme.text};
+    font-weight: 400;
+  }
+  a {
+    font-weight: 400;
+  }
+`;

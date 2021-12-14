@@ -13,16 +13,7 @@ import {
   TitleRow,
   Subtitle,
   Grid,
-  GridItem,
-  ProjectImage,
-  DescriptionOverlay,
-  ProjectTitle,
-  ProjectSubTitle,
-  SkillContainer,
-  SkillsContainer,
   SkillImage,
-  SkillLabel,
-  SkillImageContainer,
   SkillFilter,
   SkillFilterSpan,
   SkillFilterBadge,
@@ -44,9 +35,9 @@ import {
 import projects, { projectInfoType } from '../../metadata/projects';
 import skills, { skillType, SKILL_KEYS } from '../../metadata/skills';
 
-import PreloadImage from '../../common/PreloadImage';
 import Filter from '../../icons/Filter';
 import Check from '../../icons/Check';
+import ProjectItem from './ProjectItem';
 
 const Projects = (): ReactElement => {
   const [isFiltersShown, setIsFiltersShown] = useState(false);
@@ -150,33 +141,14 @@ const Projects = (): ReactElement => {
             link,
             skills: projectSkills,
           }: projectInfoType) => (
-            <GridItem href={link} target="blank">
-              <PreloadImage src={image}>
-                <ProjectImage src={image} className="project-image" />
-              </PreloadImage>
-              <DescriptionOverlay>
-                <ProjectTitle>{title}</ProjectTitle>
-                <ProjectSubTitle>{subtitle}</ProjectSubTitle>
-              </DescriptionOverlay>
-              <SkillsContainer>
-                {projectSkills.map(({
-                  icon,
-                  name,
-                  key: skillKey,
-                }: skillType): ReactElement => (
-                  <SkillContainer
-                    isChecked={(selectedSkills.includes(skillKey))}
-                  >
-                    <SkillImageContainer>
-                      <PreloadImage src={icon}>
-                        <SkillImage src={icon} />
-                      </PreloadImage>
-                    </SkillImageContainer>
-                    <SkillLabel>{name}</SkillLabel>
-                  </SkillContainer>
-                ))}
-              </SkillsContainer>
-            </GridItem>
+            <ProjectItem
+              title={title}
+              subtitle={subtitle}
+              image={image}
+              link={link}
+              skills={projectSkills}
+              selectedSkills={selectedSkills}
+            />
           ))}
         </Grid>
       </Article>
@@ -205,9 +177,7 @@ const Projects = (): ReactElement => {
               <SkillRow>
                 <SkillInfo>
                   <SkillRowImageContainer>
-                    <PreloadImage src={icon}>
-                      <SkillImage src={icon} />
-                    </PreloadImage>
+                    <SkillImage src={icon} />
                   </SkillRowImageContainer>
                   <SkillRowLabel>{name}</SkillRowLabel>
                 </SkillInfo>

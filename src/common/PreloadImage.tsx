@@ -1,27 +1,28 @@
-import { useEffect, useState, ReactElement } from 'react';
+/* eslint-disable no-param-reassign */
+import {
+  useEffect, ReactElement, RefObject,
+} from 'react';
 
 type PreloadImageProps = {
-  src: string,
   children: JSX.Element,
+  imageRef: RefObject<HTMLImageElement>
 };
 
 const PreloadImage = ({
-  src = '',
   children,
-}: PreloadImageProps): ReactElement | null => {
-  const [loaded, setLoaded] = useState(false);
-
+  imageRef,
+}: PreloadImageProps): ReactElement => {
   useEffect(() => {
-    const image = new Image();
-
-    image.onload = () => {
-      setLoaded(true);
-    };
-
-    image.src = src;
+    if (imageRef.current) {
+      imageRef.current.style.opacity = '0';
+      imageRef.current.onload = () => {
+        if (imageRef.current) {
+          imageRef.current.style.opacity = '1';
+        }
+      };
+    }
   }, []);
 
-  if (!loaded) return null;
   return (
     <>
       {children}

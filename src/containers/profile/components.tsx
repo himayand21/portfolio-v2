@@ -132,15 +132,6 @@ export const VedantuDescription = (): ReactElement => (
       <DescriptionListItem>
         <ListBullet isFirst />
         <ListContent>
-          <b>Fill in the Blanks and Subjective Questions</b>
-          <ListContentDescription>
-            These features have massively improved student&apos;s interactivity and immersion, and have provided yet another way for evaluation in LIVE classes.
-          </ListContentDescription>
-        </ListContent>
-      </DescriptionListItem>
-      <DescriptionListItem>
-        <ListBullet />
-        <ListContent>
           <b>UI Revamp</b>
           <ListContentDescription>
             We went through a massive design overhaul touching almost every other modules of the application. It has progressed the user experience to a more slick, polished and modern UI suitable for the students of today.
@@ -148,7 +139,22 @@ export const VedantuDescription = (): ReactElement => (
         </ListContent>
       </DescriptionListItem>
       <DescriptionListItem>
-        <ListBullet isLast />
+        <ListBullet />
+        <ListContent>
+          <b>UI Component Library</b>
+          <ListContentDescription>
+            <span>I worked on building a in-house re-usable UI library (in </span>
+            <b>TypeScript</b>
+            <span> and </span>
+            <b>React</b>
+            <span>), which exposes utilities and helper components like </span>
+            <b>Draggable, Pinchable, Toaster, Timer, Modal etc.</b>
+            <span> that are designed for cross-team collaboration across the organization.</span>
+          </ListContentDescription>
+        </ListContent>
+      </DescriptionListItem>
+      <DescriptionListItem>
+        <ListBullet />
         <ListContent>
           <b>Design System</b>
           <ListContentDescription>
@@ -158,6 +164,16 @@ export const VedantuDescription = (): ReactElement => (
           </ListContentDescription>
         </ListContent>
       </DescriptionListItem>
+      <DescriptionListItem>
+        <ListBullet isLast />
+        <ListContent>
+          <b>Fill in the Blanks and Subjective Questions</b>
+          <ListContentDescription>
+            These features have massively improved student&apos;s interactivity and immersion, and have provided yet another way for evaluation in LIVE classes.
+          </ListContentDescription>
+        </ListContent>
+      </DescriptionListItem>
+
     </DescriptionList>
   </DescriptionWrapper>
 );
