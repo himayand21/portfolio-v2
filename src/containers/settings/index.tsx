@@ -1,4 +1,4 @@
-import { ReactElement, useEffect } from 'react';
+import { ReactElement } from 'react';
 import {
   COLORS, COLOR_MAP, AMBIENCE, AMBIENCES,
 } from '../../constants';
@@ -37,65 +37,59 @@ const Settings = ({
   ambience,
   setColor,
   setAmbience,
-}: SettingsProps): ReactElement => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  return (
-    <Article>
-      <Title>
-        Settings
-      </Title>
-      <Subtitle>
-        Customize your view with your choice of color and background
-      </Subtitle>
-      <Block>
-        <Label>Color</Label>
-        <Box>
-          <Pallete>
-            {Object.values(COLORS).map((each) => (
-              <PickerWrapper>
-                <Picker
-                  filledColor={COLOR_MAP[each]}
-                  onClick={() => setColor(each)}
-                >
-                  {(color === each) && (
+}: SettingsProps): ReactElement => (
+  <Article>
+    <Title>
+      Settings
+    </Title>
+    <Subtitle>
+      Customize your view with your choice of color and background
+    </Subtitle>
+    <Block>
+      <Label>Color</Label>
+      <Box>
+        <Pallete>
+          {Object.values(COLORS).map((each) => (
+            <PickerWrapper>
+              <Picker
+                filledColor={COLOR_MAP[each]}
+                onClick={() => setColor(each)}
+              >
+                {(color === each) && (
                   <CheckWrapper>
                     <Check />
                   </CheckWrapper>
-                  )}
-                </Picker>
-                <Caption>
+                )}
+              </Picker>
+              <Caption>
+                {getCaption(each)}
+              </Caption>
+            </PickerWrapper>
+          ))}
+        </Pallete>
+      </Box>
+    </Block>
+    <Block>
+      <Label>Background</Label>
+      <Box>
+        <Pallete>
+          {Object.values(AMBIENCE).map((each) => (
+            <ThemeBoxWrapper>
+              <ThemeBox
+                onClick={() => setAmbience(each)}
+                selected={each === ambience}
+                customTheme={AMBIENCES[each]}
+              >
+                <ThemeName>
                   {getCaption(each)}
-                </Caption>
-              </PickerWrapper>
-            ))}
-          </Pallete>
-        </Box>
-      </Block>
-      <Block>
-        <Label>Background</Label>
-        <Box>
-          <Pallete>
-            {Object.values(AMBIENCE).map((each) => (
-              <ThemeBoxWrapper>
-                <ThemeBox
-                  onClick={() => setAmbience(each)}
-                  selected={each === ambience}
-                  customTheme={AMBIENCES[each]}
-                >
-                  <ThemeName>
-                    {getCaption(each)}
-                  </ThemeName>
-                </ThemeBox>
-              </ThemeBoxWrapper>
-            ))}
-          </Pallete>
-        </Box>
-      </Block>
-    </Article>
-  );
-};
+                </ThemeName>
+              </ThemeBox>
+            </ThemeBoxWrapper>
+          ))}
+        </Pallete>
+      </Box>
+    </Block>
+  </Article>
+);
 
 export default Settings;

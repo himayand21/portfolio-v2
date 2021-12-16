@@ -79,10 +79,6 @@ const Profile = ({
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
     if (isHighlightsShown) {
       document.addEventListener('click', handleOutsideClick, false);
       return (() => {

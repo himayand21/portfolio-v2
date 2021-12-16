@@ -85,10 +85,6 @@ const Projects = (): ReactElement => {
     }
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const handleOutsideClick = (event: Event) => {
     const clickedOn = filtersRef.current;
     if (clickedOn) {
