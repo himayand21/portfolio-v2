@@ -74,7 +74,7 @@ export const AsideBlockItem = styled.a`
         background-color: ${({ theme }) => transparentize(0.5, theme.background)};
     }
     &:last-child {
-        padding-bottom: 20px;
+        padding-bottom: 15px;
     }
 `;
 
@@ -93,6 +93,7 @@ export const AsideItemInfoWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: space-around;
+    min-height: 50px;
 `;
 
 export const AsideItemTitle = styled(TypographyBodyReduced)`

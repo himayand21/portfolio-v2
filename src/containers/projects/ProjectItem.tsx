@@ -39,7 +39,6 @@ const SkillItem = ({
             src={icon}
             ref={imageRef}
             alt=""
-            loading="lazy"
           />
         </PreloadImage>
       </SkillImageContainer>
@@ -71,6 +70,8 @@ const ProjectItem = ({
           ref={imageRef}
           alt=""
           loading="lazy"
+          width="502"
+          height="336"
         />
       </PreloadImage>
       <DescriptionOverlay>

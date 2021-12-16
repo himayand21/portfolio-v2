@@ -48,7 +48,6 @@ const LinkInTimeline = ({
             src={getImage(ambience)}
             ref={imageRef}
             alt=""
-            loading="lazy"
           />
           <TimelineLinkDivider />
         </>

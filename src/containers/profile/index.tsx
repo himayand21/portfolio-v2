@@ -208,7 +208,10 @@ const Profile = ({
               link,
             }: asiderowType): ReactElement => (
               <AsideBlockItem href={link} target="blank">
-                <AsideItemImage src={getImage(ambience)} alt="" />
+                <AsideItemImage
+                  src={getImage(ambience)}
+                  alt=""
+                />
                 <AsideItemInfoWrapper>
                   <AsideItemTitle>
                     {title}
