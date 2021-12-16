@@ -65,13 +65,10 @@ const ProjectItem = ({
     >
       <PreloadImage imageRef={imageRef}>
         <ProjectImage
-          src={image}
-          className="project-image"
+          data-src={image}
+          className="project-image lazy"
           ref={imageRef}
           alt=""
-          loading="lazy"
-          width="502"
-          height="336"
         />
       </PreloadImage>
       <DescriptionOverlay>

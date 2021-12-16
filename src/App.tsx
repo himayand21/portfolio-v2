@@ -11,7 +11,6 @@ import Profile from './containers/profile';
 import Settings from './containers/settings';
 import Navigator from './containers/navigator';
 import Projects from './containers/projects';
-// import Skills from './containers/skills';
 import {
   Screen,
   Left,
