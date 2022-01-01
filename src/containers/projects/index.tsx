@@ -142,6 +142,7 @@ const Projects = (): ReactElement => {
               subtitle={subtitle}
               image={image}
               link={link}
+              key={link}
               skills={projectSkills}
               selectedSkills={selectedSkills}
             />
@@ -170,7 +171,7 @@ const Projects = (): ReactElement => {
             }]: [string, skillType]): ReactElement => {
             const isChecked = selectedSkills.includes(skillKey);
             return (
-              <SkillRow>
+              <SkillRow key={name}>
                 <SkillInfo>
                   <SkillRowImageContainer>
                     <SkillImage src={icon} />

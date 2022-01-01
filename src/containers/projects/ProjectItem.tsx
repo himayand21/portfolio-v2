@@ -85,6 +85,7 @@ const ProjectItem = ({
             isChecked={(selectedSkills.includes(skillKey))}
             name={name}
             icon={icon}
+            key={name}
           />
         ))}
       </SkillsContainer>
