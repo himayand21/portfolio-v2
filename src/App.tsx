@@ -11,6 +11,8 @@ import Profile from './containers/profile';
 import Settings from './containers/settings';
 import Navigator from './containers/navigator';
 import Projects from './containers/projects';
+import ScrollToTop from './ScrollToTop';
+
 import {
   Screen,
   Left,
@@ -32,6 +34,7 @@ const App = (): ReactElement => {
         color: COLOR_MAP[color],
       }}
     >
+      <ScrollToTop />
       <GlobalStyle />
       <Screen>
         <Left>

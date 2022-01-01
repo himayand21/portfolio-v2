@@ -87,10 +87,7 @@ export const Right = styled.main`
   border-right: 1px solid ${({ theme }) => theme.border};
   @media only screen and (max-width: ${MOBILE}px) {
     padding: 0px;
-    padding-bottom: 10px;
-    max-height: calc(100vh - 78px);
-    overflow-y: auto;
-    overflow-x: hidden;
+    margin-bottom: 78px;
     border: none;
   }
 `;
