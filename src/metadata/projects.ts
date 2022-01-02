@@ -11,6 +11,9 @@ import kataKuti from '../images/projects/katakuti.jpg';
 import covid19 from '../images/projects/covid19.jpg';
 import nodeReactAuth from '../images/projects/nodeReactAuth.jpg';
 import blackboard from '../images/projects/blackboard.jpg';
+import newyear from '../images/projects/newyear.jpg';
+import christmas from '../images/projects/christmas.jpg';
+import addabuzz from '../images/projects/addabuzz.jpg';
 
 import SKILLSET, { skillType } from './skills';
 
@@ -27,15 +30,38 @@ const {
   FIREBASE,
   GRAPHQL,
   REACT_NATIVE,
+  SOCKET,
+  STYLED_COMPONENTS,
 } = SKILLSET;
 
 const projects = [
+  {
+    title: 'Addabuzz',
+    image: addabuzz,
+    subtitle: 'A virtual room for far off friends to hang out with each other.',
+    link: 'https://addabuzz.herokuapp.com',
+    skills: [REACT, STYLED_COMPONENTS, SOCKET, NODE],
+  },
   {
     title: 'Blackboard',
     image: blackboard,
     subtitle: 'Blackboard makes note-taking easier with it\'s variety of tools. Tag them to boards or pin them to dashboard for easy access. Comment on your friends\' notes to let them know what you think.',
     link: 'https://black-board.netlify.app',
     skills: [REACT, SASS, GRAPHQL, MONGO, NODE],
+  },
+  {
+    title: 'HNY 2021',
+    image: newyear,
+    subtitle: 'An animation to bring back the nostalgia of new-year greeting cards of the early 2000s.',
+    link: 'https://greeting-card-hny.netlify.app',
+    skills: [REACT, SASS],
+  },
+  {
+    title: 'Merry Christmas',
+    image: christmas,
+    subtitle: 'A Christmas-themed CSS-enabled animation, meant for kids, but is enjoyed by people of all ages.',
+    link: 'https://gift-box.netlify.app',
+    skills: [REACT, SASS],
   },
   {
     title: 'WeConnect',

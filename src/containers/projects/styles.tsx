@@ -181,7 +181,7 @@ type withIsFiltersShown = {
 export const Aside = styled('aside')<withIsFiltersShown>`
   min-height: 100vh;
   position: fixed;
-  min-width: 250px;
+  min-width: 300px;
   padding: 20px;
   max-height: 100vh;
   box-sizing: border-box;
@@ -196,8 +196,8 @@ export const Aside = styled('aside')<withIsFiltersShown>`
       opacity: 1;
       transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   `) : (`
-      margin-left: -250px;
-      transform: translateX(250px) scaleX(0);
+      margin-left: -300px;
+      transform: translateX(300px) scaleX(0);
       overflow: hidden;
       opacity: 0;
   `))}
