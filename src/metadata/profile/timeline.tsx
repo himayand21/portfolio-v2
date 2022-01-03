@@ -2,11 +2,11 @@ import { ReactElement } from 'react';
 
 import BabyCarriage from '../../icons/BabyCarriage';
 import Graduation from '../../icons/Graduation';
-import Org11 from '../../images/Org11.png';
-import Org12 from '../../images/Org12.png';
-import Org21 from '../../images/Org21.png';
-import Org22 from '../../images/Org22.png';
-import Org3 from '../../images/Org3.png';
+import Org11 from '../../images/highlights/Org11.png';
+import Org12 from '../../images/highlights/Org12.png';
+import Org21 from '../../images/highlights/Org21.png';
+import Org22 from '../../images/highlights/Org22.png';
+import Org3 from '../../images/highlights/Org3.png';
 
 import { AMBIENCE } from '../../constants';
 import {
