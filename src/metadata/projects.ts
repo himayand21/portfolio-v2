@@ -50,20 +50,6 @@ const projects = [
     skills: [REACT, SASS, GRAPHQL, MONGO, NODE],
   },
   {
-    title: 'HNY 2021',
-    image: newyear,
-    subtitle: 'An animation to bring back the nostalgia of new-year greeting cards of the early 2000s.',
-    link: 'https://greeting-card-hny.netlify.app',
-    skills: [REACT, SASS],
-  },
-  {
-    title: 'Merry Christmas',
-    image: christmas,
-    subtitle: 'A Christmas-themed CSS-enabled animation, meant for kids, but is enjoyed by people of all ages.',
-    link: 'https://gift-box.netlify.app',
-    skills: [REACT, SASS],
-  },
-  {
     title: 'WeConnect',
     subtitle: 'A texting application to find and connect with your friends.',
     skills: [REACT, FIREBASE, SASS],
@@ -76,6 +62,20 @@ const projects = [
     skills: [REACT, SASS],
     link: 'https://covid-statistics.netlify.com',
     image: covid19,
+  },
+  {
+    title: 'HNY 2021',
+    image: newyear,
+    subtitle: 'An animation to bring back the nostalgia of new-year greeting cards of the early 2000s.',
+    link: 'https://greeting-card-hny.netlify.app',
+    skills: [REACT, SASS],
+  },
+  {
+    title: 'Merry Christmas',
+    image: christmas,
+    subtitle: 'A Christmas-themed CSS-enabled animation, meant for kids, but is enjoyed by people of all ages.',
+    link: 'https://gift-box.netlify.app',
+    skills: [REACT, SASS],
   },
   {
     title: 'node-react-auth',
