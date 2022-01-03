@@ -11,6 +11,8 @@ import Profile from './containers/profile';
 import Settings from './containers/settings';
 import Navigator from './containers/navigator';
 import Projects from './containers/projects';
+import Contact from './containers/contact';
+
 import ScrollToTop from './ScrollToTop';
 
 import {
@@ -47,6 +49,12 @@ const App = (): ReactElement => {
                 ambience={ambience}
               />
             </Route>
+            <Route path={ROUTES.PROJECTS}>
+              <Projects />
+            </Route>
+            <Route path={ROUTES.CONTACT}>
+              <Contact />
+            </Route>
             <Route path={ROUTES.SETTINGS}>
               <Settings
                 color={color}
@@ -54,9 +62,6 @@ const App = (): ReactElement => {
                 setColor={setColor}
                 setAmbience={setAmbience}
               />
-            </Route>
-            <Route path={ROUTES.PROJECTS}>
-              <Projects />
             </Route>
             <Route path="*">
               <Profile

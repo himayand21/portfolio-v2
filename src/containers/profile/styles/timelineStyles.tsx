@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { darken, transparentize } from 'polished';
-import { TypographyBody, TypographyBodyReduced } from '../../../styles';
+import { TypographyBody, TypographyBodyReduced, TypographyCaption } from '../../../styles';
 import { TABLET, ThemeType } from '../../../constants';
 
 export const TimelineItem = styled.section`
@@ -100,7 +100,6 @@ export const TimelineLinkTitle = styled(TypographyBody)`
 export const TimelineLinkSubtitle = styled(TypographyBodyReduced)`
     color: ${({ theme }) => theme.text2};
     font-weight: 400;
-    margin-bottom: 10px;
 `;
 
 export const TimelineLinkInfoWrapper = styled.div`
@@ -167,7 +166,7 @@ export const DescriptionListItem = styled.li`
         color: ${({ theme }) => theme.text};
         font-weight: 400;
     }
-    b, a, span {
+    a {
         margin-bottom: 5px;
         margin-left: 0px;
     }
@@ -176,6 +175,19 @@ export const DescriptionListItem = styled.li`
 export const WorkExperienceContent = styled(TimelineInfoSubtitle)`
     flex: 1;
     padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+`;
+
+export const WorkExperienceTitle = styled(TypographyBodyReduced)`
+    font-weight: 400;
+    color: ${({ theme }) => theme.text};
+    margin-bottom: 0px;
+`;
+
+export const WorkExperienceTime = styled(TypographyCaption)`
+    font-weight: 400;
+    color: ${({ theme }) => theme.text2};
 `;
 
 export const ListContent = styled.div`

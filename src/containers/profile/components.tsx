@@ -15,6 +15,8 @@ import {
   ListBulletWrapper,
   RightBranch,
   WorkExperienceContent,
+  WorkExperienceTitle,
+  WorkExperienceTime,
 } from './styles/timelineStyles';
 
 export const EducationTitle = (): ReactElement => (
@@ -183,14 +185,37 @@ export const VedantuWorkExperience = (): ReactElement => (
     <DescriptionListItem>
       <ListBullet isFirst />
       <WorkExperienceContent>
-        SDE - 1 (October 2020 - April 2021)
+        <WorkExperienceTitle>Software Engineer 3</WorkExperienceTitle>
+        <WorkExperienceTime>Oct 2021 - present</WorkExperienceTime>
+      </WorkExperienceContent>
+    </DescriptionListItem>
+    <DescriptionListItem>
+      <ListBullet />
+      <WorkExperienceContent>
+        <WorkExperienceTitle>Software Engineer 2</WorkExperienceTitle>
+        <WorkExperienceTime>Apr 2021 - Oct 2021</WorkExperienceTime>
       </WorkExperienceContent>
     </DescriptionListItem>
     <DescriptionListItem>
       <ListBullet isLast />
       <WorkExperienceContent>
-        SDE - 2 (April 2021 - now)
+        <WorkExperienceTitle>Software Engineer</WorkExperienceTitle>
+        <WorkExperienceTime>Oct 2020 - Apr 2021</WorkExperienceTime>
       </WorkExperienceContent>
     </DescriptionListItem>
   </DescriptionList>
+);
+
+export const SnapwizWorkExperience = (): ReactElement => (
+  <WorkExperienceContent>
+    <WorkExperienceTitle>Software Engineer</WorkExperienceTitle>
+    <WorkExperienceTime>Apr 2020 - Oct 2020</WorkExperienceTime>
+  </WorkExperienceContent>
+);
+
+export const WiproWorkExperience = (): ReactElement => (
+  <WorkExperienceContent>
+    <WorkExperienceTitle>Project Engineer</WorkExperienceTitle>
+    <WorkExperienceTime>Jun 2018 - Apr 2020</WorkExperienceTime>
+  </WorkExperienceContent>
 );

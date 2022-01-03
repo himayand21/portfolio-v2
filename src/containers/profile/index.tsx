@@ -65,8 +65,6 @@ const Profile = ({
   const toggleSetIsHighlightsShown = () => setIsHighlightsShown(!isHighlightsShown);
 
   const highlightsRef = useRef<HTMLDivElement>(null);
-  const coverImageRef = useRef<HTMLImageElement>(null);
-  const displayImageRef = useRef<HTMLImageElement>(null);
 
   const handleOutsideClick = (event: Event) => {
     const clickedOn = highlightsRef.current;
@@ -102,12 +100,10 @@ const Profile = ({
           <DisplayImageDummy />
           <CoverImage
             src="assets/cover.jpg"
-            ref={coverImageRef}
             alt=""
           />
           <DisplayImage
             src="assets/display.jpg"
-            ref={displayImageRef}
             alt=""
           />
         </ProfileImageWrapper>

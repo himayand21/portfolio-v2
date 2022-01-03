@@ -16,6 +16,8 @@ import {
   SnapwizDescription,
   VedantuDescription,
   VedantuWorkExperience,
+  SnapwizWorkExperience,
+  WiproWorkExperience,
 } from '../../containers/profile/components';
 
 export const types = {
@@ -46,7 +48,7 @@ const timeline = [{
     }
   },
   getTitle: (): string => ('Snapwiz Edutec'),
-  getSubTitle: (): string => 'Software Engineer (April 2020 - October 2020)',
+  getSubTitle: SnapwizWorkExperience,
 }, {
   type: types.LINK,
   name: 'Himayan Debnath',
@@ -61,7 +63,7 @@ const timeline = [{
     }
   },
   getTitle: (): string => ('Wipro Technologies'),
-  getSubTitle: (): string => 'Project Engineer (June 2018 - April 2020)',
+  getSubTitle: WiproWorkExperience,
 }, {
   type: types.EVENT,
   name: 'Himayan Debnath',
@@ -72,9 +74,9 @@ const timeline = [{
 }, {
   type: types.EVENT,
   name: 'Himayan Debnath',
-  date: 'September 1996',
+  date: 'September',
   getIcon: BabyCarriage,
-  getTitle: (): string => ('Born on September 21, 1996'),
+  getTitle: (): string => ('Born on September 21'),
   getSubTitle: (): string => 'Kolkata, West Bengal',
 }];
 
