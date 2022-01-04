@@ -1,6 +1,6 @@
-import HTML from '../images/skills/html.png';
-import CSS from '../images/skills/css.png';
-import JS from '../images/skills/js.png';
+import Html from '../images/skills/html.png';
+import Css from '../images/skills/css.png';
+import Js from '../images/skills/js.png';
 import React from '../images/skills/react.png';
 import Redux from '../images/skills/redux.png';
 import Sass from '../images/skills/sass.png';
@@ -19,30 +19,30 @@ export const SKILL_KEYS = {
   REACT: 'REACT',
   REDUX: 'REDUX',
   SASS: 'SASS',
-  WEBPACK: 'WEBPACK',
-  MONGO: 'MONGO',
-  NODE: 'NODE',
-  FIREBASE: 'FIREBASE',
-  GRAPHQL: 'GRAPHQL',
-  REACT_NATIVE: 'REACT_NATIVE',
-  SOCKET: 'SOCKET',
   STYLED_COMPONENTS: 'STYLED_COMPONENTS',
+  SOCKET: 'SOCKET',
+  WEBPACK: 'WEBPACK',
+  REACT_NATIVE: 'REACT_NATIVE',
+  GRAPHQL: 'GRAPHQL',
+  FIREBASE: 'FIREBASE',
+  NODE: 'NODE',
+  MONGO: 'MONGO',
 };
 
 const skills = {
   [SKILL_KEYS.HTML]: {
     name: 'HTML5',
-    icon: HTML,
+    icon: Html,
     key: SKILL_KEYS.HTML,
   },
   [SKILL_KEYS.CSS]: {
     name: 'CSS3',
-    icon: CSS,
+    icon: Css,
     key: SKILL_KEYS.CSS,
   },
   [SKILL_KEYS.JS]: {
     name: 'JavaScript',
-    icon: JS,
+    icon: Js,
     key: SKILL_KEYS.JS,
   },
   [SKILL_KEYS.REACT]: {

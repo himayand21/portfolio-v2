@@ -23,7 +23,7 @@ type skillItemPropTypes = {
     name: string,
 }
 
-const SkillItem = ({
+export const SkillItem = ({
   isChecked,
   icon,
   name,

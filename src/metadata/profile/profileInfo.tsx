@@ -5,7 +5,8 @@ import Location from '../../icons/Location';
 import Job from '../../icons/Job';
 import LinkedIn from '../../icons/LinkedIn';
 import Github from '../../icons/Github';
-import Twitter from '../../icons/Twitter';
+import StackOverflow from '../../icons/StackOverflow';
+import Medium from '../../icons/Medium';
 
 const location = {
   getIcon: Location,
@@ -41,24 +42,25 @@ const BioFirst = () => (
 
 export const bioInfo = [
   <BioFirst />,
-  'If you have any suggestions or queries about my work, or would just like to discuss some awesome project ideas, you can reach out to me following the links below -',
 ];
 
 export const contactInfo = [{
+  getIcon: LinkedIn,
+  label: '@himayan',
+  link: 'https://www.linkedin.com/in/himayan',
+}, {
   getIcon: Github,
   label: '@himayand21',
   link: 'https://github.com/himayand21',
 }, {
-  getIcon: Twitter,
-  label: '@himayan7',
-  link: 'https://twitter.com/Himayan7',
-},
-{
-  getIcon: LinkedIn,
-  label: '@himayan-debnath',
-  link: 'https://www.linkedin.com/in/himayan-debnath',
-},
-];
+  getIcon: StackOverflow,
+  label: '@himayan',
+  link: 'https://stackoverflow.com/users/11737993/himayan',
+}, {
+  getIcon: Medium,
+  label: '@himayandebnath',
+  link: 'https://himayandebnath.medium.com',
+}];
 
 export type profilerowType = {
   getIcon: () => ReactElement,

@@ -60,11 +60,12 @@ export const AsideBlockTitle = styled(TypographyBody)`
     padding: 12px 15px 10px;
     font-weight: 400;
     color: ${({ theme }) => theme.text2};
+    border-bottom: 1px solid ${({ theme }) => theme.border};
 `;
 
 export const AsideBlockItem = styled.a`
     padding: 10px 15px;
-    border-top: 1px solid ${({ theme }) => theme.border};
+    border-bottom: 1px solid ${({ theme }) => theme.border};
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -75,6 +76,7 @@ export const AsideBlockItem = styled.a`
     }
     &:last-child {
         padding-bottom: 15px;
+        border-bottom: none;
     }
 `;
 
@@ -103,4 +105,12 @@ export const AsideItemTitle = styled(TypographyBodyReduced)`
 
 export const AsideItemSubtitle = styled(TypographyCaption)`
     color: ${({ theme }) => theme.text2};
+`;
+
+export const SkillContainer = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 15px 15px 15px;
 `;

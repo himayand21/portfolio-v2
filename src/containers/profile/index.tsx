@@ -40,6 +40,7 @@ import {
   AsideItemInfoWrapper,
   AsideItemTitle,
   AsideItemSubtitle,
+  SkillContainer,
 } from './styles/asideStyles';
 
 import { Pill, PillContent } from '../../styles';
@@ -53,6 +54,9 @@ import timeline, { timelineType } from '../../metadata/profile/timeline';
 import Bars from '../../icons/Bars';
 import Cross from '../../icons/Cross';
 import TimelineItem from './TimelineItem';
+import { SkillItem } from '../projects/ProjectItem';
+
+import skills, { SKILL_KEYS } from '../../metadata/skills';
 
 type ProfileProps = {
   ambience: string,
@@ -189,6 +193,21 @@ const Profile = ({
         <CrossIcon onClick={toggleSetIsHighlightsShown}>
           <Cross />
         </CrossIcon>
+        <AsideBlock key="Skills">
+          <AsideBlockTitle>
+            Skills
+          </AsideBlockTitle>
+          <SkillContainer>
+            {Object.values(SKILL_KEYS).map((skillKey: string): ReactElement => (
+              <SkillItem
+                key={skillKey}
+                isChecked
+                icon={skills[skillKey].icon}
+                name={skills[skillKey].name}
+              />
+            ))}
+          </SkillContainer>
+        </AsideBlock>
         {asideFeed.map(({
           type,
           items,

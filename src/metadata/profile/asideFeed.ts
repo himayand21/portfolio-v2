@@ -9,7 +9,7 @@ import Org22 from '../../images/highlights/Org22.png';
 import Org3 from '../../images/highlights/Org3.png';
 import Vol1 from '../../images/highlights/Vol1.jpg';
 
-const aiseFeed = [
+const asideFeed = [
   {
     type: 'Blogs',
     items: [{
@@ -83,4 +83,4 @@ export type asideFeedType = {
   items: asiderowType[],
 };
 
-export default aiseFeed;
+export default asideFeed;

@@ -334,7 +334,6 @@ export const SkillContainer = styled('div')<withIsChecked>`
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   @media only screen and (max-width: ${TABLET}px) {
     margin: 1px;
   }
