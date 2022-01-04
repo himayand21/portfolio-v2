@@ -15,6 +15,7 @@ export const TypographyBody = styled.span`
 export const TypographyBodyReduced = styled.span`
     font-size: 14px;
     font-weight: 200;
+    line-height: 1.6em;
     @media only screen and (max-width: ${TABLET}px) {
         font-size: 12px;
     }

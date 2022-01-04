@@ -118,4 +118,12 @@ export const BioText = styled(TypographyBodyReduced)`
     width: 100%;
     color: ${({ theme }) => theme.text2};
     line-height: 1.5em;
+    span {
+        font-size: inherit;
+    }
+    b {
+        font-size: inherit;
+        font-weight: bold;
+        color: ${({ theme }) => theme.text};
+    }
 `;

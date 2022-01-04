@@ -24,8 +24,23 @@ const job = {
 
 export const profileInfo = [location, job];
 
+const BioFirst = () => (
+  <span>
+    Hey there! I am a
+    <b> front-end developer </b>
+    trying to make the web a better place.
+    I am passionate about
+    <b> quality software, responsive UI </b>
+    and
+    <b> clean code</b>
+    . When I am not picking my brain trying to name a variable in front of a computer 👨🏾‍💻,
+    I am trying new recipes in the kitchen 👨🏾‍🍳
+    or struggling to play the E chord on my ukulele 🎸
+  </span>
+);
+
 export const bioInfo = [
-  'Hey there! I am a front-end developer trying to make the web a better place. I am passionate about quality software, responsive UI and clean code. When I am not picking my brain trying to name a variable in front of a computer 👨🏾‍💻, I am trying new recipes in the kitchen 👨🏾‍🍳 or struggling to play the E chord on my ukulele 🎸.',
+  <BioFirst />,
   'If you have any suggestions or queries about my work, or would just like to discuss some awesome project ideas, you can reach out to me following the links below -',
 ];
 
