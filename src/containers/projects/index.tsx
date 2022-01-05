@@ -13,31 +13,19 @@ import {
   TitleRow,
   Subtitle,
   Grid,
-  SkillImage,
-  SkillFilter,
+  SkillFilterTogglerFixed,
   SkillFilterSpan,
   SkillFilterBadge,
   SkillFilterIcon,
   Aside,
-  SkillRows,
-  SkillFilterHeaderRow,
-  SkillFilterFooterRow,
-  SkillFilterHeader,
-  SkillFilterSelectAllBtn,
-  SkillFilterSelectAllSpan,
-  SkillRow,
-  SkillRowLabel,
-  SkillRowImageContainer,
-  SkillInfo,
-  SkillCheckBox,
 } from './styles';
 
 import projects, { projectInfoType } from '../../metadata/projects';
-import skills, { skillType, SKILL_KEYS } from '../../metadata/skills';
+import { skillType, SKILL_KEYS } from '../../metadata/skills';
 
 import Filter from '../../icons/Filter';
-import Check from '../../icons/Check';
 import ProjectItem from './ProjectItem';
+import SkillContent from './SkillContent';
 
 const Projects = (): ReactElement => {
   const [isFiltersShown, setIsFiltersShown] = useState(false);
@@ -112,7 +100,7 @@ const Projects = (): ReactElement => {
           <Title>
             Projects
           </Title>
-          <SkillFilter
+          <SkillFilterTogglerFixed
             onClick={toggleFiltersShown}
           >
             <SkillFilterIcon>
@@ -124,7 +112,7 @@ const Projects = (): ReactElement => {
             <SkillFilterBadge>
               {numberOfSkillsSelected}
             </SkillFilterBadge>
-          </SkillFilter>
+          </SkillFilterTogglerFixed>
         </TitleRow>
         <Subtitle>
           Here are a few projects I have worked on over the years -
@@ -153,52 +141,14 @@ const Projects = (): ReactElement => {
         isFiltersShown={isFiltersShown}
         ref={filtersRef}
       >
-        <SkillFilterHeaderRow>
-          <SkillFilterHeader>Filters</SkillFilterHeader>
-          <SkillFilterSelectAllBtn
-            onClick={toggleSelectAllFilters}
-          >
-            <SkillFilterSelectAllSpan>
-              {`${areAllSkillsSelected ? 'Clear' : 'Select'} all`}
-            </SkillFilterSelectAllSpan>
-          </SkillFilterSelectAllBtn>
-        </SkillFilterHeaderRow>
-        <SkillRows>
-          {Object.entries(skills).map(([
-            skillKey, {
-              name,
-              icon,
-            }]: [string, skillType]): ReactElement => {
-            const isChecked = selectedSkills.includes(skillKey);
-            return (
-              <SkillRow key={name}>
-                <SkillInfo>
-                  <SkillRowImageContainer>
-                    <SkillImage src={icon} />
-                  </SkillRowImageContainer>
-                  <SkillRowLabel>{name}</SkillRowLabel>
-                </SkillInfo>
-                <SkillCheckBox
-                  isChecked={isChecked}
-                  data-skill-key={skillKey}
-                  onClick={toggleFilterCheck}
-                >
-                  <Check />
-                </SkillCheckBox>
-              </SkillRow>
-            );
-          })}
-        </SkillRows>
-        <SkillFilterFooterRow>
-          <SkillFilterHeader>
-            {`${selectedProjects.length} projects`}
-          </SkillFilterHeader>
-          <SkillFilter onClick={toggleFiltersShown}>
-            <SkillFilterSpan>
-              Done
-            </SkillFilterSpan>
-          </SkillFilter>
-        </SkillFilterFooterRow>
+        <SkillContent
+          toggleFilterCheck={toggleFilterCheck}
+          toggleFiltersShown={toggleFiltersShown}
+          toggleSelectAllFilters={toggleSelectAllFilters}
+          areAllSkillsSelected={areAllSkillsSelected}
+          selectedSkills={selectedSkills}
+          selectedProjects={selectedProjects}
+        />
       </Aside>
     </>
   );

@@ -24,21 +24,39 @@ export const Title = styled(TypographyHeadline)`
   flex: 1;
 `;
 
-export const SkillFilter = styled.button`
+export const SkillFilterToggler = styled.button`
   background-color: ${({ theme }) => theme.color};
   color: ${({ theme }) => theme.background};
-  border: none;
   padding: 3px 10px;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border: none;
   @media (hover: hover) {
     transition: background-color 0.3s ease-out;
     &:hover {
       background-color: ${({ theme }) => lighten(0.1, theme.color)};
     }
+  }
+`;
+
+export const SkillFilterTogglerFixed = styled(SkillFilterToggler)`
+  position: fixed;
+  top: 40px;
+  right: 60px;
+  z-index: 2;
+  border: 4px solid ${({ theme }) => theme.text2};
+  @media only screen and (max-width: ${LAPTOP}px) {
+    right: 50px;
+  }
+  @media only screen and (max-width: ${TABLET}px) {
+    right: 40px;
+  }
+  @media only screen and (max-width: ${MOBILE}px) {
+    top: 25px;
+    right: 25px;
   }
 `;
 
@@ -274,6 +292,7 @@ export const SkillRows = styled.div`
     padding-left: 20px;
     margin-right: -20px;
     padding-right: 20px;
+    overscroll-behavior: contain;
   }
 `;
 
