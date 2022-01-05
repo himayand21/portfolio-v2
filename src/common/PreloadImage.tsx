@@ -14,12 +14,14 @@ const PreloadImage = ({
 }: PreloadImageProps): ReactElement => {
   useEffect(() => {
     if (imageRef.current) {
-      imageRef.current.style.opacity = '0';
-      imageRef.current.onload = () => {
-        if (imageRef.current) {
-          imageRef.current.style.opacity = '1';
-        }
-      };
+      if (!imageRef.current.complete) {
+        imageRef.current.style.opacity = '0';
+        imageRef.current.onload = () => {
+          if (imageRef.current) {
+            imageRef.current.style.opacity = '1';
+          }
+        };
+      }
     }
   }, []);
 
