@@ -10,13 +10,12 @@ type withIsHightlightsShown = {
 
 export const Aside = styled('aside')<withIsHightlightsShown>`
     flex: 1;
-    min-height: 100vh;
     position: sticky;
     top: 0;
     min-width: 250px;
     padding-top: 20px;
     @media only screen and (max-width: ${LAPTOP}px) {
-        max-height: 100vh;
+        max-height: 100%;
         box-sizing: border-box;
         z-index: 5;
         ${({ isHighlightsShown, theme }) => (isHighlightsShown ? (`

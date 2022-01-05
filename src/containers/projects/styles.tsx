@@ -179,11 +179,11 @@ type withIsFiltersShown = {
 }
 
 export const Aside = styled('aside')<withIsFiltersShown>`
-  min-height: 100vh;
+  min-height: 100%;
   position: fixed;
   min-width: 300px;
   padding: 20px;
-  max-height: 100vh;
+  max-height: 100%;
   box-sizing: border-box;
   z-index: 5;
   ${({ isFiltersShown, theme }) => (isFiltersShown ? (`

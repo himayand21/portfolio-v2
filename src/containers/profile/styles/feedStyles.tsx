@@ -19,7 +19,7 @@ export const FeedWrapper = styled.section`
 export const Feed = styled.div`
     max-width: 600px;
     min-width: 60%;
-    min-height: 100vh;
+    min-height: 100%;
     border-right: 1px solid ${({ theme }) => theme.border};
     @media only screen and (max-width: ${LAPTOP}px) {
         width: 100%;
