@@ -69,7 +69,7 @@ export const SkillFilterIcon = styled.div`
 `;
 
 export const SkillFilterSpan = styled(TypographyLabelReduced)`
-  font-weight: bold;
+  font-weight: 400;
 `;
 
 export const SkillFilterBadge = styled(TypographyCaption)`
@@ -78,7 +78,7 @@ export const SkillFilterBadge = styled(TypographyCaption)`
   transform: translateX(4px);
   color: ${({ theme }) => theme.color};
   background-color: ${({ theme }) => theme.background};
-  font-weight: bold;
+  font-weight: 400;
 `;
 
 export const Subtitle = styled(TypographyIntroReduced)`
@@ -150,7 +150,7 @@ export const ProjectTitle = styled(TypographyLabelSuper)`
 export const ProjectSubTitle = styled(TypographyCaption)`
   color: rgba(255, 255, 255, 0.7);
   margin: 5px 15px 15px;
-  font-weight: bold;
+  font-weight: 400;
   @media only screen and (max-width: ${TABLET}px) {
     margin: 2px 10px 10px;
   }
@@ -187,7 +187,7 @@ export const SkillImage = styled.img`
 `;
 
 export const SkillLabel = styled(TypographyCaption)`
-  font-weight: bold;
+  font-weight: 400;
   margin-left: 5px;
 `;
 
@@ -268,7 +268,7 @@ export const SkillFilterFooterRow = styled.div`
 `;
 
 export const SkillFilterHeader = styled(TypographyBody)`
-  font-weight: bold;
+  font-weight: 400;
   flex: 1;
 `;
 
@@ -281,7 +281,7 @@ export const SkillFilterSelectAllBtn = styled.button`
 
 export const SkillFilterSelectAllSpan = styled(TypographyBody)`
   color: ${({ theme }) => theme.color};
-  font-weight: bold;
+  font-weight: 400;
 `;
 
 export const SkillRows = styled.div`
@@ -298,7 +298,7 @@ export const SkillRows = styled.div`
 
 export const SkillRowLabel = styled(TypographyLabelReduced)`
   color: ${({ theme }) => theme.text2};
-  font-weight: bold;
+  font-weight: 400;
   margin-left: 10px;
 `;
 

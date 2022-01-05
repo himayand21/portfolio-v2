@@ -91,7 +91,9 @@ const Profile = ({
   }, [isHighlightsShown]);
 
   return (
-    <FeedWrapper>
+    <FeedWrapper
+      isHighlightsShown={isHighlightsShown}
+    >
       <Feed>
         <HeaderWrapper>
           <Header>Profile</Header>

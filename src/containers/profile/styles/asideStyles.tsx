@@ -15,6 +15,7 @@ export const Aside = styled('aside')<withIsHightlightsShown>`
     min-width: 250px;
     padding-top: 20px;
     overscroll-behavior: contain;
+    pointer-events: auto;
     @media only screen and (max-width: ${LAPTOP}px) {
         max-height: 100%;
         box-sizing: border-box;

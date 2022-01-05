@@ -2,17 +2,27 @@ import { transparentize } from 'polished';
 import styled from 'styled-components';
 
 import {
-  DESKTOP, LAPTOP,
+  DESKTOP, LAPTOP, ThemeType,
 } from '../../../constants';
 import { TypographyIntroSuper } from '../../../styles';
 
-export const FeedWrapper = styled.section`
+type withIsHightlightsShown = {
+    isHighlightsShown: boolean,
+    theme: ThemeType,
+}
+
+export const FeedWrapper = styled('section')<withIsHightlightsShown>`
     display: flex;
     align-items: flex-start;
     width: 100%;
     padding-right: calc(50vw - 725px);
     @media only screen and (max-width: ${DESKTOP}px) {
         padding-right: 0px;
+    }
+    @media only screen and (max-width: ${LAPTOP}px) {
+        ${({ isHighlightsShown }) => (isHighlightsShown ? (`
+            pointer-events: none;
+        `) : '')};
     }
 `;
 

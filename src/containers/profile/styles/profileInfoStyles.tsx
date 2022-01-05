@@ -122,8 +122,9 @@ export const BioText = styled(TypographyBodyReduced)`
         font-size: inherit;
     }
     b {
-        font-size: inherit;
-        font-weight: bold;
+        font-size: 12px;
+        font-weight: 400;
         color: ${({ theme }) => theme.text};
+        letter-spacing: auto;
     }
 `;

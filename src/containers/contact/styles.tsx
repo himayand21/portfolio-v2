@@ -63,7 +63,7 @@ export const DisplayName = styled(TypographyIntro)`
   position: absolute;
   left: 20px;
   bottom: 8px;
-  font-weight: bold;
+  font-weight: 400;
   color: ${({ theme }) => theme.text2};
   @media only screen and (max-width: ${MOBILE}px) {
     display: none;
@@ -72,7 +72,7 @@ export const DisplayName = styled(TypographyIntro)`
 
 export const DescriptionName = styled(TypographyIntro)`
   width: 100%;
-  font-weight: bold;
+  font-weight: 400;
   text-align: center;
   margin-top: 17%;
   margin-bottom: 20px;
