@@ -10,6 +10,10 @@ import Node from '../images/skills/node.png';
 import Firebase from '../images/skills/firebase.png';
 import GraphQL from '../images/skills/graphql.png';
 import Socket from '../images/skills/socket.png';
+import Ts from '../images/skills/ts.png';
+import TestingLibrary from '../images/skills/testingLibrary.png';
+import Jest from '../images/skills/jest.png';
+import Puppeteer from '../images/skills/puppeteer.png';
 import StyledComponents from '../images/skills/styledComponents.png';
 
 export const SKILL_KEYS = {
@@ -20,11 +24,15 @@ export const SKILL_KEYS = {
   REDUX: 'REDUX',
   SASS: 'SASS',
   STYLED_COMPONENTS: 'STYLED_COMPONENTS',
+  TS: 'TS',
   SOCKET: 'SOCKET',
   WEBPACK: 'WEBPACK',
+  TESTING_LIBRARY: 'TESTING_LIBRARY',
+  JEST: 'JEST',
   REACT_NATIVE: 'REACT_NATIVE',
   GRAPHQL: 'GRAPHQL',
   FIREBASE: 'FIREBASE',
+  PUPPETEER: 'PUPPETEER',
   NODE: 'NODE',
   MONGO: 'MONGO',
 };
@@ -56,49 +64,69 @@ const skills = {
     key: SKILL_KEYS.REDUX,
   },
   [SKILL_KEYS.SASS]: {
-    name: 'Sass',
+    name: 'SCSS',
     icon: Sass,
     key: SKILL_KEYS.SASS,
   },
-  [SKILL_KEYS.WEBPACK]: {
-    name: 'Webpack',
-    icon: Webpack,
-    key: SKILL_KEYS.WEBPACK,
+  [SKILL_KEYS.STYLED_COMPONENTS]: {
+    name: 'Styled Components',
+    icon: StyledComponents,
+    key: SKILL_KEYS.STYLED_COMPONENTS,
   },
-  [SKILL_KEYS.MONGO]: {
-    name: 'MongoDB',
-    icon: Mongo,
-    key: SKILL_KEYS.MONGO,
-  },
-  [SKILL_KEYS.NODE]: {
-    name: 'NodeJS',
-    icon: Node,
-    key: SKILL_KEYS.NODE,
-  },
-  [SKILL_KEYS.FIREBASE]: {
-    name: 'Firebase',
-    icon: Firebase,
-    key: SKILL_KEYS.FIREBASE,
-  },
-  [SKILL_KEYS.GRAPHQL]: {
-    name: 'GraphQL',
-    icon: GraphQL,
-    key: SKILL_KEYS.GRAPHQL,
-  },
-  [SKILL_KEYS.REACT_NATIVE]: {
-    name: 'React Native',
-    icon: React,
-    key: SKILL_KEYS.REACT_NATIVE,
+  [SKILL_KEYS.TS]: {
+    name: 'TypeScript',
+    icon: Ts,
+    key: SKILL_KEYS.TS,
   },
   [SKILL_KEYS.SOCKET]: {
     name: 'Socket IO',
     icon: Socket,
     key: SKILL_KEYS.SOCKET,
   },
-  [SKILL_KEYS.STYLED_COMPONENTS]: {
-    name: 'Styled Components',
-    icon: StyledComponents,
-    key: SKILL_KEYS.STYLED_COMPONENTS,
+  [SKILL_KEYS.WEBPACK]: {
+    name: 'Webpack',
+    icon: Webpack,
+    key: SKILL_KEYS.WEBPACK,
+  },
+  [SKILL_KEYS.TESTING_LIBRARY]: {
+    name: 'Testing Library',
+    icon: TestingLibrary,
+    key: SKILL_KEYS.TESTING_LIBRARY,
+  },
+  [SKILL_KEYS.JEST]: {
+    name: 'Jest',
+    icon: Jest,
+    key: SKILL_KEYS.JEST,
+  },
+  [SKILL_KEYS.REACT_NATIVE]: {
+    name: 'React Native',
+    icon: React,
+    key: SKILL_KEYS.REACT_NATIVE,
+  },
+  [SKILL_KEYS.GRAPHQL]: {
+    name: 'GraphQL',
+    icon: GraphQL,
+    key: SKILL_KEYS.GRAPHQL,
+  },
+  [SKILL_KEYS.FIREBASE]: {
+    name: 'Firebase',
+    icon: Firebase,
+    key: SKILL_KEYS.FIREBASE,
+  },
+  [SKILL_KEYS.PUPPETEER]: {
+    name: 'Puppeteer',
+    icon: Puppeteer,
+    key: SKILL_KEYS.PUPPETEER,
+  },
+  [SKILL_KEYS.NODE]: {
+    name: 'NodeJS',
+    icon: Node,
+    key: SKILL_KEYS.NODE,
+  },
+  [SKILL_KEYS.MONGO]: {
+    name: 'MongoDB',
+    icon: Mongo,
+    key: SKILL_KEYS.MONGO,
   },
 };
 
