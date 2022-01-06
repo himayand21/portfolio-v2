@@ -15,7 +15,7 @@ import newyear from '../images/projects/newyear.jpg';
 import christmas from '../images/projects/christmas.jpg';
 import addabuzz from '../images/projects/addabuzz.jpg';
 
-import SKILLSET, { skillType } from './skills';
+import SKILLSET, { skillType, SKILL_KEYS } from './skills';
 
 const {
   HTML,
@@ -158,3 +158,9 @@ export type projectInfoType = {
   link: string,
   skills: skillType[],
 };
+
+export const allSkills = Object.keys(SKILL_KEYS).filter((skill) => (
+  projects.some(({ skills: projectSkills }: projectInfoType) => (
+    projectSkills.some(({ key } : skillType) => (key === skill))
+  ))
+));

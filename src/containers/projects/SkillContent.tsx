@@ -1,8 +1,8 @@
 import { MouseEventHandler, ReactElement } from 'react';
 
 import Check from '../../icons/Check';
-import { projectInfoType } from '../../metadata/projects';
-import skills, { skillType } from '../../metadata/skills';
+import { projectInfoType, allSkills } from '../../metadata/projects';
+import skills from '../../metadata/skills';
 
 import {
   SkillImage,
@@ -50,11 +50,8 @@ const SkillContent = ({
       </SkillFilterSelectAllBtn>
     </SkillFilterHeaderRow>
     <SkillRows>
-      {Object.entries(skills).map(([
-        skillKey, {
-          name,
-          icon,
-        }]: [string, skillType]): ReactElement => {
+      {allSkills.map((skillKey: string): ReactElement => {
+        const { name, icon } = skills[skillKey];
         const isChecked = selectedSkills.includes(skillKey);
         return (
           <SkillRow key={name}>

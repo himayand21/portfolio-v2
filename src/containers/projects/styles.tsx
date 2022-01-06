@@ -27,7 +27,7 @@ export const Title = styled(TypographyHeadline)`
 export const SkillFilterToggler = styled.button`
   background-color: ${({ theme }) => theme.color};
   color: ${({ theme }) => theme.background};
-  padding: 3px 10px;
+  padding: 3px 8px;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@ export const SkillFilterTogglerFixed = styled(SkillFilterToggler)`
   top: 40px;
   right: 60px;
   z-index: 2;
-  border: 4px solid ${({ theme }) => theme.text2};
+  border: 3px solid ${({ theme }) => theme.text2};
   @media only screen and (max-width: ${LAPTOP}px) {
     right: 50px;
   }
@@ -69,7 +69,7 @@ export const SkillFilterIcon = styled.div`
 `;
 
 export const SkillFilterSpan = styled(TypographyLabelReduced)`
-  font-weight: 400;
+  font-weight: 600;
 `;
 
 export const SkillFilterBadge = styled(TypographyCaption)`

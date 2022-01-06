@@ -20,8 +20,8 @@ import {
   Aside,
 } from './styles';
 
-import projects, { projectInfoType } from '../../metadata/projects';
-import { skillType, SKILL_KEYS } from '../../metadata/skills';
+import projects, { projectInfoType, allSkills } from '../../metadata/projects';
+import { skillType } from '../../metadata/skills';
 
 import Filter from '../../icons/Filter';
 import ProjectItem from './ProjectItem';
@@ -29,12 +29,13 @@ import SkillContent from './SkillContent';
 
 const Projects = (): ReactElement => {
   const [isFiltersShown, setIsFiltersShown] = useState(false);
-  const [selectedSkills, setSelectedSkills] = useState(Object.values(SKILL_KEYS));
+  const [selectedSkills, setSelectedSkills] = useState(allSkills);
 
   const filtersRef = useRef<HTMLDivElement>(null);
 
   const numberOfSkillsSelected = selectedSkills.length;
-  const areAllSkillsSelected = Object.keys(SKILL_KEYS).length === numberOfSkillsSelected;
+
+  const areAllSkillsSelected = allSkills.length === numberOfSkillsSelected;
 
   const toggleFiltersShown = () => setIsFiltersShown(!isFiltersShown);
 
@@ -69,7 +70,7 @@ const Projects = (): ReactElement => {
     if (areAllSkillsSelected) {
       setSelectedSkills([]);
     } else {
-      setSelectedSkills(Object.values(SKILL_KEYS));
+      setSelectedSkills(allSkills);
     }
   };
 
