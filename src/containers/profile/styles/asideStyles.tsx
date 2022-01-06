@@ -13,6 +13,7 @@ export const Aside = styled('aside')<withIsHightlightsShown>`
     position: sticky;
     top: 0px;
     min-width: 250px;
+    min-height: 100vh;
     max-width: 350px;
     padding-top: 20px;
     overscroll-behavior: contain;
@@ -40,6 +41,7 @@ export const Aside = styled('aside')<withIsHightlightsShown>`
         `))}
     }
     @media only screen and (max-width: ${MOBILE}px) {
+        max-width: unset;
         ${({ isHighlightsShown }) => (isHighlightsShown ? (`
             border-left: none;
         `) : '')}
