@@ -23,7 +23,7 @@ export const Aside = styled('aside')<withIsHightlightsShown>`
         z-index: 5;
         ${({ isHighlightsShown, theme }) => (isHighlightsShown ? (`
             position: fixed;
-            top: 0px;
+            top: 0px !important;
             right: 0px;
             background-color: ${theme.background};
             border-left: 1px solid ${theme.border};
