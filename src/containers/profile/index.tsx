@@ -80,6 +80,13 @@ const Profile = ({
     }
   };
 
+  const handleAsideTop = () => {
+    const highlightsElem = highlightsRef.current;
+    if (highlightsElem) {
+      highlightsElem.style.top = `${window.innerHeight - (highlightsElem.offsetHeight + 20)}px`;
+    }
+  };
+
   useEffect(() => {
     if (isHighlightsShown) {
       document.addEventListener('click', handleOutsideClick, false);
@@ -89,6 +96,14 @@ const Profile = ({
     }
     return (() => undefined);
   }, [isHighlightsShown]);
+
+  useEffect(() => {
+    handleAsideTop();
+    window.addEventListener('resize', handleAsideTop);
+    return (() => {
+      window.removeEventListener('resize', handleAsideTop);
+    });
+  }, []);
 
   return (
     <FeedWrapper

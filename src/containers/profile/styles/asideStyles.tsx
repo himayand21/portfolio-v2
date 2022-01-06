@@ -11,8 +11,9 @@ type withIsHightlightsShown = {
 export const Aside = styled('aside')<withIsHightlightsShown>`
     flex: 1;
     position: sticky;
-    top: 0;
+    top: 0px;
     min-width: 250px;
+    max-width: 350px;
     padding-top: 20px;
     overscroll-behavior: contain;
     pointer-events: auto;
