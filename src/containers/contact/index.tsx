@@ -48,7 +48,7 @@ import {
 const BUTTON_TEXTS = {
   SEND: 'Send Message',
   SENDING: 'Sending ...',
-  FAILED: 'Sending Failed',
+  FAILED: 'Message not Sent',
   SENT: 'Message Sent',
 };
 
@@ -99,7 +99,10 @@ const Contact = (): ReactElement => {
       };
       try {
         setButtonMessage(BUTTON_TEXTS.SENDING);
-        await fetch('/', options);
+        const response = await fetch('/', options);
+        if (!response?.ok) {
+          throw response;
+        }
         await delay(1000);
         setButtonMessage(BUTTON_TEXTS.SENT);
       } catch (error) {
@@ -217,7 +220,6 @@ const Contact = (): ReactElement => {
         <GetInTouchForm
           name="portfolio-contact"
           method="POST"
-          data-netlify="true"
           ref={contactFormRef}
           onSubmit={handleFormSubmit}
         >
