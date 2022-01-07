@@ -50,7 +50,9 @@ const Settings = ({
       <Box>
         <Pallete>
           {Object.values(COLORS).map((each) => (
-            <PickerWrapper>
+            <PickerWrapper
+              key={each}
+            >
               <Picker
                 filledColor={COLOR_MAP[each]}
                 onClick={() => setColor(each)}

@@ -146,7 +146,12 @@ const Profile = ({
             </ProfileRow>
             <ProfileRow>
               {bioInfo.map((text) => (
-                <BioText as="div">{text}</BioText>
+                <BioText
+                  as="div"
+                  key="bio-text"
+                >
+                  {text}
+                </BioText>
               ))}
             </ProfileRow>
             <ProfileRow>
@@ -155,7 +160,7 @@ const Profile = ({
                 label,
                 link,
               }: profilerowType): ReactElement => (
-                <Info key={label}>
+                <Info key={link}>
                   <InfoLogo>
                     {getIcon()}
                   </InfoLogo>
@@ -199,6 +204,7 @@ const Profile = ({
               getIcon={getIcon}
               link={link}
               ambience={ambience}
+              key={date}
             />
           );
         })}
@@ -239,7 +245,11 @@ const Profile = ({
               getImage,
               link,
             }: asiderowType): ReactElement => (
-              <AsideBlockItem href={link} target="blank">
+              <AsideBlockItem
+                href={link}
+                target="blank"
+                key={link}
+              >
                 <AsideItemImage
                   src={getImage(ambience)}
                   alt=""

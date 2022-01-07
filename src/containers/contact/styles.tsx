@@ -4,7 +4,6 @@ import { MOBILE, TABLET, ThemeType } from '../../constants';
 
 import {
   TypographyBody,
-  TypographyBodyReduced,
   TypographyHeadline,
   TypographyIntro,
   TypographyIntroReduced,
@@ -129,12 +128,17 @@ export const ContactInfoSpan = styled(TypographyLabelReduced)`
   margin-left: 10px;
 `;
 
+export const ResumeLinkWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const ResumeLink = styled.a`
-  padding: 3px 8px;
   text-decoration: none;
-  border-radius: 12px;
-  background-color: ${({ theme }) => theme.backgroundHover};
+  cursor: pointer;
   color: ${({ theme }) => theme.color};
+  margin-left: 6px;
   @media (hover: hover) {
     &:hover {
       color: ${({ theme }) => darken(0.1, theme.color)};
@@ -142,7 +146,7 @@ export const ResumeLink = styled.a`
   }
 `;
 
-export const ResumeLabel = styled(TypographyBodyReduced)`
+export const ResumeLabel = styled(TypographyBody)`
   font-weight: 400;
 `;
 
@@ -211,7 +215,7 @@ export const Aside = styled('aside')<withIsContactFormShown>`
 export const GetInTouchBtn = styled.button`
   background-color: ${({ theme }) => theme.color};
   color: ${({ theme }) => theme.background};
-  padding: 3px 8px;
+  padding: 8px 10px;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -224,9 +228,12 @@ export const GetInTouchBtn = styled.button`
       background-color: ${({ theme }) => lighten(0.1, theme.color)};
     }
   }
+  @media only screen and (max-width: ${MOBILE}px) {
+    padding: 6px 8px;
+  }
 `;
 
-export const GetInTouchSpan = styled(TypographyBodyReduced)`
+export const GetInTouchSpan = styled(TypographyBody)`
   font-weight: 400;
 `;
 

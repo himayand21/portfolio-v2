@@ -36,6 +36,7 @@ const Navigator = (): ReactElement => {
         <MenuItem
           onClick={() => switchTab(path)}
           isActive={checkIfActive(path)}
+          key={path}
         >
           <MenuLogo isActive={checkIfActive(path)}>
             <Icon />

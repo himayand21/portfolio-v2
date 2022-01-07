@@ -8,8 +8,9 @@ import {
 } from 'react';
 
 import {
-  contactInfo, profilerowType, profileInfo, resumeInfo,
+  contactInfo, profilerowType, profileInfo, RESUME_LINK,
 } from '../../metadata/profile/profileInfo';
+import Anchor from '../../icons/Anchor';
 
 import { Article } from '../../styles';
 import {
@@ -29,6 +30,7 @@ import {
   ContactRow,
   ContactInfoLogo,
   ContactInfoSpan,
+  ResumeLinkWrapper,
   ResumeLink,
   ResumeLabel,
   Footer,
@@ -178,7 +180,7 @@ const Contact = (): ReactElement => {
                   label,
                   link,
                 }: profilerowType): ReactElement => (
-                  <Info key={label}>
+                  <Info key={link}>
                     <InfoLogo>
                       {getIcon()}
                     </InfoLogo>
@@ -193,14 +195,19 @@ const Contact = (): ReactElement => {
               </ProfileRow>
             </DescriptionValue>
             <Footer>
-              <ResumeLink
-                href={resumeInfo.link}
-                target="blank"
-              >
-                <ResumeLabel>
-                  {resumeInfo.label}
-                </ResumeLabel>
-              </ResumeLink>
+              <ResumeLinkWrapper>
+                <InfoLogo>
+                  <Anchor />
+                </InfoLogo>
+                <ResumeLink
+                  href={RESUME_LINK}
+                  target="blank"
+                >
+                  <ResumeLabel>
+                    Resume
+                  </ResumeLabel>
+                </ResumeLink>
+              </ResumeLinkWrapper>
               <GetInTouchBtn onClick={toggleIsContactFormShown}>
                 <GetInTouchSpan>
                   Get in Touch

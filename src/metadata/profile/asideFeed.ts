@@ -8,6 +8,9 @@ import Org21 from '../../images/highlights/Org21.png';
 import Org22 from '../../images/highlights/Org22.png';
 import Org3 from '../../images/highlights/Org3.png';
 import Vol1 from '../../images/highlights/Vol1.jpg';
+import Sass from '../../images/skills/sass.png';
+import Webpack from '../../images/skills/webpack.png';
+import GraphQL from '../../images/skills/graphql.png';
 
 const asideFeed = [
   {
@@ -58,6 +61,25 @@ const asideFeed = [
       title: '10 CSS things I wish I knew when I was a beginner',
       subtitle: 'August 2020',
       getImage: (): string => Blog1,
+    }],
+  },
+  {
+    type: 'Certifications',
+    items: [{
+      link: 'https://drive.google.com/file/d/19Dp2C3zFRTJRfNwj_-BaJHw6Tzu5_Srx/view?usp=drivesdk',
+      title: 'The Complete Sass and SCSS Course',
+      subtitle: 'Mar 2020 | Udemy',
+      getImage: (): string => Sass,
+    }, {
+      link: 'https://drive.google.com/file/d/19Exk87mArdBqIgtyCqHPQZPXukK26gg_/view?usp=drivesdk',
+      title: 'GraphQL with React: The Complete Developer\'s Guide',
+      subtitle: 'February 2020 | Udemy',
+      getImage: (): string => GraphQL,
+    }, {
+      link: 'https://drive.google.com/file/d/1MZPuL-lwtuwsihFPgUuIZl2xqpjrkSmT/view?usp=sharing',
+      title: 'Webpack 2: The Complete Developer\'s Guide',
+      subtitle: 'November 2019 | Udemy',
+      getImage: (): string => Webpack,
     }],
   },
   {
