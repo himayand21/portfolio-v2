@@ -59,9 +59,7 @@ export const HighlightsIcon = styled.span`
     display: none;
     align-items: center;
     color: ${({ theme }) => theme.color};
-    &:hover {
-        cursor: pointer;
-    }
+    cursor: pointer;
     @media only screen and (max-width: ${LAPTOP}px) {
         display: flex;
     }
@@ -84,9 +82,7 @@ export const CrossIcon = styled.div`
     top: 10px;
     right 20px;
     z-index: 6;
-    &:hover {
-        cursor: pointer;
-    }
+    cursor: pointer;
     @media only screen and (max-width: ${LAPTOP}px) {
         display: flex;
     }

@@ -46,9 +46,11 @@ export const MenuItem = styled.li`
         background-color: ${theme.color};
         color: ${theme.containedText};
     `) : (`
-        &:hover {
-            cursor: pointer;
-            background-color: ${transparentize(0.9, theme.color)};
+        cursor: pointer;
+        @media (hover: hover) {
+            &:hover {
+                background-color: ${transparentize(0.9, theme.color)};
+            }
         }
     `))}
     @media only screen and (max-width: ${LAPTOP}px) {

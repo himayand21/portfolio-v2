@@ -105,12 +105,12 @@ export const GridItem = styled.a`
   padding-top: 67%;
   position: relative;
   display: block;
+  cursor: pointer;
   @media (hover: hover) {
     .project-image {
       transition: transform 0.3s ease-out;
     }
     &:hover {
-      cursor: pointer;
       .project-image {
         transform: scale(1.05);
       }

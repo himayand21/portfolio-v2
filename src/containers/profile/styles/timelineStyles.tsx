@@ -68,8 +68,10 @@ export const TimelineLink = styled.a`
     background-color: ${({ theme }) => theme.backgroundHover};
     transition: background-color ease-in 0.3s;
     cursor: pointer;
-    &:hover {
-        background-color: ${({ theme }) => transparentize(0.1, theme.backgroundHover)};
+    @media (hover: hover) {
+        &:hover {
+            background-color: ${({ theme }) => transparentize(0.1, theme.backgroundHover)};
+        }
     }
 `;
 

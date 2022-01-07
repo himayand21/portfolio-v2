@@ -103,8 +103,10 @@ export const InfoLink = styled.a`
     color: ${({ theme }) => theme.color};
     text-decoration: none;
     font-weight: 400;
-    &:hover {
-        color: ${({ theme }) => darken(0.1, theme.color)};
+    @media (hover: hover) {
+        &:hover {
+            color: ${({ theme }) => darken(0.1, theme.color)};
+        }
     }
 `;
 

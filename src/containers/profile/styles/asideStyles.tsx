@@ -75,8 +75,10 @@ export const AsideBlockItem = styled.a`
     align-items: center;
     cursor: pointer;
     transition: background-color ease-in 0.3s;
-    &:hover {
-        background-color: ${({ theme }) => transparentize(0.5, theme.background)};
+    @media (hover: hover) {
+        &:hover {
+            background-color: ${({ theme }) => transparentize(0.5, theme.background)};
+        }
     }
     &:last-child {
         padding-bottom: 15px;
