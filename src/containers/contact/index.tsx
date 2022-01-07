@@ -4,7 +4,7 @@ import {
   useState,
   useEffect,
   ChangeEvent,
-  MouseEvent,
+  FormEvent,
 } from 'react';
 
 import {
@@ -83,7 +83,7 @@ const Contact = (): ReactElement => {
     }
   };
 
-  const handleFormSubmit = async (event: MouseEvent<HTMLButtonElement>) => {
+  const handleFormSubmit = async (event: FormEvent) => {
     event.preventDefault();
     if (contactFormRef.current) {
       const options = {
@@ -219,6 +219,7 @@ const Contact = (): ReactElement => {
           method="POST"
           data-netlify="true"
           ref={contactFormRef}
+          onSubmit={handleFormSubmit}
         >
           <input type="hidden" name="form-name" value="portfolio-contact" />
           <GetInTouchRow>
@@ -256,7 +257,6 @@ const Contact = (): ReactElement => {
           </GetInTouchRow>
           <GetInTouchRow>
             <SendMessageBtn
-              onClick={handleFormSubmit}
               type="submit"
               disabled={isDisabled || !isEditable}
             >
