@@ -83,33 +83,37 @@ const Contact = (): ReactElement => {
     }
   };
 
-  // const handleFormSubmit = async (event: MouseEvent<HTMLButtonElement>) => {
-  //   event.preventDefault();
-  //   if (contactFormRef.current) {
-  //     const formData = new FormData(contactFormRef.current);
-  //     try {
-  //       setButtonMessage(BUTTON_TEXTS.SENDING);
-  //       await fetch('/', {
-  //         method: 'POST',
-  //         headers: {
-  //           'Content-Type': 'application/x-www-form-urlencoded',
-  //         },
-  //         body: new URLSearchParams(formData.toString()).toString(),
-  //       });
-  //       await delay(1000);
-  //       setButtonMessage(BUTTON_TEXTS.SENT);
-  //     } catch (error) {
-  //       setButtonMessage(BUTTON_TEXTS.FAILED);
-  //     } finally {
-  //       await delay(1000);
-  //       setButtonMessage(BUTTON_TEXTS.SEND);
-  //       setName('');
-  //       setEmail('');
-  //       setMessage('');
-  //       setIsContactFormShown(false);
-  //     }
-  //   }
-  // };
+  const handleFormSubmit = async (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    if (contactFormRef.current) {
+      const options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: Object.entries({
+          'form-name': 'portfolio-contact',
+          name,
+          email,
+          message,
+        }).map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+          .join('&'),
+      };
+      try {
+        setButtonMessage(BUTTON_TEXTS.SENDING);
+        await fetch('/', options);
+        await delay(1000);
+        setButtonMessage(BUTTON_TEXTS.SENT);
+      } catch (error) {
+        setButtonMessage(BUTTON_TEXTS.FAILED);
+      } finally {
+        await delay(1000);
+        setButtonMessage(BUTTON_TEXTS.SEND);
+        setName('');
+        setEmail('');
+        setMessage('');
+        setIsContactFormShown(false);
+      }
+    }
+  };
 
   useEffect(() => {
     if (isContactFormShown) {
@@ -251,7 +255,7 @@ const Contact = (): ReactElement => {
           </GetInTouchRow>
           <GetInTouchRow>
             <SendMessageBtn
-              // onClick={handleFormSubmit}
+              onClick={handleFormSubmit}
               type="submit"
               disabled={isDisabled || !isEditable}
             >
