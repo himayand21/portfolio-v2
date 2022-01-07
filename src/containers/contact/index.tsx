@@ -212,6 +212,7 @@ const Contact = (): ReactElement => {
         </GetInTouchHeaderRow>
         <GetInTouchForm
           name="portfolio-contact"
+          method="POST"
           data-netlify="true"
           ref={contactFormRef}
         >
