@@ -1,8 +1,9 @@
-import { darken } from 'polished';
+import { darken, lighten } from 'polished';
 import styled from 'styled-components';
-import { MOBILE, TABLET } from '../../constants';
+import { MOBILE, TABLET, ThemeType } from '../../constants';
 
 import {
+  TypographyBody,
   TypographyBodyReduced,
   TypographyHeadline,
   TypographyIntro,
@@ -150,4 +151,166 @@ export const Footer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+
+type withIsContactFormShown = {
+  isContactFormShown: boolean,
+  theme: ThemeType,
+}
+
+export const Aside = styled('aside')<withIsContactFormShown>`
+  min-height: 100%;
+  position: fixed;
+  min-width: 400px;
+  padding: 20px;
+  max-height: 100%;
+  box-sizing: border-box;
+  z-index: 5;
+  ${({ isContactFormShown, theme }) => (isContactFormShown ? (`
+      top: 0px;
+      right: 0px;
+      background-color: ${theme.background};
+      border-left: 1px solid ${theme.border};
+      transform: translateX(0px) scaleX(1);
+      overflow: auto;
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  `) : (`
+      margin-left: -300px;
+      transform: translateX(300px) scaleX(0);
+      overflow: hidden;
+      opacity: 0;
+  `))}
+  }
+  @media only screen and (max-width: ${MOBILE}px) {
+    min-height: unset;
+    min-width: 100vw;
+    bottom: 0px;
+    left: 0px;
+    top: unset;
+    overflow: hidden;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    ${({ isContactFormShown, theme }) => (isContactFormShown ? (`
+        background-color: ${theme.background};
+        border: 1px solid ${theme.border};
+        border-bottom: none;
+        border-radius: 25px 25px 0px 0px;
+        transform: translateY(0px) scaleY(1);
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    `) : (`
+        margin-top: -60vh;
+        transform: translateY(60vh) scaleY(0);
+        opacity: 0;
+    `))}
+    }
+  }
+`;
+
+export const GetInTouchBtn = styled.button`
+  background-color: ${({ theme }) => theme.color};
+  color: ${({ theme }) => theme.background};
+  padding: 3px 8px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  @media (hover: hover) {
+    transition: background-color 0.3s ease-out;
+    &:hover {
+      background-color: ${({ theme }) => lighten(0.1, theme.color)};
+    }
+  }
+`;
+
+export const GetInTouchSpan = styled(TypographyBodyReduced)`
+  font-weight: 400;
+`;
+
+export const GetInTouchHeader = styled(TypographyIntro)`
+  font-weight: 400;
+  flex: 1;
+`;
+
+export const GetInTouchHeaderRow = styled.div`
+  padding: 20px 0px 10px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid ${({ theme }) => theme.border};
+`;
+
+export const GetInTouchForm = styled.form`
+  margin: 20px 0 10px;
+`;
+
+export const GetInTouchRow = styled.p`
+  margin: 20px 0px;
+  width: 100%;
+  @media only screen and (max-width: ${MOBILE}px) {
+    margin: 10px 0px;
+  }
+`;
+
+export const GetInTouchInput = styled.input`
+  background-color: ${({ theme }) => theme.backgroundHover};
+  color: ${({ theme }) => theme.text};
+  padding: 8px;
+  border-radius: 8px;
+  width: 100%;
+  border: none;
+  &::placeholder {
+    color: ${({ theme }) => lighten(0.2, theme.border)};
+  }
+  &:disabled {
+    opacity: 0.6;
+  }
+`;
+
+export const GetInTouchTextarea = styled.textarea`
+  background-color: ${({ theme }) => theme.backgroundHover};
+  padding: 8px;
+  border-radius: 8px;
+  width: 100%;
+  border: none;
+  resize: none;
+  &::placeholder {
+    color: ${({ theme }) => lighten(0.2, theme.border)};
+  }
+  &:disabled {
+    opacity: 0.6;
+  }
+`;
+
+export const SendMessageBtn = styled.button`
+  background-color: ${({ theme }) => theme.color};
+  color: ${({ theme }) => theme.background};
+  padding: 8px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  margin-top: 35px;
+  @media (hover: hover) {
+    transition: background-color 0.3s ease-out;
+    &:hover {
+      background-color: ${({ theme }) => lighten(0.1, theme.color)};
+    }
+  }
+  &:disabled {
+    opacity: 0.3;
+  }
+  @media only screen and (max-width: ${MOBILE}px) {
+    margin-top: 10px;
+    margin-left: auto;
+    padding: 6px 8px;
+  }
+`;
+
+export const SendMessageSpan = styled(TypographyBody)`
+  font-weight: 400;
 `;
