@@ -62,6 +62,11 @@ export const contactInfo = [{
   link: 'https://himayandebnath.medium.com',
 }];
 
+export const resumeInfo = {
+  label: 'View Resume',
+  link: 'https://drive.google.com/drive/folders/1KTmvnSH0dSWGd2nM8MxFMBU2iRBD3LYx?usp=sharing',
+};
+
 export type profilerowType = {
   getIcon: () => ReactElement,
   label: string,

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { MOBILE, TABLET } from '../../constants';
 
 import {
+  TypographyBodyReduced,
   TypographyHeadline,
   TypographyIntro,
   TypographyIntroReduced,
@@ -97,8 +98,10 @@ export const DescriptionLink = styled.a`
   color: ${({ theme }) => theme.color};
   text-decoration: none;
   font-weight: 400;
-  &:hover {
-    color: ${({ theme }) => darken(0.1, theme.color)};
+  @media (hover: hover) {
+    &:hover {
+      color: ${({ theme }) => darken(0.1, theme.color)};
+    }
   }
 `;
 
@@ -123,4 +126,28 @@ export const ContactInfoLogo = styled.span`
 export const ContactInfoSpan = styled(TypographyLabelReduced)`
   color: ${({ theme }) => theme.text2};
   margin-left: 10px;
+`;
+
+export const ResumeLink = styled.a`
+  padding: 3px 10px;
+  text-decoration: none;
+  border-radius: 12px;
+  background-color: ${({ theme }) => theme.backgroundHover};
+  color: ${({ theme }) => theme.color};
+  @media (hover: hover) {
+    &:hover {
+      color: ${({ theme }) => darken(0.1, theme.color)};
+    }
+  }
+`;
+
+export const ResumeLabel = styled(TypographyBodyReduced)`
+  font-weight: 400;
+`;
+
+export const Footer = styled.div`
+  margin: 20px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;

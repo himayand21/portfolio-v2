@@ -1,5 +1,7 @@
 import { ReactElement } from 'react';
-import { contactInfo, profilerowType, profileInfo } from '../../metadata/profile/profileInfo';
+import {
+  contactInfo, profilerowType, profileInfo, resumeInfo,
+} from '../../metadata/profile/profileInfo';
 
 import { Article } from '../../styles';
 import {
@@ -19,6 +21,9 @@ import {
   ContactRow,
   ContactInfoLogo,
   ContactInfoSpan,
+  ResumeLink,
+  ResumeLabel,
+  Footer,
 } from './styles';
 
 const Contact = (): ReactElement => (
@@ -81,6 +86,16 @@ const Contact = (): ReactElement => (
             ))}
           </ProfileRow>
         </DescriptionValue>
+        <Footer>
+          <ResumeLink
+            href={resumeInfo.link}
+            target="blank"
+          >
+            <ResumeLabel>
+              {resumeInfo.label}
+            </ResumeLabel>
+          </ResumeLink>
+        </Footer>
       </DescriptionWrapper>
     </Card>
   </Article>
