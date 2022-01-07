@@ -129,7 +129,7 @@ export const ContactInfoSpan = styled(TypographyLabelReduced)`
 `;
 
 export const ResumeLink = styled.a`
-  padding: 3px 10px;
+  padding: 3px 8px;
   text-decoration: none;
   border-radius: 12px;
   background-color: ${({ theme }) => theme.backgroundHover};
