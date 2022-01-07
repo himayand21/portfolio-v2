@@ -53,14 +53,14 @@ const projects = [
     title: 'WeConnect',
     subtitle: 'A texting application to find and connect with your friends.',
     skills: [REACT, FIREBASE, SASS],
-    link: 'https://we-connect.netlify.com',
+    link: 'https://we-connect.netlify.app',
     image: weconnect,
   },
   {
     title: 'Covid Statistics',
     subtitle: 'An overview of the damage caused by Covid-19 in the form of maps and charts.',
     skills: [REACT, SASS],
-    link: 'https://covid-statistics.netlify.com',
+    link: 'https://covid-statistics.netlify.app',
     image: covid19,
   },
   {
@@ -95,14 +95,14 @@ const projects = [
     title: 'Skill Registry',
     subtitle: 'An application to find employees in your organization based on skills, current project, etc.',
     skills: [NODE, MONGO, REACT, REDUX, CSS],
-    link: 'https://skill-registry.netlify.com',
+    link: 'https://skill-registry.netlify.app',
     image: skillRegistry,
   },
   {
     title: 'Interview Feedback - Web App',
     subtitle: 'A web application to store feedback about candidates applying for a position after an interview.',
     skills: [NODE, MONGO, REACT, REDUX, CSS],
-    link: 'https://interview-feedback.netlify.com',
+    link: 'https://interview-feedback.netlify.app',
     image: interviewDesktop,
   },
   {
@@ -130,7 +130,7 @@ const projects = [
     title: 'KataKuti',
     subtitle: 'The classic game of tic-tac-toe which can be played between two users, comes with an easy to beat AI.',
     skills: [REACT, JS, SASS, HTML],
-    link: 'https://kata-kuti.netlify.com',
+    link: 'https://kata-kuti.netlify.app',
     image: kataKuti,
   },
   {
