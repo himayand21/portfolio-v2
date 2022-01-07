@@ -220,6 +220,7 @@ const Contact = (): ReactElement => {
           data-netlify="true"
           ref={contactFormRef}
         >
+          <input type="hidden" name="form-name" value="portfolio-contact" />
           <GetInTouchRow>
             <GetInTouchInput
               type="text"
