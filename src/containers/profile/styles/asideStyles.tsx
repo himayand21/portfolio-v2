@@ -71,6 +71,7 @@ export const AsideBlockItem = styled.a`
     padding: 10px 15px;
     border-bottom: 1px solid ${({ theme }) => theme.border};
     display: flex;
+    min-height: 70px;
     flex-direction: row;
     align-items: center;
     cursor: pointer;

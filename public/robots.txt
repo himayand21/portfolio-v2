@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://himayan-portfolio.netlify.app/sitemap.xml
