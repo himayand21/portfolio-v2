@@ -25,6 +25,8 @@ import {
   COLORS, AMBIENCE, AMBIENCES, COLOR_MAP, ROUTES,
 } from './constants';
 
+import './App.css';
+
 const App = (): ReactElement => {
   const [color, setColor] = useState(COLORS.GREEN);
   const [ambience, setAmbience] = useState(AMBIENCE.NIGHT);
