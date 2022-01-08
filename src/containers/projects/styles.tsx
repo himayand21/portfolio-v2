@@ -184,6 +184,7 @@ export const SkillImageContainer = styled.div`
 
 export const SkillImage = styled.img`
   height: 100%;
+  min-width: 12px;
 `;
 
 export const SkillLabel = styled(TypographyCaption)`

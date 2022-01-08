@@ -1,7 +1,9 @@
 import { transparentize } from 'polished';
 import styled from 'styled-components';
 import { TypographyCaption, TypographyBodyReduced, TypographyBody } from '../../../styles';
-import { LAPTOP, MOBILE, ThemeType } from '../../../constants';
+import {
+  LAPTOP, MOBILE, ThemeType,
+} from '../../../constants';
 
 type withIsHightlightsShown = {
     isHighlightsShown: boolean,
@@ -71,7 +73,7 @@ export const AsideBlockItem = styled.a`
     padding: 10px 15px;
     border-bottom: 1px solid ${({ theme }) => theme.border};
     display: flex;
-    min-height: 70px;
+    min-height: 88px;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
@@ -84,6 +86,9 @@ export const AsideBlockItem = styled.a`
     &:last-child {
         padding-bottom: 15px;
         border-bottom: none;
+    }
+    @media only screen and (max-width: ${LAPTOP}px) {
+        min-height: unset;
     }
 `;
 
