@@ -1,15 +1,15 @@
 {
-  "short_name": "Portfolio",
-  "name": "Portfolio | Himayan",
+  "short_name": "Portfolio - Himayan",
+  "name": "Portfolio - Himayan",
   "icons": [
     {
       "src": "assets/portfolio.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "sizes": "512x512 64x64 32x32 24x24 16x16",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
