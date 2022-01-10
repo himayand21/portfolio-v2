@@ -26,8 +26,9 @@ export const Card = styled.div`
   overflow: hidden;
 `;
 
-export const DisplayImage = styled.img`
+export const DisplayImageWrapper = styled.div`
   width: 30%;
+  padding-top: calc(30% - 8px);
   border-radius: 50%;
   position: absolute;
   right: 5%;
@@ -36,11 +37,28 @@ export const DisplayImage = styled.img`
   z-index: 1;
   box-sizing: border-box;
   transform: translateY(35%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: ${({ theme }) => theme.background};
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media only screen and (max-width: ${MOBILE}px) {
     right: 32.5%;
     width: 35%;
+    padding-top: calc(35% - 8px);
     transform: translateY(32%);
   }
+`;
+
+export const DisplayImage = styled.img`
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
 `;
 
 export const DisplayWrapper = styled.div`

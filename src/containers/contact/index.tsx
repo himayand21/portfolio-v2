@@ -11,6 +11,7 @@ import {
   contactInfo, profilerowType, profileInfo, RESUME_LINK,
 } from '../../metadata/profile/profileInfo';
 import Anchor from '../../icons/Anchor';
+import Display from '../../images/profile/display.jpg';
 
 import { Article } from '../../styles';
 import {
@@ -20,6 +21,7 @@ import {
   Title,
   Card,
   DisplayImage,
+  DisplayImageWrapper,
   DisplayWrapper,
   DisplayName,
   DescriptionWrapper,
@@ -141,10 +143,12 @@ const Contact = (): ReactElement => {
         </Title>
         <Card>
           <DisplayWrapper>
-            <DisplayImage
-              src="assets/display.jpg"
-              alt=""
-            />
+            <DisplayImageWrapper>
+              <DisplayImage
+                src={Display}
+                alt=""
+              />
+            </DisplayImageWrapper>
             <DisplayName>
               Himayan Debnath
             </DisplayName>

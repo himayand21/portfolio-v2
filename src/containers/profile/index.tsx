@@ -5,6 +5,9 @@ import {
   useRef,
 } from 'react';
 
+import Display from '../../images/profile/display.jpg';
+import Cover from '../../images/profile/cover.jpg';
+
 import {
   ProfileImageWrapper,
   CoverImage,
@@ -120,11 +123,11 @@ const Profile = ({
           <CoverImageDummy />
           <DisplayImageDummy />
           <CoverImage
-            src="assets/cover.jpg"
+            src={Cover}
             alt=""
           />
           <DisplayImage
-            src="assets/display.jpg"
+            src={Display}
             alt=""
           />
         </ProfileImageWrapper>

@@ -1,7 +1,9 @@
 import { ReactElement, useRef } from 'react';
 
 import PreloadImage from '../../common/PreloadImage';
+import Display from '../../images/profile/display.jpg';
 import { timelineType, types } from '../../metadata/profile/timeline';
+
 import {
   TimelineItem,
   Sender,
@@ -77,7 +79,7 @@ const Timeline = ({
   <TimelineItem key={date}>
     <Sender>
       <SenderImage
-        src="assets/display.jpg"
+        src={Display}
         alt=""
       />
       <SenderDetails>
