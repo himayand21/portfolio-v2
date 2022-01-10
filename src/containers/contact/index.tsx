@@ -48,6 +48,7 @@ import {
   SendMessageBtn,
   SendMessageSpan,
 } from './styles';
+import PreloadImage from '../../common/PreloadImage';
 
 const BUTTON_TEXTS = {
   SEND: 'Send Message',
@@ -61,6 +62,8 @@ const delay = (time: number) => new Promise((resolve) => setTimeout(resolve, tim
 const Contact = (): ReactElement => {
   const asideRef = useRef<HTMLDivElement>(null);
   const contactFormRef = useRef<HTMLFormElement>(null);
+
+  const displayImageRef = useRef<HTMLImageElement>(null);
 
   const [isContactFormShown, setIsContactFormShown] = useState(false);
   const [buttonMessage, setButtonMessage] = useState(BUTTON_TEXTS.SEND);
@@ -144,10 +147,15 @@ const Contact = (): ReactElement => {
         <Card>
           <DisplayWrapper>
             <DisplayImageWrapper>
-              <DisplayImage
-                src={Display}
-                alt=""
-              />
+              <PreloadImage
+                imageRef={displayImageRef}
+              >
+                <DisplayImage
+                  src={Display}
+                  alt=""
+                  ref={displayImageRef}
+                />
+              </PreloadImage>
             </DisplayImageWrapper>
             <DisplayName>
               Himayan Debnath

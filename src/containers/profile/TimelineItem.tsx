@@ -75,47 +75,56 @@ const Timeline = ({
   getIcon = () => '',
   link,
   ambience,
-}: propType): ReactElement => (
-  <TimelineItem key={date}>
-    <Sender>
-      <SenderImage
-        src={Display}
-        alt=""
-      />
-      <SenderDetails>
-        <SenderName>{name}</SenderName>
-        <SenderDate>{date}</SenderDate>
-      </SenderDetails>
-    </Sender>
-    {getDescription()}
-    {(() => {
-      switch (type) {
-        case types.LINK: {
-          return (
-            <LinkInTimeline
-              getTitle={getTitle}
-              getSubTitle={getSubTitle}
-              getImage={getImage}
-              link={link || ''}
-              ambience={ambience}
-            />
-          );
+}: propType): ReactElement => {
+  const displayImageRef = useRef<HTMLImageElement>(null);
+
+  return (
+    <TimelineItem key={date}>
+      <Sender>
+        <PreloadImage
+          imageRef={displayImageRef}
+        >
+          <SenderImage
+            src={Display}
+            alt=""
+            ref={displayImageRef}
+          />
+        </PreloadImage>
+        <SenderDetails>
+          <SenderName>{name}</SenderName>
+          <SenderDate>{date}</SenderDate>
+        </SenderDetails>
+      </Sender>
+      {getDescription()}
+      {(() => {
+        switch (type) {
+          case types.LINK: {
+            return (
+              <LinkInTimeline
+                getTitle={getTitle}
+                getSubTitle={getSubTitle}
+                getImage={getImage}
+                link={link || ''}
+                ambience={ambience}
+              />
+            );
+          }
+          case types.EVENT: {
+            return (
+              <TimelineInfo>
+                <TimelineIcon>
+                  {getIcon()}
+                </TimelineIcon>
+                <TimelineInfoTitle>{getTitle()}</TimelineInfoTitle>
+                <TimelineInfoSubtitle>{getSubTitle()}</TimelineInfoSubtitle>
+              </TimelineInfo>
+            );
+          }
+          default: return null;
         }
-        case types.EVENT: {
-          return (
-            <TimelineInfo>
-              <TimelineIcon>
-                {getIcon()}
-              </TimelineIcon>
-              <TimelineInfoTitle>{getTitle()}</TimelineInfoTitle>
-              <TimelineInfoSubtitle>{getSubTitle()}</TimelineInfoSubtitle>
-            </TimelineInfo>
-          );
-        }
-        default: return null;
-      }
-    })()}
-  </TimelineItem>
-);
+      })()}
+    </TimelineItem>
+  );
+};
 
 export default Timeline;

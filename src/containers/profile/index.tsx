@@ -60,6 +60,7 @@ import TimelineItem from './TimelineItem';
 import { SkillItem } from '../projects/ProjectItem';
 
 import skills, { SKILL_KEYS } from '../../metadata/skills';
+import PreloadImage from '../../common/PreloadImage';
 
 type ProfileProps = {
   ambience: string,
@@ -72,6 +73,8 @@ const Profile = ({
   const toggleSetIsHighlightsShown = () => setIsHighlightsShown(!isHighlightsShown);
 
   const highlightsRef = useRef<HTMLDivElement>(null);
+  const displayImageRef = useRef<HTMLImageElement>(null);
+  const coverImageRef = useRef<HTMLImageElement>(null);
 
   const handleOutsideClick = (event: Event) => {
     const clickedOn = highlightsRef.current;
@@ -122,14 +125,24 @@ const Profile = ({
         <ProfileImageWrapper>
           <CoverImageDummy />
           <DisplayImageDummy />
-          <CoverImage
-            src={Cover}
-            alt=""
-          />
-          <DisplayImage
-            src={Display}
-            alt=""
-          />
+          <PreloadImage
+            imageRef={coverImageRef}
+          >
+            <CoverImage
+              src={Cover}
+              alt=""
+              ref={coverImageRef}
+            />
+          </PreloadImage>
+          <PreloadImage
+            imageRef={displayImageRef}
+          >
+            <DisplayImage
+              src={Display}
+              alt=""
+              ref={displayImageRef}
+            />
+          </PreloadImage>
         </ProfileImageWrapper>
         <ProfileInfoContainer>
           <Name>Himayan Debnath</Name>
