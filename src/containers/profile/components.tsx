@@ -62,9 +62,9 @@ export const WiproDescription = (): ReactElement => (
     <Description>
       <span>During my tenure at </span>
       <b>Wipro</b>
-      <span>, I learnt the tricks of the trade of being a front-end developer (including </span>
+      <span>, I learned the tricks of the trade of being a front-end developer (including </span>
       <b>HTML, CSS, JavaScript, ReactJS, Redux</b>
-      <span> etc). </span>
+      <span> etc.). </span>
       <span>I transitioned from working on internal projects to developing </span>
       <b>large scale applications</b>
       <span> for the </span>
@@ -102,7 +102,7 @@ export const SnapwizDescription = (): ReactElement => (
     <Description>
       <span>At </span>
       <b>Snapwiz</b>
-      <span>, I was responsible for developing new and upcoming featues for their education platform - </span>
+      <span>, I was responsible for developing new and upcoming features for their education platform - </span>
       <b>Edulastic</b>
       <span>. It is a technology-enhanced assessment solution for teachers and school administrators. Here, I got introduced to tools like </span>
       <b>redux-saga</b>
