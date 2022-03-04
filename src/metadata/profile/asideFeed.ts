@@ -9,6 +9,7 @@ import Org22 from '../../images/highlights/Org22.png';
 import Org3 from '../../images/highlights/Org3.png';
 import Vol1 from '../../images/highlights/Vol1.jpg';
 import Sass from '../../images/skills/sass.png';
+import JS from '../../images/skills/js.png';
 import Webpack from '../../images/skills/webpack.png';
 import GraphQL from '../../images/skills/graphql.png';
 
@@ -66,6 +67,11 @@ const asideFeed = [
   {
     type: 'Certifications',
     items: [{
+      link: 'https://drive.google.com/file/d/1ju2I3TCGbNMWD59k91LoX05eHqFQjZ4z/view?usp=sharing',
+      title: 'Advanced JavaScript',
+      subtitle: 'Mar 2022 | Udemy',
+      getImage: (): string => JS,
+    }, {
       link: 'https://drive.google.com/file/d/19Dp2C3zFRTJRfNwj_-BaJHw6Tzu5_Srx/view?usp=drivesdk',
       title: 'The Complete Sass and SCSS Course',
       subtitle: 'Mar 2020 | Udemy',
