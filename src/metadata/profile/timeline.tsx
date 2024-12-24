@@ -7,6 +7,7 @@ import Org12 from '../../images/highlights/Org12.png';
 import Org21 from '../../images/highlights/Org21.png';
 import Org22 from '../../images/highlights/Org22.png';
 import Org3 from '../../images/highlights/Org3.png';
+import Org4 from '../../images/highlights/Org4.png';
 
 import { AMBIENCE } from '../../constants';
 import {
@@ -15,9 +16,11 @@ import {
   WiproDescription,
   SnapwizDescription,
   VedantuDescription,
-  VedantuWorkExperience,
-  SnapwizWorkExperience,
+  AtlassianDescription,
   WiproWorkExperience,
+  SnapwizWorkExperience,
+  VedantuWorkExperience,
+  AtlassianWorkExperience,
 } from '../../containers/profile/components';
 
 export const types = {
@@ -26,6 +29,15 @@ export const types = {
 };
 
 const timeline = [{
+  type: types.LINK,
+  name: 'Himayan Debnath',
+  date: 'June 2022',
+  link: 'https://www.atlassian.com',
+  getDescription: AtlassianDescription,
+  getImage: (): string => Org4,
+  getTitle: (): string => ('Atlassian'),
+  getSubTitle: AtlassianWorkExperience,
+}, {
   type: types.LINK,
   name: 'Himayan Debnath',
   date: 'October 2020',

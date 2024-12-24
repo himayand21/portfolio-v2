@@ -260,6 +260,7 @@ const Profile = ({
               subtitle,
               getImage,
               link,
+              noBorder,
             }: asiderowType): ReactElement => (
               <AsideBlockItem
                 href={link}
@@ -269,6 +270,7 @@ const Profile = ({
                 <AsideItemImage
                   src={getImage(ambience)}
                   alt=""
+                  noBorder={noBorder}
                 />
                 <AsideItemInfoWrapper>
                   <AsideItemTitle>

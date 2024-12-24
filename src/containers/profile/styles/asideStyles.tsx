@@ -10,6 +10,11 @@ type withIsHightlightsShown = {
     theme: ThemeType,
 }
 
+type withNoBorder = {
+    noBorder?: boolean,
+    theme: ThemeType,
+}
+
 export const Aside = styled('aside')<withIsHightlightsShown>`
     flex: 1;
     position: sticky;
@@ -92,9 +97,9 @@ export const AsideBlockItem = styled.a`
     }
 `;
 
-export const AsideItemImage = styled.img`
+export const AsideItemImage = styled.img<withNoBorder>`
     width: 50px;
-    border-radius: 50%;
+    border-radius: ${({ noBorder }) => (noBorder ? '0%' : '50%')};
     margin-right: 15px;
     @media only screen and (min-width: ${LAPTOP}px) and (max-width: ${LAPTOP + 100}px) {
         display: none;

@@ -20,7 +20,7 @@ const location = {
 
 const job = {
   getIcon: Job,
-  label: 'Software Engineer 3 at Vedantu',
+  label: 'SDE 2 at Atlassian',
 };
 
 export const profileInfo = [location, job];
@@ -36,7 +36,7 @@ const BioFirst = () => (
     <b> clean code</b>
     . When I am not picking my brain trying to name a variable in front of a computer 👨🏾‍💻,
     I am trying new recipes in the kitchen 👨🏾‍🍳
-    or struggling to play the E chord on my ukulele 🎸
+    or struggling to play the F chord on my guitar 🎸
   </span>
 );
 
