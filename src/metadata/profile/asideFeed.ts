@@ -7,6 +7,7 @@ import Org12 from '../../images/highlights/Org12.png';
 import Org21 from '../../images/highlights/Org21.png';
 import Org22 from '../../images/highlights/Org22.png';
 import Org3 from '../../images/highlights/Org3.png';
+import Org4 from '../../images/highlights/Org4.png';
 import Vol1 from '../../images/highlights/Vol1.jpg';
 import Sass from '../../images/skills/sass.png';
 import JS from '../../images/skills/js.png';
@@ -17,9 +18,16 @@ const asideFeed = [
   {
     type: 'Work Experience',
     items: [{
+      link: 'https://www.atlassian.com',
+      title: 'Atlassian',
+      subtitle: 'June 2022 - now',
+      getImage: (): string => Org4,
+      noBorder: true,
+    },
+    {
       link: 'https://www.vedantu.com',
       title: 'Vedantu Innovations',
-      subtitle: 'October 2020 - now',
+      subtitle: 'October 2020 - June 2022',
       getImage: (): string => Org3,
     }, {
       link: 'https://snapwiz.com',
@@ -104,6 +112,7 @@ export type asiderowType = {
   title: string,
   subtitle: string,
   getImage: (ambience?: string) => string,
+  noBorder?: boolean,
 };
 
 export type asideFeedType = {

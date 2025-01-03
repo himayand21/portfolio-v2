@@ -122,13 +122,13 @@ export const VedantuDescription = (): ReactElement => (
     <Description>
       <span>At </span>
       <b>Vedantu</b>
-      <span>, I am part of the </span>
+      <span>, I was part of the </span>
       <b>WAVE</b>
-      <span> team, which is instrumental in enhancing LIVE classroom experience. Here, I got introduced to technologies like </span>
+      <span> team, which was instrumental in enhancing LIVE classroom experience. Here, I got introduced to technologies like </span>
       <b>PaperJS</b>
       <span> and </span>
       <b>socket.io</b>
-      <span>. I have been responsible for shipping top-tier features like -</span>
+      <span>. I was responsible for shipping top-tier features like -</span>
     </Description>
     <DescriptionList>
       <DescriptionListItem>
@@ -180,13 +180,43 @@ export const VedantuDescription = (): ReactElement => (
   </DescriptionWrapper>
 );
 
+export const AtlassianDescription = (): ReactElement => (
+  <DescriptionWrapper>
+    <Description>
+      <span>At </span>
+      <b>Atlassian</b>
+      <span>, I am responsible for planning and delivering new requirements for one of their billing platforms - </span>
+      <b>Advocate Central</b>
+      <span>. It is a one-stop solution for customer advocates to assist and place orders for existing and potential customers. Here, I comprehensively used </span>
+      <b>React</b>
+      <span> to develop UI features and </span>
+      <b>GraphQL</b>
+      <span> to consume multiple services and integrate them seamlessly into the application.</span>
+    </Description>
+  </DescriptionWrapper>
+);
+
+export const WiproWorkExperience = (): ReactElement => (
+  <WorkExperienceContent>
+    <WorkExperienceTitle>Project Engineer</WorkExperienceTitle>
+    <WorkExperienceTime>Jun 2018 - Apr 2020</WorkExperienceTime>
+  </WorkExperienceContent>
+);
+
+export const SnapwizWorkExperience = (): ReactElement => (
+  <WorkExperienceContent>
+    <WorkExperienceTitle>Software Engineer</WorkExperienceTitle>
+    <WorkExperienceTime>Apr 2020 - Oct 2020</WorkExperienceTime>
+  </WorkExperienceContent>
+);
+
 export const VedantuWorkExperience = (): ReactElement => (
   <DescriptionList>
     <DescriptionListItem>
       <ListBullet isFirst />
       <WorkExperienceContent>
         <WorkExperienceTitle>Software Engineer 3</WorkExperienceTitle>
-        <WorkExperienceTime>Oct 2021 - present</WorkExperienceTime>
+        <WorkExperienceTime>Oct 2021 - June 2022</WorkExperienceTime>
       </WorkExperienceContent>
     </DescriptionListItem>
     <DescriptionListItem>
@@ -206,16 +236,9 @@ export const VedantuWorkExperience = (): ReactElement => (
   </DescriptionList>
 );
 
-export const SnapwizWorkExperience = (): ReactElement => (
+export const AtlassianWorkExperience = (): ReactElement => (
   <WorkExperienceContent>
-    <WorkExperienceTitle>Software Engineer</WorkExperienceTitle>
-    <WorkExperienceTime>Apr 2020 - Oct 2020</WorkExperienceTime>
-  </WorkExperienceContent>
-);
-
-export const WiproWorkExperience = (): ReactElement => (
-  <WorkExperienceContent>
-    <WorkExperienceTitle>Project Engineer</WorkExperienceTitle>
-    <WorkExperienceTime>Jun 2018 - Apr 2020</WorkExperienceTime>
+    <WorkExperienceTitle>Software Development Engineer 2</WorkExperienceTitle>
+    <WorkExperienceTime>Jun 2022 - Now</WorkExperienceTime>
   </WorkExperienceContent>
 );
